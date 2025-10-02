@@ -4,30 +4,32 @@ layout: compress
 
 <!doctype html>
 <html lang="en" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-  <body>
+  <body>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
-    <div id="main" role="main">
-      {% include sidebar.html %}
-    
-      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        <div class="page__inner-wrap">
-          <section class="page__content" itemprop="text">
-            {{ content }}
-          </section>
-        </div>
-      </article>
-    </div>
+    <div id="main" role="main">
+      {% include sidebar.html %}
+    
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text">
+            {{ content }}
+          </section>
+        </div>
+      </article>
+    </div>
 
-    {% include scripts.html %}
+    {% include scripts.html %}
 
-  </body>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=xBZtIMJxmg-No4X0j6G07MWoZ5aXy_AnwE64U__c1_4&cl=ffffff&w=a"></script>
+
+  </body>
 </html>
