@@ -22,7 +22,7 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 
 
 # 🔥 News
-- **2025.5** 🎉🎉  We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
+- **2025.9** 🎉🎉   One papes is accepted by NeurIPS 2025, We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
 - **2025.4** 🎉🎉  One papes is accepted by ACL 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://arxiv.org/abs/2502.11903).
 - **2025.4** 🎉🎉  One papes is accepted by CVPR 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html).
 - **2025.2** 🎉🎉  Two papers are accepted by ICLR 2025, thanks for all of my collaborators.  Check out our papers [MSSBench](https://arxiv.org/abs/2410.06172) and [ANTRP](https://openreview.net/forum?id=zGb4WgCW5i).
@@ -30,18 +30,6 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 
 
 # 💥 Preprints
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/more.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[More Thinking, Less Seeing? Assessing Amplified Hallucination in Multimodal Reasoning Models](https://arxiv.org/abs/2505.21523)
-
-**Chengzhi Liu**<sup>*</sup>, Zhongxing Xu<sup>*</sup>, Qinyue Wei, Juncheng Wu, James Zou, Xin Eric Wang, Yuyin Zhou, Sheng Liu
-
-[**Project**](https://mlrm-halu.github.io/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> | [![GitHub stars](https://img.shields.io/github/stars/MLRM-Halu/MLRM-Halu?style=social)](https://github.com/MLRM-Halu/MLRM-Halu)
-</div>
-</div>
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/safety.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -54,6 +42,23 @@ Kaiwen Zhou<sup>*</sup>, **Chengzhi Liu**<sup>*</sup>, Xuandong Zhao, Shreedhar 
 </div>
 
 # 📝 Selected Publications 
+
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge"> NeurIPS 2025</div>
+      <img src='images/more.jpg' alt="sym" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
+
+  [More Thinking, Less Seeing? Assessing Amplified Hallucination in Multimodal Reasoning Models](https://arxiv.org/abs/2505.21523)  
+  **Chengzhi Liu**<sup>*</sup>, Zhongxing Xu<sup>*</sup>, Qinyue Wei, Juncheng Wu, James Zou, Xin Eric Wang, Yuyin Zhou, Sheng Liu
+
+  [**Project**](https://mlrm-halu.github.io/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> | [![GitHub stars](https://img.shields.io/github/stars/MLRM-Halu/MLRM-Halu?style=social)](https://github.com/MLRM-Halu/MLRM-Halu)
+
+  </div>
+</div>
 
 <div class='paper-box'>
   <div class='paper-box-image'>
