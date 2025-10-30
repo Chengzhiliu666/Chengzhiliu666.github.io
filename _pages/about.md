@@ -20,6 +20,7 @@ Hi there! I'm an incoming PhD student at the [University of California, Santa Ba
 
 My research interests lie in trustworthy AI and the algorithmic foundations of multimodal large models, with a focus on enhancing their reasoning capabilities, reliability, and interpretability across diverse input modalities. I am always open to collaboration and the exchange of ideas. If you’d like to discuss potential research opportunities or simply connect, please don’t hesitate to reach out to me at **chengzhi@ucsb.edu**.
 
+**<span style="color:red;">I am currently seeking research internship opportunities for Summer 2026. I would be happy to discuss any opportunities that may be a good fit.</span>**
 
 # 🔥 News
 - **2025.9** 🎉🎉   One papes is accepted by NeurIPS 2025, We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
