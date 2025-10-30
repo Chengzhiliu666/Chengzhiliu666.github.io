@@ -23,6 +23,7 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 **<span style="color:red;">I am currently seeking research internship opportunities for Summer 2026. I would be happy to discuss any opportunities that may be a good fit.</span>**
 
 # 🔥 News
+- **2025.10** 🎉🎉  Our automated aesthetic agent for academic video generation has been released.  👉 Check our [paper](https://arxiv.org/pdf/2510.05571) and [project](https://evopresent.github.io/)
 - **2025.9** 🎉🎉   One papes is accepted by NeurIPS 2025, We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
 - **2025.4** 🎉🎉  One papes is accepted by ACL 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://arxiv.org/abs/2502.11903).
 - **2025.4** 🎉🎉  One papes is accepted by CVPR 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html).
@@ -31,6 +32,17 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 
 
 # 💥 Preprints
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/safety.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations](https://arxiv.org/pdf/2510.05571)
+
+**Chengzhi Liu<**sup>*</sup>, Yuzhe Yang<sup>*</sup>, Kaiwen Zhou, Zhen Zhang, Yue Fan, Yanan Xie, Peng Qi, Xin Eric Wang
+
+ [**Project**](https://evopresent.github.io/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> | [![GitHub stars](https://img.shields.io/github/stars/eric-ai-lab/EvoPresent?style=social)](https://github.com/eric-ai-lab/EvoPresent)
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/safety.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
