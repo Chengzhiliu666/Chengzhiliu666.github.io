@@ -23,16 +23,16 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 **<span style="color:red;">I am currently seeking research internship opportunities for Summer 2026. I would be happy to discuss any opportunities that may be a good fit.</span>**
 
 # 🔥 News
-- **2025.10** 🎉🎉  Our automated aesthetic agent for academic video generation has been released.  👉 Check our [paper](https://arxiv.org/pdf/2510.05571) and [project](https://evopresent.github.io/)
-- **2025.9** 🎉🎉   One papes is accepted by NeurIPS 2025, We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
-- **2025.4** 🎉🎉  One papes is accepted by ACL 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://arxiv.org/abs/2502.11903).
-- **2025.4** 🎉🎉  One papes is accepted by CVPR 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html).
-- **2025.2** 🎉🎉  Two papers are accepted by ICLR 2025, thanks for all of my collaborators.  Check out our papers [MSSBench](https://arxiv.org/abs/2410.06172) and [ANTRP](https://openreview.net/forum?id=zGb4WgCW5i).
-- **2025.1** 🎉🎉  One paper is accepted by <span style="color:red;"><strong>AAAI 2025 Oral</strong></span>, thanks for all of my collaborators.  Check it out in the [paper](https://ojs.aaai.org/index.php/AAAI/article/view/32570).
+- **2025.10** 🎉  Our automated aesthetic agent for academic video generation has been released.  👉 Check our [paper](https://arxiv.org/pdf/2510.05571) and [project](https://evopresent.github.io/)
+- **2025.9** 🎉   One papes is accepted by NeurIPS 2025, We release a paper on balancing reasoning and hallucination in multimodal reasoning models. 👉 Check our [paper](https://arxiv.org/abs/2505.21523) and [project](https://mlrm-halu.github.io/)
+- **2025.4** 🎉  One papes is accepted by ACL 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://arxiv.org/abs/2502.11903).
+- **2025.4** 🎉  One papes is accepted by CVPR 2025 , thanks for all of my collaborators.  Check it out in the [paper](https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html).
+- **2025.2** 🎉  Two papers are accepted by ICLR 2025, thanks for all of my collaborators.  Check out our papers [MSSBench](https://arxiv.org/abs/2410.06172) and [ANTRP](https://openreview.net/forum?id=zGb4WgCW5i).
+- **2025.1** 🎉  One paper is accepted by <span style="color:red;"><strong>AAAI 2025 Oral</strong></span>, thanks for all of my collaborators.  Check it out in the [paper](https://ojs.aaai.org/index.php/AAAI/article/view/32570).
 
 
 # 💥 Preprints
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/safety.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/evopresent.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations](https://arxiv.org/pdf/2510.05571)
