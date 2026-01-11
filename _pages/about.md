@@ -129,4 +129,4 @@ Kaiwen Zhou<sup>*</sup>, **Chengzhi Liu**<sup>*</sup>, Xuandong Zhao, Shreedhar 
 - *2025.09 - 2030.06*,  Ph.D., University of California, Santa Barbara, Santa Barbara, CA, United States.
 
 # 🧑‍⚖️ Reviewer
-- Conference Reviewer: AAAI-AIA, AAAI, ICLR, ICME, IJCNN
+- Conference Reviewer: TCSVT,AAAI-AIA, AAAI, ICLR, ICME, IJCNN
