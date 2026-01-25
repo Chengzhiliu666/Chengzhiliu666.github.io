@@ -19,7 +19,6 @@ redirect_from:
 Hi there! 👋 I'm a First Year PhD student at the [University of California, Santa Barbara](https://www.ucsb.edu/), [Department of Computer Science](https://www.cs.ucsb.edu/), advised by [Dr. Eric Xin Wang](https://eric-xw.github.io/). I am also in my final year as an undergraduate student at the School of Engineering, University of Liverpool. 
 
 My research interests lie in trustworthy AI and the algorithmic foundations of multimodal large models, with a focus on enhancing their reasoning capabilities, reliability, and interpretability across diverse input modalities. I am always open to collaboration and the exchange of ideas. If you’d like to discuss potential research opportunities or simply connect, please don’t hesitate to reach out to me at **chengzhi@ucsb.edu**. 
-
 <br>
 📌 I'm always happy to collaborate with graduate/undergraduate students. Please drop me an email if you want to work with me.
 
