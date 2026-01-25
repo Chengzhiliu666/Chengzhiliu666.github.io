@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Chengzhi Liu"
-description              : "Incoming Phd in UCSB"
+description              : "Phd in UCSB"
 repository               : "https://chengzhiliu666.github.io/"
 google_scholar_stats_use_cdn : true
 
@@ -35,7 +35,7 @@ author:
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "https://x.com/liuchen02938149"
   foursquare       :
   github           : # e.g., "github username"
   google_plus      :
