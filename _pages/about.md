@@ -20,6 +20,7 @@ Hi there! 👋 I'm a First Year PhD student at the [University of California, Sa
 
 My research interests lie in trustworthy AI and the algorithmic foundations of multimodal large models, with a focus on enhancing their reasoning capabilities, reliability, and interpretability across diverse input modalities. I am always open to collaboration and the exchange of ideas. If you’d like to discuss potential research opportunities or simply connect, please don’t hesitate to reach out to me at **chengzhi@ucsb.edu**. 
 
+<br>
 📌 I'm always happy to collaborate with graduate/undergraduate students. Please drop me an email if you want to work with me.
 
 ✨ **<span style="color:red;">I am currently seeking research internship opportunities for Summer 2026. </span>**
