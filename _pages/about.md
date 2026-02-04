@@ -52,23 +52,6 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
   </div>
 </div>
 
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div>
-      <div class="badge">ICLR 2025</div>
-      <img src='images/mssbench.jpg' alt="sym" width="100%">
-    </div>
-  </div>
-  <div class='paper-box-text' markdown="1">
-
-  [Multimodal Situational Safety](https://arxiv.org/abs/2410.06172)  
-  Kaiwen Zhou<sup>*</sup>, **Chengzhi Liu**<sup>*</sup>, Xuandong Zhao, Anderson Compalas, Dawn Song, Xin Eric Wang  
-  
- [**Project**](https://mssbench.github.io/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> | [![GitHub stars](https://img.shields.io/github/stars/eric-ai-lab/MSSBench?style=social)](https://github.com/eric-ai-lab/MSSBench)
-  </div>
-</div>
-
-
 
 <div class='paper-box'>
   <div class='paper-box-image'>
