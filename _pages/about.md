@@ -33,15 +33,13 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 - **2025.1** 🎉  One paper is accepted by <span style="color:red;"><strong>AAAI 2025 Oral</strong></span>, thanks for all of my collaborators.  Check it out in the [paper](https://ojs.aaai.org/index.php/AAAI/article/view/32570).
 
 
-# 💥 Preprints
-
 # 📝 Selected Publications 
 
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
       <div class="badge">ICLR 2026 </div>
-      <img src='images/more.jpg' alt="sym" width="100%">
+      <img src='images/evopresent.png' alt="sym" width="100%">
     </div>
   </div>
   <div class='paper-box-text' markdown="1">
