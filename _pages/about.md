@@ -126,4 +126,4 @@ My research interests lie in trustworthy AI and the algorithmic foundations of m
 - *2025.09 - 2030.06*,  Ph.D., University of California, Santa Barbara, Santa Barbara, CA, United States.
 
 # 🧑‍⚖️ Reviewer
-- Conference Reviewer: AAAI, ICLR, ICML, CVPR, TCSVT, ICME, IJCNN
+- Conference Reviewer: AAAI25, ICLR26, ICML26, CVPR25, ARR26, TCSVT, ICME24-26
