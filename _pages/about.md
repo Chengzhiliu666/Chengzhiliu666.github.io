@@ -668,7 +668,7 @@ window.addEventListener('scroll', function() {
 
 Hi there! 👋 I'm a **First Year PhD student** at the [University of California, Santa Barbara NLP Group](http://nlp.cs.ucsb.edu/), [Department of Computer Science](https://www.cs.ucsb.edu/), advised by [Dr. Eric Xin Wang](https://eric-xw.github.io/). I graduated from the School of Engineering at the University of Liverpool.
 
-My research interests lie in **trustworthy AI** and the **algorithmic foundations of multimodal large models**, with a focus on:
+My research interests lie in the **Foundations of Vision-Language models**, **Trustworthy AI** and **Multimodal Agent**, with a focus on:
 - 🎯 Multimodal reasoning and visual grounding
 - 🛡️ Reliability and robustness of LLMs and VLMs
 - 🔍 Autonomous agent frameworks with self-evolution
