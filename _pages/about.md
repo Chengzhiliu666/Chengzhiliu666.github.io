@@ -17,23 +17,16 @@ redirect_from:
 
 <style>
   /* Reduce top spacing */
-  .page__content:first-child, article:first-child { margin-top: 0 !important; padding-top: 0 !important; }
-  #about-me { scroll-margin-top: 80px; }
+  .page__content { margin-top: -20px !important; }
+  h1:first-of-type { margin-top: 0 !important; }
   
   /* News items styling */
   .news-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .news-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .news-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-  /* Education & Service cards */
-  .edu-card { background: rgba(255,255,255,0.05) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-  .service-card { background: rgba(255,255,255,0.05) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-
-  /* Contact card gradient */
-  .contact-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); }
-
-  /* Paper box text color fix */
-  .paper-box-text p, .paper-box-text span, .paper-box-text strong { color: #e0e0e0 !important; }
-  .paper-box-text a { color: #64b5f6 !important; }
+  /* Education & Service cards - light theme */
+  .edu-card { background: #f8f9fa !important; border: 1px solid #e9ecef; }
+  .service-card { background: #f0f7ff !important; border: 1px solid #e3f2fd; }
 
   /* Badge colors */
   .badge-red { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
@@ -70,34 +63,34 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 <div class="news-container" style="max-height: 350px; overflow-y: auto; padding: 5px 15px 5px 5px;">
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #e74c3c;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #e74c3c;">
   <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2026.01</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571" style="color:#64b5f6;">paper</a> and <a href="https://evopresent.github.io/" style="color:#64b5f6;">project</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #9b59b6;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #9b59b6;">
   <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.09</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523" style="color:#64b5f6;">paper</a> | <a href="https://mlrm-halu.github.io/" style="color:#64b5f6;">project</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#9b59b6;">NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903" style="color:#64b5f6;">here</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#3498db;">ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903">here</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #2ecc71;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #2ecc71;">
   <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html" style="color:#64b5f6;">here</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#2ecc71;">CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">here</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.02</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 Two papers are accepted by <strong style="color:#fff;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172" style="color:#64b5f6;">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i" style="color:#64b5f6;">ANTRP</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 Two papers are accepted by <strong style="color:#3498db;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #f39c12;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #f39c12;">
   <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.01</span>
-  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570" style="color:#64b5f6;">here</a></span>
+  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">here</a></span>
 </div>
 
 </div>
@@ -224,21 +217,21 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 <div style="display: flex; flex-direction: column; gap: 15px;">
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid #3498db;">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #3498db;">
   <div style="font-size: 30px;">🎓</div>
   <div>
-    <p style="margin: 0; font-weight: bold; color: #ffffff;">Ph.D. in Computer Science</p>
-    <p style="margin: 5px 0 0 0; color: #a0a0a0;">University of California, Santa Barbara</p>
-    <p style="margin: 5px 0 0 0; font-size: 14px; color: #808080;">📅 2025.09 - 2030.06 (Expected)</p>
+    <p style="margin: 0; font-weight: bold; color: #2c3e50;">Ph.D. in Computer Science</p>
+    <p style="margin: 5px 0 0 0; color: #555;">University of California, Santa Barbara</p>
+    <p style="margin: 5px 0 0 0; font-size: 14px; color: #888;">📅 2025.09 - 2030.06 (Expected)</p>
   </div>
 </div>
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid #e74c3c;">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #e74c3c;">
   <div style="font-size: 30px;">🎓</div>
   <div>
-    <p style="margin: 0; font-weight: bold; color: #ffffff;">Bachelor of Engineering</p>
-    <p style="margin: 5px 0 0 0; color: #a0a0a0;">University of Liverpool, United Kingdom</p>
-    <p style="margin: 5px 0 0 0; font-size: 14px; color: #808080;">📅 2021.09 - 2025.07</p>
+    <p style="margin: 0; font-weight: bold; color: #2c3e50;">Bachelor of Engineering</p>
+    <p style="margin: 5px 0 0 0; color: #555;">University of Liverpool, United Kingdom</p>
+    <p style="margin: 5px 0 0 0; font-size: 14px; color: #888;">📅 2021.09 - 2025.07</p>
   </div>
 </div>
 
@@ -248,18 +241,18 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 # 🧑‍⚖️ Academic Services
 
-<div class="service-card" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 10px;">
+<div class="service-card" style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin-top: 10px;">
 
-<p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">Conference Reviewer:</p>
+<p style="color: #2c3e50; font-weight: bold; margin-bottom: 12px;">Conference Reviewer:</p>
 
 <span style="display: inline-flex; flex-wrap: wrap; gap: 8px;">
-  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,152,219,0.4);">AAAI 2025</span>
-  <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(155,89,182,0.4);">ICLR 2026</span>
-  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(231,76,60,0.4);">ICML 2026</span>
-  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(46,204,113,0.4);">CVPR 2025</span>
-  <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(243,156,18,0.4);">ARR 2026</span>
-  <span style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(26,188,156,0.4);">TCSVT</span>
-  <span style="background: linear-gradient(135deg, #34495e, #2c3e50); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,73,94,0.4);">ICME 2024-26</span>
+  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,152,219,0.3);">AAAI 2025</span>
+  <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(155,89,182,0.3);">ICLR 2026</span>
+  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(231,76,60,0.3);">ICML 2026</span>
+  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(46,204,113,0.3);">CVPR 2025</span>
+  <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(243,156,18,0.3);">ARR 2026</span>
+  <span style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(26,188,156,0.3);">TCSVT</span>
+  <span style="background: linear-gradient(135deg, #34495e, #2c3e50); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,73,94,0.3);">ICME 2024-26</span>
 </span>
 
 </div>
