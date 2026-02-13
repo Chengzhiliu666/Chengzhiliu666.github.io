@@ -21,41 +21,41 @@ redirect_from:
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
 
 <style>
-  /* ========== CSS Variables - Fresh Blue Theme ========== */
+  /* ========== CSS Variables - Soft Light Blue Theme ========== */
   :root {
-    --bg-primary: #f0f7fc;
-    --bg-secondary: #e3f0fa;
+    --bg-primary: #f8fbfe;
+    --bg-secondary: #f0f7fc;
     --bg-card: #ffffff;
     --text-primary: #1a2a3a;
     --text-secondary: #2d4a5e;
     --text-muted: #5a7a8a;
-    --border-color: #c5ddf0;
-    --shadow-color: rgba(70, 130, 180, 0.12);
-    --accent-color: #3498db;
-    --accent-light: #5dade2;
-    --link-color: #2980b9;
-    --link-hover: #1a5276;
-    --gradient-start: #e8f4fc;
-    --gradient-end: #d6eaf8;
+    --border-color: #d8eaf5;
+    --shadow-color: rgba(70, 130, 180, 0.08);
+    --accent-color: #5ba4d4;
+    --accent-light: #7dbce6;
+    --link-color: #4a9acc;
+    --link-hover: #2980b9;
+    --gradient-start: #f8fbfe;
+    --gradient-end: #f0f6fb;
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Source Serif 4', Georgia, serif;
   }
 
   [data-theme="dark"] {
-    --bg-primary: #0d1b2a;
-    --bg-secondary: #1b2838;
-    --bg-card: #1b2838;
+    --bg-primary: #101820;
+    --bg-secondary: #1a242e;
+    --bg-card: #1a242e;
     --text-primary: #e8f4fc;
     --text-secondary: #b8d4e8;
     --text-muted: #7a9ab8;
-    --border-color: #2d4a5e;
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --accent-color: #5dade2;
-    --accent-light: #85c1e9;
-    --link-color: #5dade2;
-    --link-hover: #aed6f1;
-    --gradient-start: #1b2838;
-    --gradient-end: #0d1b2a;
+    --border-color: #2a3a48;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+    --accent-color: #7dbce6;
+    --accent-light: #a3d1f0;
+    --link-color: #7dbce6;
+    --link-hover: #c5e3f6;
+    --gradient-start: #141c24;
+    --gradient-end: #101820;
   }
 
   /* ========== Global Font Styles ========== */
@@ -228,9 +228,12 @@ redirect_from:
   }
 
   /* ========== Compact spacing layout ========== */
-  .page__content { margin-top: -30px !important; padding-top: 0 !important; }
-  h1:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
-  .author__avatar { margin-top: -20px !important; }
+  .page__content { margin-top: -50px !important; padding-top: 0 !important; }
+  h1:first-of-type { margin-top: -10px !important; padding-top: 0 !important; }
+  .author__avatar { margin-top: -30px !important; }
+  .sidebar { padding-top: 0 !important; margin-top: -20px !important; }
+  .page { padding-top: 0 !important; }
+  .page__inner-wrap { padding-top: 0 !important; }
   
   /* Compact paragraph spacing */
   p { margin-bottom: 0.6em !important; }
@@ -684,32 +687,32 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 <div class="news-container" style="max-height: 280px; overflow-y: auto; padding: 8px;">
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
   <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2026.01</span>
   <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
   <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.09</span>
   <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#9b59b6;">NeurIPS 2025</strong> 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
-  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.04</span>
-  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#3498db;">ACL 2025</strong> 👉 <a href="https://arxiv.org/abs/2502.11903">paper</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
+  <span style="background: linear-gradient(135deg, #5ba4d4, #4a9acc); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.04</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#5ba4d4;">ACL 2025</strong> 👉 <a href="https://arxiv.org/abs/2502.11903">paper</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
   <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.04</span>
   <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#27ae60;">CVPR 2025</strong> 👉 <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">paper</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
-  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.02</span>
-  <span style="line-height: 1.5; font-size: 15px;">🎉 Two papers are accepted by <strong style="color:#3498db;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
+  <span style="background: linear-gradient(135deg, #5ba4d4, #4a9acc); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.02</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 Two papers are accepted by <strong style="color:#5ba4d4;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
   <span style="background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.01</span>
   <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#e74c3c;">AAAI 2025 Oral</strong> 👉 <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">paper</a></span>
 </div>
@@ -846,7 +849,7 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 <div style="display: flex; flex-direction: column; gap: 8px;">
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #3498db;">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #5ba4d4;">
   <div style="font-size: 26px;">🎓</div>
   <div>
     <p style="margin: 0; font-weight: 600; font-size: 16px;">Ph.D. in Computer Science</p>
@@ -855,7 +858,7 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
   </div>
 </div>
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #5dade2;">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #7dbce6;">
   <div style="font-size: 26px;">🎓</div>
   <div>
     <p style="margin: 0; font-weight: 600; font-size: 16px;">Bachelor of Engineering</p>
@@ -878,13 +881,13 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 <p style="font-weight: 600; margin-bottom: 12px; font-size: 16px;">Conference Reviewer:</p>
 
 <span style="display: inline-flex; flex-wrap: wrap; gap: 8px;">
-  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">AAAI 2025</span>
+  <span style="background: linear-gradient(135deg, #5ba4d4, #4a9acc); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">AAAI 2025</span>
   <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICLR 2026</span>
-  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICML 2026</span>
-  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">CVPR 2025</span>
-  <span style="background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ARR 2026</span>
-  <span style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">TCSVT</span>
-  <span style="background: linear-gradient(135deg, #5d6d7e, #34495e); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICME 2024-26</span>
+  <span style="background: linear-gradient(135deg, #e57373, #c0392b); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICML 2026</span>
+  <span style="background: linear-gradient(135deg, #66bb6a, #43a047); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">CVPR 2025</span>
+  <span style="background: linear-gradient(135deg, #ffb74d, #f57c00); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ARR 2026</span>
+  <span style="background: linear-gradient(135deg, #4db6ac, #26a69a); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">TCSVT</span>
+  <span style="background: linear-gradient(135deg, #78909c, #546e7a); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICME 2024-26</span>
 </span>
 
 </div>
