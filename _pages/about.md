@@ -228,7 +228,7 @@ redirect_from:
   }
 
   /* ========== Compact spacing layout ========== */
-  .page__content { margin-top: -50px !important; padding-top: 0 !important; }
+  .page__content { margin-top: -80px !important; padding-top: 0 !important; }
   h1:first-of-type { margin-top: -10px !important; padding-top: 0 !important; }
   .author__avatar { margin-top: -30px !important; }
   .sidebar { padding-top: 0 !important; margin-top: -20px !important; }
