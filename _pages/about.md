@@ -228,12 +228,14 @@ redirect_from:
   }
 
   /* ========== Compact spacing layout ========== */
-  .page__content { margin-top: -80px !important; padding-top: 0 !important; }
-  h1:first-of-type { margin-top: -10px !important; padding-top: 0 !important; }
-  .author__avatar { margin-top: -30px !important; }
-  .sidebar { padding-top: 0 !important; margin-top: -20px !important; }
-  .page { padding-top: 0 !important; }
-  .page__inner-wrap { padding-top: 0 !important; }
+   .page__content { margin-top: -80px !important; padding-top: 0 !important; }
+  h1:first-of-type { margin-top: -20px !important; padding-top: 0 !important; }
+  .author__avatar { margin-top: -50px !important; }
+  .sidebar { padding-top: 0 !important; margin-top: -50px !important; }
+  .page { padding-top: 0 !important; margin-top: -20px !important; }
+  .page__inner-wrap { padding-top: 0 !important; margin-top: 0 !important; }
+  #main { padding-top: 0 !important; margin-top: -30px !important; }
+  .initial-content { padding-top: 0 !important; }
   
   /* Compact paragraph spacing */
   p { margin-bottom: 0.6em !important; }
