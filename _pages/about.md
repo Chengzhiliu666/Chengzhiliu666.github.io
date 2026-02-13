@@ -726,7 +726,32 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 # 📝 Selected Publications
 
-<p style="font-size: 15px; color: var(--text-muted); margin-bottom: 12px;">Only (co-)first author papers are listed. See more on the <a href="/publications/">Publications</a> page or <a href="https://scholar.google.com/">Google Scholar</a>.<br><span style="font-style: italic;">(*indicates equal contribution)</span></p> 
+<p style="font-size: 15px; color: var(--text-muted); margin-bottom: 12px;">Only (co-)first author papers are listed. See more on the <a href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&hl=zh-CN">Google Scholar</a>.<br><span style="font-style: italic;">(*indicates equal contribution)</span></p> 
+
+
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge badge-red">ICLR 2026</div>
+      <img src='images/latent.png' alt="EvoPresent" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
+
+**[Reasoning Within the Mind: Dynamic Multimodal Interleaving in Latent Space](https://arxiv.org/abs/2512.12623)**
+
+**Chengzhi Liu** <sup>*</sup>, Yuzhe Yang<sup>*</sup>, Yue Fan, Qinyue Wei, Sheng Liu, Xin Eric Wang
+
+<span style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 8px;">
+  <a href="https://mllm-dmlr.github.io/" style="text-decoration: none;">🌐 Project</a>
+  <a href="https://arxiv.org/abs/2512.12623" style="text-decoration: none;">📄 Paper</a>
+  <a href="https://arxiv.org/abs/2512.12623" style="text-decoration: none;">📢 Talk</a>
+  <a href="https://github.com/eric-ai-lab/DMLR"><img src="https://img.shields.io/github/stars/eric-ai-lab/DMLR?style=social" alt="GitHub stars"></a>
+</span>
+
+  </div>
+</div>
+
 
 <div class='paper-box'>
   <div class='paper-box-image'>
