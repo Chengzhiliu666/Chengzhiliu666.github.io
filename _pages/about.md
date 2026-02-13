@@ -21,44 +21,48 @@ redirect_from:
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
 
 <style>
-  /* ========== CSS Variables - Warm Editorial Theme ========== */
+  /* ========== CSS Variables - Fresh Blue Theme ========== */
   :root {
-    --bg-primary: #faf9f7;
-    --bg-secondary: #f5f3f0;
+    --bg-primary: #f0f7fc;
+    --bg-secondary: #e3f0fa;
     --bg-card: #ffffff;
-    --text-primary: #1a1a1a;
-    --text-secondary: #3d3d3d;
-    --text-muted: #6b6b6b;
-    --border-color: #e8e6e3;
-    --shadow-color: rgba(26, 26, 26, 0.04);
-    --accent-color: #8b4513;
-    --accent-light: #a0522d;
-    --link-color: #8b4513;
-    --link-hover: #5c2e0d;
+    --text-primary: #1a2a3a;
+    --text-secondary: #2d4a5e;
+    --text-muted: #5a7a8a;
+    --border-color: #c5ddf0;
+    --shadow-color: rgba(70, 130, 180, 0.12);
+    --accent-color: #3498db;
+    --accent-light: #5dade2;
+    --link-color: #2980b9;
+    --link-hover: #1a5276;
+    --gradient-start: #e8f4fc;
+    --gradient-end: #d6eaf8;
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Source Serif 4', Georgia, serif;
   }
 
   [data-theme="dark"] {
-    --bg-primary: #141414;
-    --bg-secondary: #1e1e1e;
-    --bg-card: #1e1e1e;
-    --text-primary: #f5f5f5;
-    --text-secondary: #c9c9c9;
-    --text-muted: #8c8c8c;
-    --border-color: #2e2e2e;
-    --shadow-color: rgba(0,0,0,0.35);
-    --accent-color: #d4a574;
-    --accent-light: #e6c9a8;
-    --link-color: #d4a574;
-    --link-hover: #f0dcc6;
+    --bg-primary: #0d1b2a;
+    --bg-secondary: #1b2838;
+    --bg-card: #1b2838;
+    --text-primary: #e8f4fc;
+    --text-secondary: #b8d4e8;
+    --text-muted: #7a9ab8;
+    --border-color: #2d4a5e;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --accent-color: #5dade2;
+    --accent-light: #85c1e9;
+    --link-color: #5dade2;
+    --link-hover: #aed6f1;
+    --gradient-start: #1b2838;
+    --gradient-end: #0d1b2a;
   }
 
   /* ========== Global Font Styles ========== */
   body, .page__content, .author__bio, p, li, span, div {
     font-family: var(--font-body) !important;
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--text-secondary);
     font-weight: 400;
     letter-spacing: 0.01em;
@@ -73,43 +77,45 @@ redirect_from:
     line-height: 1.25;
   }
   
-  h1 { font-size: 2.4em !important; margin-bottom: 0.5em !important; font-weight: 400 !important; }
-  h2 { font-size: 1.8em !important; font-weight: 500 !important; }
-  h3 { font-size: 1.4em !important; font-weight: 500 !important; }
+  h1 { font-size: 2.2em !important; margin-bottom: 0.4em !important; font-weight: 400 !important; }
+  h2 { font-size: 1.7em !important; font-weight: 500 !important; }
+  h3 { font-size: 1.35em !important; font-weight: 500 !important; }
   
   /* ========== Section Headers - Editorial Style ========== */
   .page__content > h1 {
     position: relative;
     display: block;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     margin-top: 0 !important;
-    margin-bottom: 1.5em !important;
+    margin-bottom: 0.8em !important;
   }
   .page__content > h1::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 50px;
-    height: 1px;
-    background: var(--accent-color);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+    border-radius: 2px;
   }
   
   /* Horizontal rule - editorial */
   hr {
     border: none;
     height: 1px;
-    background: var(--border-color);
-    margin: 45px 0;
-    max-width: 120px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 25px 0;
+    max-width: 100%;
   }
 
   /* ========== Link Styles ========== */
   a {
     color: var(--link-color) !important;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid transparent;
+    position: relative;
   }
   a:hover {
     color: var(--link-hover) !important;
@@ -117,9 +123,10 @@ redirect_from:
     text-decoration: none !important;
   }
 
-  /* ========== Background ========== */
+  /* ========== Background with subtle gradient ========== */
   body, html {
-    background: var(--bg-primary) !important;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%) !important;
+    background-attachment: fixed !important;
   }
   
   .page, .page__content, .sidebar, .author__content, .wrapper {
@@ -130,6 +137,65 @@ redirect_from:
     background: transparent !important;
   }
 
+  /* ========== Entrance Animations ========== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .page__content > h1 {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .paper-box, .edu-card, .service-card, .news-item, .contact-card {
+    animation: fadeInUp 0.5s ease-out backwards;
+  }
+  
+  .paper-box:nth-child(1) { animation-delay: 0.1s; }
+  .paper-box:nth-child(2) { animation-delay: 0.2s; }
+  .paper-box:nth-child(3) { animation-delay: 0.3s; }
+  .paper-box:nth-child(4) { animation-delay: 0.4s; }
+  .paper-box:nth-child(5) { animation-delay: 0.5s; }
+  
+  .news-item:nth-child(1) { animation-delay: 0.05s; }
+  .news-item:nth-child(2) { animation-delay: 0.1s; }
+  .news-item:nth-child(3) { animation-delay: 0.15s; }
+  .news-item:nth-child(4) { animation-delay: 0.2s; }
+  .news-item:nth-child(5) { animation-delay: 0.25s; }
+  .news-item:nth-child(6) { animation-delay: 0.3s; }
+
   /* ========== Theme Toggle Button ========== */
   .theme-toggle {
     position: fixed;
@@ -138,21 +204,22 @@ redirect_from:
     z-index: 9999;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
-    width: 42px;
-    height: 42px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
-    box-shadow: 0 2px 12px var(--shadow-color);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
   }
   .theme-toggle:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--shadow-color);
+    transform: translateY(-3px) rotate(15deg);
+    box-shadow: 0 8px 25px var(--shadow-color);
     border-color: var(--accent-color);
+    background: var(--accent-color);
   }
 
   /* ========== Remove Floating Particles for Clean Look ========== */
@@ -160,115 +227,167 @@ redirect_from:
     display: none !important;
   }
 
-  /* ========== Reduce spacing for compact layout ========== */
+  /* ========== Compact spacing layout ========== */
   .page__content { margin-top: -30px !important; padding-top: 0 !important; }
   h1:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
   .author__avatar { margin-top: -20px !important; }
   
   /* Compact paragraph spacing */
-  p { margin-bottom: 0.8em !important; }
-  ul, ol { margin-bottom: 0.8em !important; }
-  li { margin-bottom: 0.3em !important; }
+  p { margin-bottom: 0.6em !important; }
+  ul, ol { margin-bottom: 0.6em !important; }
+  li { margin-bottom: 0.25em !important; }
 
-  /* ========== Simple Fade Animation ========== */
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* ========== News items - Editorial Style ========== */
+  /* ========== News items - Modern Blue Style ========== */
   .news-item { 
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--bg-card) !important;
     border: 1px solid var(--border-color);
-    border-radius: 3px !important;
+    border-radius: 10px !important;
     position: relative;
+    overflow: hidden;
+  }
+  .news-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .news-item:hover::before {
+    opacity: 1;
   }
   .news-item:hover { 
-    transform: translateX(6px);
-    box-shadow: 0 6px 24px var(--shadow-color);
+    transform: translateX(8px) scale(1.01);
+    box-shadow: 0 8px 30px var(--shadow-color);
     border-color: var(--accent-color);
   }
   .news-item > span:last-child { 
     color: var(--text-secondary) !important;
     font-family: var(--font-body) !important;
+    font-size: 15px !important;
   }
 
   /* ========== Education & Service cards ========== */
   .edu-card { 
     background: var(--bg-card) !important; 
     border: 1px solid var(--border-color);
-    transition: all 0.25s ease;
-    border-radius: 3px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .edu-card:hover::after {
+    opacity: 1;
   }
   .edu-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 40px var(--shadow-color);
+    border-color: var(--accent-color);
   }
   
   .service-card { 
     background: var(--bg-card) !important;
     border: 1px solid var(--border-color);
-    border-radius: 3px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .service-card:hover {
+    box-shadow: 0 8px 25px var(--shadow-color);
   }
 
-  /* ========== Paper boxes - Editorial Style ========== */
+  /* ========== Paper boxes - Modern Blue Style ========== */
   .paper-box {
-    transition: all 0.25s ease;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 3px;
+    border-radius: 12px;
     overflow: hidden;
+    position: relative;
+  }
+  .paper-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .paper-box:hover::before {
+    transform: scaleX(1);
   }
   .paper-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px var(--shadow-color);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px var(--shadow-color);
   }
   .paper-box-image {
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 8px;
   }
   .paper-box-image img {
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .paper-box:hover .paper-box-image img {
-    transform: scale(1.04);
+    transform: scale(1.06);
   }
 
-  /* ========== Badge colors - Refined ========== */
-  .badge-red { background: #9b2c2c !important; }
-  .badge-purple { background: #6b46c1 !important; }
-  .badge-blue { background: #2b6cb0 !important; }
-  .badge-orange { background: #c05621 !important; }
-  .badge-green { background: #276749 !important; }
+  /* ========== Badge colors - Blue Theme ========== */
+  .badge-red { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
+  .badge-purple { background: linear-gradient(135deg, #9b59b6, #8e44ad) !important; }
+  .badge-blue { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
+  .badge-orange { background: linear-gradient(135deg, #e67e22, #d35400) !important; }
+  .badge-green { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
 
   /* ========== Reviewer badges ========== */
   .service-card span[style*="border-radius"] {
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
     font-family: var(--font-body) !important;
+    font-size: 13px !important;
   }
   .service-card span[style*="border-radius"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 18px var(--shadow-color);
   }
   
-  /* ========== Custom Scrollbar - Subtle ========== */
+  /* ========== Custom Scrollbar - Blue Theme ========== */
   .news-container::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
   }
   .news-container::-webkit-scrollbar-track {
-    background: var(--border-color);
-    border-radius: 2px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
   }
   .news-container::-webkit-scrollbar-thumb {
-    background: var(--text-muted);
-    border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent-color), var(--accent-light));
+    border-radius: 10px;
+  }
+  .news-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
   }
   
-  /* ========== Selection Style ========== */
+  /* ========== Selection Style - Blue ========== */
   ::selection {
-    background: rgba(180, 80, 80, 0.2);
+    background: rgba(52, 152, 219, 0.25);
     color: var(--text-primary);
   }
   
@@ -285,23 +404,25 @@ redirect_from:
     scroll-behavior: smooth;
   }
   
-  /* ========== News Container - Clean ========== */
+  /* ========== News Container - Modern ========== */
   .news-container {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     background: transparent;
     border: none;
+    padding: 5px;
   }
 
   /* ========== Author Profile Sidebar ========== */
   .author__avatar img {
-    border: 2px solid var(--border-color);
-    box-shadow: 0 6px 20px var(--shadow-color);
-    transition: all 0.25s ease;
+    border: 3px solid var(--accent-light);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .author__avatar img:hover {
-    box-shadow: 0 10px 30px var(--shadow-color);
-    transform: scale(1.02);
+    box-shadow: 0 15px 40px var(--shadow-color);
+    transform: scale(1.05) rotate(2deg);
+    border-color: var(--accent-color);
   }
   .author__name {
     font-family: var(--font-display) !important;
@@ -315,46 +436,52 @@ redirect_from:
     color: var(--text-secondary) !important;
     font-style: normal;
     line-height: 1.65;
-    font-size: 14px !important;
+    font-size: 15px !important;
   }
   .author__urls-wrapper a {
     font-family: var(--font-body) !important;
-    transition: all 0.2s ease;
-    font-size: 14px !important;
+    transition: all 0.25s ease;
+    font-size: 15px !important;
+  }
+  .author__urls-wrapper a:hover {
+    transform: translateX(4px);
   }
 
   /* ========== Masthead/Navigation ========== */
   .masthead {
-    background: var(--bg-primary) !important;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
     border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
   }
   .masthead__inner-wrap {
-    background: var(--bg-primary) !important;
+    background: transparent !important;
   }
   .greedy-nav {
-    background: var(--bg-primary) !important;
+    background: transparent !important;
   }
   .greedy-nav__toggle {
-    background: var(--bg-primary) !important;
+    background: var(--bg-card) !important;
   }
   .masthead__menu-item, .greedy-nav a {
     font-family: var(--font-body) !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     font-weight: 400;
     letter-spacing: 0.02em;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
     color: var(--text-secondary) !important;
+    position: relative;
   }
   .greedy-nav a:hover {
     color: var(--accent-color) !important;
+    transform: translateY(-1px);
   }
   .greedy-nav .visible-links a::before {
-    background: var(--accent-color) !important;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-light)) !important;
   }
   
   /* Site header */
   .site-header, header, .initial-content {
-    background: var(--bg-primary) !important;
+    background: transparent !important;
   }
 
   /* ========== Strong/Bold text ========== */
@@ -365,19 +492,23 @@ redirect_from:
 
   /* ========== Dark mode adjustments ========== */
   [data-theme="dark"] body,
-  [data-theme="dark"] html,
+  [data-theme="dark"] html {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
+  }
   [data-theme="dark"] .page__content,
   [data-theme="dark"] .initial-content,
   [data-theme="dark"] .site-header,
   [data-theme="dark"] header {
-    background: var(--bg-primary) !important;
+    background: transparent !important;
   }
   [data-theme="dark"] .masthead,
   [data-theme="dark"] .masthead__inner-wrap,
-  [data-theme="dark"] .greedy-nav,
-  [data-theme="dark"] .greedy-nav__toggle {
-    background: var(--bg-primary) !important;
+  [data-theme="dark"] .greedy-nav {
+    background: transparent !important;
     border-bottom-color: var(--border-color);
+  }
+  [data-theme="dark"] .greedy-nav__toggle {
+    background: var(--bg-card) !important;
   }
   [data-theme="dark"] .masthead__menu-item,
   [data-theme="dark"] .greedy-nav a {
@@ -394,7 +525,7 @@ redirect_from:
     border-color: var(--border-color);
   }
   [data-theme="dark"] ::selection {
-    background: rgba(212, 165, 116, 0.25);
+    background: rgba(93, 173, 226, 0.3);
   }
 
   /* ========== Back to top button ========== */
@@ -403,43 +534,67 @@ redirect_from:
     bottom: 28px;
     right: 24px;
     z-index: 9999;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    width: 42px;
-    height: 42px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
-    box-shadow: 0 2px 12px var(--shadow-color);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 18px var(--shadow-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
     opacity: 0;
     visibility: hidden;
+    color: white;
   }
   .back-to-top.visible {
     opacity: 1;
     visibility: visible;
+    animation: float 3s ease-in-out infinite;
   }
   .back-to-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px var(--shadow-color);
-    border-color: var(--accent-color);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px var(--shadow-color);
   }
   
   /* ========== Contact Card ========== */
   .contact-card {
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .contact-card:hover::before {
+    opacity: 1;
   }
   .contact-card:hover {
-    box-shadow: 0 6px 24px var(--shadow-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border-color: var(--accent-color) !important;
   }
   
-  /* ========== Selection ========== */
-  ::selection {
-    background: rgba(139, 69, 19, 0.15);
-    color: var(--text-primary);
+  /* ========== Glowing effect for interactive elements ========== */
+  .theme-toggle:active,
+  .back-to-top:active {
+    transform: scale(0.95);
+  }
+  
+  /* ========== Smooth transitions for all interactive elements ========== */
+  *, *::before, *::after {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>
 
@@ -450,7 +605,7 @@ redirect_from:
 
 <!-- Back to Top Button -->
 <button class="back-to-top" onclick="scrollToTop()" title="Back to Top">
-  ⬆️
+  ↑
 </button>
 
 
@@ -512,11 +667,11 @@ My research interests lie in **trustworthy AI** and the **algorithmic foundation
 
 I am always open to collaboration and the exchange of ideas. If you'd like to discuss potential research opportunities or simply connect, please don't hesitate to reach out!
 
-<div class="contact-card" style="background: var(--bg-card); padding: 16px 20px; border-radius: 8px; margin: 20px 0; border: 1px solid var(--border-color); border-left: 3px solid var(--accent-color);">
-  <p style="margin: 0; font-size: 14px;">
+<div class="contact-card" style="background: var(--bg-card); padding: 16px 20px; border-radius: 12px; margin: 15px 0; border: 1px solid var(--border-color); border-left: 4px solid var(--accent-color);">
+  <p style="margin: 0; font-size: 16px;">
     📧 <strong>Contact:</strong> <a href="mailto:chengzhi@ucsb.edu">chengzhi@ucsb.edu</a>
   </p>
-  <p style="margin: 8px 0 0 0; font-size: 13px; color: var(--text-muted);">
+  <p style="margin: 8px 0 0 0; font-size: 15px; color: var(--text-muted);">
     📌 I'm always happy to collaborate with graduate/undergraduate students. Please drop me an email if you want to work with me!
   </p>
 </div>
@@ -527,36 +682,36 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 # 🔥 News
 
-<div class="news-container" style="max-height: 300px; overflow-y: auto; padding: 5px 10px 5px 5px;">
+<div class="news-container" style="max-height: 280px; overflow-y: auto; padding: 8px;">
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #c0392b;">
-  <span style="background: #c0392b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2026.01</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 One paper is accepted by <strong style="color:#c0392b;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2026.01</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #8e44ad;">
-  <span style="background: #8e44ad; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2025.09</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 One paper is accepted by <strong style="color:#8e44ad;">NeurIPS 2025</strong> 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.09</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#9b59b6;">NeurIPS 2025</strong> 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #2980b9;">
-  <span style="background: #2980b9; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2025.04</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 One paper is accepted by <strong style="color:#2980b9;">ACL 2025</strong> 👉 <a href="https://arxiv.org/abs/2502.11903">paper</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.04</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#3498db;">ACL 2025</strong> 👉 <a href="https://arxiv.org/abs/2502.11903">paper</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #27ae60;">
-  <span style="background: #27ae60; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2025.04</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 One paper is accepted by <strong style="color:#27ae60;">CVPR 2025</strong> 👉 <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">paper</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.04</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#27ae60;">CVPR 2025</strong> 👉 <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">paper</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #2980b9;">
-  <span style="background: #2980b9; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2025.02</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 Two papers are accepted by <strong style="color:#2980b9;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.02</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 Two papers are accepted by <strong style="color:#3498db;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; margin-bottom: 8px; border-left: 3px solid #d35400;">
-  <span style="background: #d35400; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap;">2025.01</span>
-  <span style="line-height: 1.5; font-size: 14px;">🎉 One paper is accepted by <strong style="color:#c0392b;">AAAI 2025 Oral</strong> 👉 <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">paper</a></span>
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #3498db;">
+  <span style="background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2025.01</span>
+  <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#e74c3c;">AAAI 2025 Oral</strong> 👉 <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">paper</a></span>
 </div>
 
 </div>
@@ -568,13 +723,13 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 # 📝 Selected Publications
 
-<p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Only (co-)first author papers are listed. See more on the <a href="/publications/">Publications</a> page or <a href="https://scholar.google.com/">Google Scholar</a>.<br><span style="font-style: italic;">(*indicates equal contribution)</span></p> 
+<p style="font-size: 15px; color: var(--text-muted); margin-bottom: 12px;">Only (co-)first author papers are listed. See more on the <a href="/publications/">Publications</a> page or <a href="https://scholar.google.com/">Google Scholar</a>.<br><span style="font-style: italic;">(*indicates equal contribution)</span></p> 
 
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
       <div class="badge badge-red">ICLR 2026</div>
-      <img src='images/evopresent.png' alt="EvoPresent" width="100%">
+      <img src='images/iclr2222.png' alt="EvoPresent" width="100%">
     </div>
   </div>
   <div class='paper-box-text' markdown="1">
@@ -689,23 +844,23 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 # 📖 Education
 
-<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; flex-direction: column; gap: 8px;">
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-left: 3px solid #2980b9;">
-  <div style="font-size: 24px;">🎓</div>
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #3498db;">
+  <div style="font-size: 26px;">🎓</div>
   <div>
-    <p style="margin: 0; font-weight: 600; font-size: 14px;">Ph.D. in Computer Science</p>
-    <p style="margin: 3px 0 0 0; font-size: 13px;">University of California, Santa Barbara</p>
-    <p style="margin: 3px 0 0 0; font-size: 12px; color: var(--text-muted);">2025.09 - 2030.06 (Expected)</p>
+    <p style="margin: 0; font-weight: 600; font-size: 16px;">Ph.D. in Computer Science</p>
+    <p style="margin: 4px 0 0 0; font-size: 15px;">University of California, Santa Barbara</p>
+    <p style="margin: 4px 0 0 0; font-size: 14px; color: var(--text-muted);">2025.09 - 2030.06 (Expected)</p>
   </div>
 </div>
 
-<div class="edu-card" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-left: 3px solid #c0392b;">
-  <div style="font-size: 24px;">🎓</div>
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-left: 4px solid #5dade2;">
+  <div style="font-size: 26px;">🎓</div>
   <div>
-    <p style="margin: 0; font-weight: 600; font-size: 14px;">Bachelor of Engineering</p>
-    <p style="margin: 3px 0 0 0; font-size: 13px;">University of Liverpool, United Kingdom</p>
-    <p style="margin: 3px 0 0 0; font-size: 12px; color: var(--text-muted);">2021.09 - 2025.07</p>
+    <p style="margin: 0; font-weight: 600; font-size: 16px;">Bachelor of Engineering</p>
+    <p style="margin: 4px 0 0 0; font-size: 15px;">University of Liverpool, United Kingdom</p>
+    <p style="margin: 4px 0 0 0; font-size: 14px; color: var(--text-muted);">2021.09 - 2025.07</p>
   </div>
 </div>
 
@@ -718,19 +873,18 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 # 🧑‍⚖️ Academic Services
 
-<div class="service-card" style="padding: 14px 16px; border-radius: 6px;">
+<div class="service-card" style="padding: 16px 18px; border-radius: 12px;">
 
-<p style="font-weight: 600; margin-bottom: 10px; font-size: 14px;">Conference Reviewer:</p>
+<p style="font-weight: 600; margin-bottom: 12px; font-size: 16px;">Conference Reviewer:</p>
 
-<span style="display: inline-flex; flex-wrap: wrap; gap: 6px;">
-  <span style="background: #2980b9; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">AAAI 2025</span>
-  <span style="background: #8e44ad; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">ICLR 2026</span>
-  <span style="background: #c0392b; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">ICML 2026</span>
-  <span style="background: #27ae60; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">CVPR 2025</span>
-  <span style="background: #d35400; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">ARR 2026</span>
-  <span style="background: #16a085; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">TCSVT</span>
-  <span style="background: #34495e; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">ICME 2024-26</span>
+<span style="display: inline-flex; flex-wrap: wrap; gap: 8px;">
+  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">AAAI 2025</span>
+  <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICLR 2026</span>
+  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICML 2026</span>
+  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">CVPR 2025</span>
+  <span style="background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ARR 2026</span>
+  <span style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">TCSVT</span>
+  <span style="background: linear-gradient(135deg, #5d6d7e, #34495e); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;">ICME 2024-26</span>
 </span>
 
 </div>
-****
