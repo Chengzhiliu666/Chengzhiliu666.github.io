@@ -15,258 +15,33 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
-<!-- 🌗 Theme Toggle Styles & Script -->
 <style>
-  :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #f0f7ff;
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
-    --text-muted: #95a5a6;
-    --border-color: #e0e0e0;
-    --card-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    --link-color: #3498db;
-    --gradient-start: #667eea;
-    --gradient-end: #764ba2;
-  }
+  /* Reduce top spacing */
+  .page__content:first-child, article:first-child { margin-top: 0 !important; padding-top: 0 !important; }
+  #about-me { scroll-margin-top: 80px; }
+  
+  /* News items styling */
+  .news-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .news-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-  [data-theme="dark"] {
-    --bg-primary: #1a1a2e;
-    --bg-secondary: #16213e;
-    --bg-tertiary: #0f3460;
-    --text-primary: #eaeaea;
-    --text-secondary: #b0b0b0;
-    --text-muted: #888888;
-    --border-color: #333355;
-    --card-shadow: 0 2px 15px rgba(0,0,0,0.3);
-    --link-color: #64b5f6;
-    --gradient-start: #834d9b;
-    --gradient-end: #d04ed6;
-  }
+  /* Education & Service cards */
+  .edu-card { background: rgba(255,255,255,0.05) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+  .service-card { background: rgba(255,255,255,0.05) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
 
-  /* Smooth transition for all elements */
-  *, *::before, *::after {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  }
+  /* Contact card gradient */
+  .contact-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); }
 
-  /* Theme Toggle Button */
-  .theme-toggle {
-    position: fixed;
-    top: 100px;
-    right: 25px;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  /* Paper box text color fix */
+  .paper-box-text p, .paper-box-text span, .paper-box-text strong { color: #e0e0e0 !important; }
+  .paper-box-text a { color: #64b5f6 !important; }
 
-  .theme-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-  }
-
-  .theme-toggle:active {
-    transform: scale(0.95);
-  }
-
-  /* Custom scrollbar for dark mode */
-  [data-theme="dark"] ::-webkit-scrollbar {
-    width: 8px;
-  }
-  [data-theme="dark"] ::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-  }
-  [data-theme="dark"] ::-webkit-scrollbar-thumb {
-    background: var(--gradient-start);
-    border-radius: 4px;
-  }
-
-  /* Override page background */
-  body, .page__content, #main, article {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Links */
-  a {
-    color: var(--link-color) !important;
-    transition: color 0.3s ease;
-  }
-
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-primary) !important;
-  }
-
-  /* Tables */
-  table {
-    background-color: var(--bg-secondary) !important;
-  }
-  th, td {
-    border-color: var(--border-color) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Paper boxes */
-  .paper-box {
-    background-color: var(--bg-secondary) !important;
-    box-shadow: var(--card-shadow) !important;
-  }
-
-  /* Horizontal rules */
-  hr {
-    border-color: var(--border-color) !important;
-    opacity: 0.5;
-  }
-
-  /* Theme-aware cards */
-  .theme-card {
-    background: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  .theme-card-alt {
-    background: var(--bg-tertiary) !important;
-  }
-
-  .theme-text {
-    color: var(--text-primary) !important;
-  }
-
-  .theme-text-secondary {
-    color: var(--text-secondary) !important;
-  }
-
-  .theme-text-muted {
-    color: var(--text-muted) !important;
-  }
-
-  /* Animation for icon switch */
-  @keyframes rotateIn {
-    from {
-      transform: rotate(-180deg) scale(0);
-      opacity: 0;
-    }
-    to {
-      transform: rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-
-  .theme-toggle span {
-    animation: rotateIn 0.3s ease;
-  }
-
-  /* Floating particles effect (optional decoration) */
-  .theme-particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9998;
-    overflow: hidden;
-  }
-
-  .particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gradient-start);
-    opacity: 0;
-    animation: float-up 1s ease-out forwards;
-  }
-
-  @keyframes float-up {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-100px) scale(0);
-    }
-  }
+  /* Badge colors */
+  .badge-red { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
+  .badge-purple { background: linear-gradient(135deg, #9b59b6, #8e44ad) !important; }
+  .badge-blue { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
+  .badge-orange { background: linear-gradient(135deg, #f39c12, #e67e22) !important; }
+  .badge-green { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
 </style>
-
-<!-- Theme Toggle Button -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
-  <span id="theme-icon">🌙</span>
-</button>
-
-<!-- Particles container -->
-<div class="theme-particles" id="particles"></div>
-
-<script>
-  // Check for saved theme preference or default to light
-  function getPreferredTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) return savedTheme;
-    // Check system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  // Apply theme
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    const icon = document.getElementById('theme-icon');
-    if (icon) {
-      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-    localStorage.setItem('theme', theme);
-  }
-
-  // Toggle theme with particle effect
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    // Create particles effect
-    createParticles();
-    
-    applyTheme(newTheme);
-  }
-
-  // Create floating particles on toggle
-  function createParticles() {
-    const container = document.getElementById('particles');
-    const button = document.querySelector('.theme-toggle');
-    const rect = button.getBoundingClientRect();
-    
-    for (let i = 0; i < 12; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = (rect.left + rect.width / 2 + (Math.random() - 0.5) * 50) + 'px';
-      particle.style.top = (rect.top + rect.height / 2) + 'px';
-      particle.style.animationDelay = (Math.random() * 0.3) + 's';
-      container.appendChild(particle);
-      
-      // Remove particle after animation
-      setTimeout(() => particle.remove(), 1000);
-    }
-  }
-
-  // Apply theme on page load
-  document.addEventListener('DOMContentLoaded', function() {
-    applyTheme(getPreferredTheme());
-  });
-
-  // Also apply immediately in case DOMContentLoaded already fired
-  applyTheme(getPreferredTheme());
-</script>
-
 <span class='anchor' id='about-me'></span>
 
 # 👨‍🎓 About Me
@@ -280,11 +55,11 @@ My research interests lie in **trustworthy AI** and the **algorithmic foundation
 
 I am always open to collaboration and the exchange of ideas. If you'd like to discuss potential research opportunities or simply connect, please don't hesitate to reach out!
 
-<div style="background: linear-gradient(135deg, var(--gradient-start, #667eea) 0%, var(--gradient-end, #764ba2) 100%); padding: 15px 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+<div class="contact-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);">
   <p style="color: white; margin: 0; font-size: 15px;">
-    📧 <strong>Contact:</strong> <a href="mailto:chengzhi@ucsb.edu" style="color: #ffd700 !important;">chengzhi@ucsb.edu</a>
+    📧 <strong>Contact:</strong> <a href="mailto:chengzhi@ucsb.edu" style="color: #ffd700 !important; text-decoration: none;">chengzhi@ucsb.edu</a>
   </p>
-  <p style="color: white; margin: 8px 0 0 0; font-size: 14px;">
+  <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">
     📌 I'm always happy to collaborate with graduate/undergraduate students. Please drop me an email if you want to work with me!
   </p>
 </div>
@@ -295,34 +70,34 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 <div class="news-container" style="max-height: 350px; overflow-y: auto; padding: 5px 15px 5px 5px;">
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #e74c3c;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #e74c3c;">
   <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2026.01</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 One paper is accepted by <strong>ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571" style="color:#64b5f6;">paper</a> and <a href="https://evopresent.github.io/" style="color:#64b5f6;">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #9b59b6;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #9b59b6;">
   <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.09</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 One paper is accepted by <strong>NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523" style="color:#64b5f6;">paper</a> | <a href="https://mlrm-halu.github.io/" style="color:#64b5f6;">project</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 One paper is accepted by <strong>ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903">here</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903" style="color:#64b5f6;">here</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #2ecc71;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #2ecc71;">
   <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 One paper is accepted by <strong>CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">here</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#fff;">CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html" style="color:#64b5f6;">here</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #3498db;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.02</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 Two papers are accepted by <strong>ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 Two papers are accepted by <strong style="color:#fff;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172" style="color:#64b5f6;">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i" style="color:#64b5f6;">ANTRP</a></span>
 </div>
 
-<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: var(--bg-secondary, #f8f9fa); border-radius: 8px; border-left: 3px solid #f39c12;">
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid #f39c12;">
   <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.01</span>
-  <span class="theme-text" style="color: var(--text-primary, #2c3e50); line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">here</a></span>
+  <span style="color: #e0e0e0; line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570" style="color:#64b5f6;">here</a></span>
 </div>
 
 </div>
@@ -449,21 +224,21 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 <div style="display: flex; flex-direction: column; gap: 15px;">
 
-<div class="theme-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 10px; border-left: 4px solid #3498db; box-shadow: var(--card-shadow);">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid #3498db;">
   <div style="font-size: 30px;">🎓</div>
   <div>
-    <p class="theme-text" style="margin: 0; font-weight: bold;">Ph.D. in Computer Science</p>
-    <p class="theme-text-secondary" style="margin: 5px 0 0 0;">University of California, Santa Barbara</p>
-    <p class="theme-text-muted" style="margin: 5px 0 0 0; font-size: 14px;">📅 2025.09 - 2030.06 (Expected)</p>
+    <p style="margin: 0; font-weight: bold; color: #ffffff;">Ph.D. in Computer Science</p>
+    <p style="margin: 5px 0 0 0; color: #a0a0a0;">University of California, Santa Barbara</p>
+    <p style="margin: 5px 0 0 0; font-size: 14px; color: #808080;">📅 2025.09 - 2030.06 (Expected)</p>
   </div>
 </div>
 
-<div class="theme-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 10px; border-left: 4px solid #e74c3c; box-shadow: var(--card-shadow);">
+<div class="edu-card" style="display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid #e74c3c;">
   <div style="font-size: 30px;">🎓</div>
   <div>
-    <p class="theme-text" style="margin: 0; font-weight: bold;">Bachelor of Engineering</p>
-    <p class="theme-text-secondary" style="margin: 5px 0 0 0;">University of Liverpool, United Kingdom</p>
-    <p class="theme-text-muted" style="margin: 5px 0 0 0; font-size: 14px;">📅 2021.09 - 2025.07</p>
+    <p style="margin: 0; font-weight: bold; color: #ffffff;">Bachelor of Engineering</p>
+    <p style="margin: 5px 0 0 0; color: #a0a0a0;">University of Liverpool, United Kingdom</p>
+    <p style="margin: 5px 0 0 0; font-size: 14px; color: #808080;">📅 2021.09 - 2025.07</p>
   </div>
 </div>
 
@@ -473,18 +248,18 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 # 🧑‍⚖️ Academic Services
 
-<div class="theme-card-alt" style="background: var(--bg-tertiary); padding: 20px; border-radius: 10px; margin-top: 10px; box-shadow: var(--card-shadow);">
+<div class="service-card" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 10px;">
 
-**Conference Reviewer:**
+<p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">Conference Reviewer:</p>
 
-<span style="display: inline-flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
-  <span style="background: #3498db; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(52,152,219,0.3);">AAAI 2025</span>
-  <span style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(155,89,182,0.3);">ICLR 2026</span>
-  <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(231,76,60,0.3);">ICML 2026</span>
-  <span style="background: #2ecc71; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(46,204,113,0.3);">CVPR 2025</span>
-  <span style="background: #f39c12; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(243,156,18,0.3);">ARR 2026</span>
-  <span style="background: #1abc9c; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(26,188,156,0.3);">TCSVT</span>
-  <span style="background: #34495e; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; box-shadow: 0 2px 8px rgba(52,73,94,0.3);">ICME 2024-26</span>
+<span style="display: inline-flex; flex-wrap: wrap; gap: 8px;">
+  <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,152,219,0.4);">AAAI 2025</span>
+  <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(155,89,182,0.4);">ICLR 2026</span>
+  <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(231,76,60,0.4);">ICML 2026</span>
+  <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(46,204,113,0.4);">CVPR 2025</span>
+  <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(243,156,18,0.4);">ARR 2026</span>
+  <span style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(26,188,156,0.4);">TCSVT</span>
+  <span style="background: linear-gradient(135deg, #34495e, #2c3e50); color: white; padding: 5px 14px; border-radius: 20px; font-size: 13px; box-shadow: 0 3px 10px rgba(52,73,94,0.4);">ICME 2024-26</span>
 </span>
 
 </div>
