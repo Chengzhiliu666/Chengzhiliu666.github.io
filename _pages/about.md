@@ -17,12 +17,14 @@ redirect_from:
 
 <style>
   /* Reduce top spacing */
-  .page__content { margin-top: -20px !important; }
-  h1:first-of-type { margin-top: 0 !important; }
+  .page__content { margin-top: -50px !important; padding-top: 0 !important; }
+  h1:first-of-type { margin-top: -20px !important; padding-top: 0 !important; }
+  .author__avatar { margin-top: -30px !important; }
   
-  /* News items styling */
+  /* News items styling - force black text */
   .news-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
   .news-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .news-item > span:last-child { color: #000 !important; }
 
   /* Education & Service cards - light theme */
   .edu-card { background: #f8f9fa !important; border: 1px solid #e9ecef; }
@@ -65,32 +67,32 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #e74c3c;">
   <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2026.01</span>
-  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #9b59b6;">
   <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.09</span>
-  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#9b59b6;">NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#9b59b6;">NeurIPS 2025</strong> - Balancing reasoning and hallucination in multimodal reasoning models 👉 <a href="https://arxiv.org/abs/2505.21523">paper</a> | <a href="https://mlrm-halu.github.io/">project</a></span>
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#3498db;">ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903">here</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#3498db;">ACL 2025</strong> 👉 Check it out <a href="https://arxiv.org/abs/2502.11903">here</a></span>
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #2ecc71;">
   <span style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.04</span>
-  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#2ecc71;">CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">here</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 One paper is accepted by <strong style="color:#2ecc71;">CVPR 2025</strong> 👉 Check it out <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.html">here</a></span>
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #3498db;">
   <span style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.02</span>
-  <span style="color: #333; line-height: 1.6;">🎉 Two papers are accepted by <strong style="color:#3498db;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 Two papers are accepted by <strong style="color:#3498db;">ICLR 2025</strong> 👉 <a href="https://arxiv.org/abs/2410.06172">MSSBench</a> & <a href="https://openreview.net/forum?id=zGb4WgCW5i">ANTRP</a></span>
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #f39c12;">
   <span style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; white-space: nowrap;">2025.01</span>
-  <span style="color: #333; line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">here</a></span>
+  <span style="color: #000 !important; line-height: 1.6;">🎉 One paper is accepted by <span style="color:#e74c3c; font-weight:bold;">AAAI 2025 Oral</span> 👉 Check it out <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">here</a></span>
 </div>
 
 </div>
