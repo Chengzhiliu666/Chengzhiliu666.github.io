@@ -605,7 +605,7 @@ redirect_from:
 
 <!-- Theme Toggle Button -->
 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
-  <span id="theme-icon">🌙</span>
+  <span id="theme-icon">☀️</span>
 </button>
 
 <!-- Back to Top Button -->
@@ -632,13 +632,16 @@ function toggleTheme() {
   }
 }
 
-// Load saved theme
+// Load saved theme (default to dark mode)
 (function() {
   const savedTheme = localStorage.getItem('theme');
   const icon = document.getElementById('theme-icon');
-  if (savedTheme === 'dark') {
+  // Default to dark mode unless explicitly set to light
+  if (savedTheme !== 'light') {
     document.documentElement.setAttribute('data-theme', 'dark');
     if (icon) icon.textContent = '☀️';
+  } else {
+    if (icon) icon.textContent = '🌙';
   }
 })();
 
