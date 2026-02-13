@@ -116,8 +116,13 @@ redirect_from:
     background: var(--bg-primary) !important;
   }
   
-  .page, .page__content, .sidebar, .author__content {
+  .page, .page__content, .sidebar, .author__content, .wrapper {
     background: transparent !important;
+  }
+  
+  /* Ensure entire page wrapper follows theme */
+  .page__inner-wrap, .archive, .entries-list {
+    background: var(--bg-primary) !important;
   }
   
   /* Remove all pseudo-element decorations for cleaner look */
@@ -259,6 +264,19 @@ redirect_from:
     color: var(--text-primary);
   }
   
+  /* ========== Anchor scroll offset for fixed header ========== */
+  .anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
   /* ========== News Container - Clean ========== */
   .news-container {
     position: relative;
@@ -297,16 +315,34 @@ redirect_from:
 
   /* ========== Masthead/Navigation - Clean ========== */
   .masthead {
-    background: var(--bg-card) !important;
+    background: var(--bg-primary) !important;
     border-bottom: 1px solid var(--border-color);
+  }
+  .masthead__inner-wrap {
+    background: var(--bg-primary) !important;
+  }
+  .greedy-nav {
+    background: var(--bg-primary) !important;
+  }
+  .greedy-nav__toggle {
+    background: var(--bg-primary) !important;
   }
   .masthead__menu-item, .greedy-nav a {
     font-family: var(--font-body) !important;
     font-size: 14px !important;
     transition: color 0.2s ease;
+    color: var(--text-secondary) !important;
   }
   .greedy-nav a:hover {
     color: var(--link-color) !important;
+  }
+  .greedy-nav .visible-links a::before {
+    background: var(--accent-color) !important;
+  }
+  
+  /* Site header top bar */
+  .site-header, header, .initial-content {
+    background: var(--bg-primary) !important;
   }
 
   /* ========== Strong/Bold text ========== */
@@ -317,12 +353,26 @@ redirect_from:
 
   /* ========== Dark mode adjustments ========== */
   [data-theme="dark"] body,
-  [data-theme="dark"] .page__content {
+  [data-theme="dark"] html,
+  [data-theme="dark"] .page__content,
+  [data-theme="dark"] .initial-content,
+  [data-theme="dark"] .site-header,
+  [data-theme="dark"] header {
     background: var(--bg-primary) !important;
   }
-  [data-theme="dark"] .masthead {
-    background: var(--bg-card) !important;
+  [data-theme="dark"] .masthead,
+  [data-theme="dark"] .masthead__inner-wrap,
+  [data-theme="dark"] .greedy-nav,
+  [data-theme="dark"] .greedy-nav__toggle {
+    background: var(--bg-primary) !important;
     border-bottom-color: var(--border-color);
+  }
+  [data-theme="dark"] .masthead__menu-item,
+  [data-theme="dark"] .greedy-nav a {
+    color: var(--text-secondary) !important;
+  }
+  [data-theme="dark"] .greedy-nav a:hover {
+    color: var(--link-color) !important;
   }
   [data-theme="dark"] .news-item,
   [data-theme="dark"] .edu-card,
@@ -419,6 +469,7 @@ window.addEventListener('scroll', function() {
 });
 </script>
 <span class='anchor' id='about-me'></span>
+<span class='anchor' id='about'></span>
 
 # 👨‍🎓 About Me
 
@@ -441,6 +492,8 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 </div>
 
 ---
+
+<span class='anchor' id='news'></span>
 
 # 🔥 News
 
@@ -479,6 +532,9 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 </div>
 
 ---
+
+<span class='anchor' id='publications'></span>
+<span class='anchor' id='selected-publications'></span>
 
 # 📝 Selected Publications
 
@@ -598,6 +654,9 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 
 ---
 
+<span class='anchor' id='education'></span>
+<span class='anchor' id='educations'></span>
+
 # 📖 Education
 
 <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -623,6 +682,9 @@ Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, **Chengzhi Liu**, Qiang Sun, H
 </div>
 
 ---
+
+<span class='anchor' id='services'></span>
+<span class='anchor' id='academic-services'></span>
 
 # 🧑‍⚖️ Academic Services
 
