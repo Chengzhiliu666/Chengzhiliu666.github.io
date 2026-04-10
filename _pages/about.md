@@ -693,20 +693,20 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 <div class="news-container" style="max-height: 280px; overflow-y: auto; padding: 8px;">
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
+  
   <span style="background: linear-gradient(135deg, #4285F4, #34A853); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">
     2026 Summer
   </span>
   
-  <span style="line-height: 1.5; font-size: 15px; display: flex; align-items: center; gap: 6px;">
-    
-    <!-- Google Logo -->
+  <span style="line-height: 1.6; font-size: 15px;">
     <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" 
          alt="Google" 
-         style="width:16px; height:16px; vertical-align: middle;">
+         style="width:16px; height:16px; vertical-align: middle; margin-right: 4px;">
     
     🎉 I will join <strong style="color:#4285F4;">Google</strong> as a research intern in Summer 2026. 
     Welcome to reach out for collaboration and discussions!
   </span>
+
 </div>
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
