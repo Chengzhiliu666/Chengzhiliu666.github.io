@@ -693,6 +693,23 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 <div class="news-container" style="max-height: 280px; overflow-y: auto; padding: 8px;">
 
 <div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
+  <span style="background: linear-gradient(135deg, #4285F4, #34A853); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">
+    2026 Summer
+  </span>
+  
+  <span style="line-height: 1.5; font-size: 15px; display: flex; align-items: center; gap: 6px;">
+    
+    <!-- Google Logo -->
+    <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" 
+         alt="Google" 
+         style="width:16px; height:16px; vertical-align: middle;">
+    
+    🎉 I will join <strong style="color:#4285F4;">Google</strong> as a research intern in Summer 2026. 
+    Welcome to reach out for collaboration and discussions!
+  </span>
+</div>
+
+<div class="news-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin-bottom: 6px; border-left: 4px solid #7dbce6;">
   <span style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">2026.01</span>
   <span style="line-height: 1.5; font-size: 15px;">🎉 One paper is accepted by <strong style="color:#e74c3c;">ICLR 2026</strong> 👉 Check our <a href="https://arxiv.org/pdf/2510.05571">paper</a> and <a href="https://evopresent.github.io/">project</a></span>
 </div>
@@ -737,7 +754,7 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
-      <div class="badge badge-red">ICLR 2026</div>
+      <div class="badge badge-red">CVPR 2026</div>
       <img src='images/latent.png' alt="EvoPresent" width="100%">
     </div>
   </div>
