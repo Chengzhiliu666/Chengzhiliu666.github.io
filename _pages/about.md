@@ -697,14 +697,11 @@ I am always open to collaboration and the exchange of ideas. If you'd like to di
   <span style="background: linear-gradient(135deg, #4285F4, #34A853); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">
     2026 Summer
   </span>
-  
-  <span style="line-height: 1.6; font-size: 15px;">
+    
+    I will join   <span style="line-height: 1.6; font-size: 15px;">
     <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" 
          alt="Google" 
-         style="width:16px; height:16px; vertical-align: middle; margin-right: 4px;">
-    
-    🎉 I will join <strong style="color:#4285F4;">Google</strong> as a research intern in Summer 2026. 
-    Welcome to reach out for collaboration and discussions!
+         style="width:16px; height:16px; vertical-align: middle; margin-right: 4px;">  as a research intern in Summer 2026. Welcome to reach out for collaboration and discussions!
   </span>
 
 </div>
