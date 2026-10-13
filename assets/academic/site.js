@@ -147,7 +147,7 @@
   document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
 
   /* Reveal on scroll */
-  const revealables = document.querySelectorAll('.section, .theme, .timeline li, .pub, .exp li, .contact');
+  const revealables = document.querySelectorAll('.section, .theme, .pub, .exp li, .contact');
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
