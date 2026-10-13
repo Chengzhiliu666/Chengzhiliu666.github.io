@@ -54,3 +54,8 @@ Removed the motion toggle and legacy paused-state lookup. A time-based canvas or
 ## Page frame and News timeline (2026-10-13)
 
 Main content and footer sit in a bordered page frame over a blue-tinted outer background, with matching dark-mode colors and narrower mobile margins. Removed the redundant identity badge above the name. News uses a date column, continuous vertical line and event nodes within the existing scroll region. Contact copy includes recursive self-improvement.
+
+
+## Visual system refinement (2026-10-13)
+
+Replaced the heavy rounded outer frame with a subtle paper-like surface and blue top edge. Section headings use fine trailing rules; Research uses open columns with separators rather than nested card borders. Affiliation strips, navigation, contact buttons, filters, photo framing, and publication links share consistent alignment and restrained corner radii. All academic content is unchanged. Verified at 320px, 390px, 768px, and 1280px, including dark mode, publication expansion/filtering, and scrollable News.
