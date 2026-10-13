@@ -7,8 +7,9 @@
 
 # Site Settings
 title                    : "Chengzhi Liu"
-description              : "Phd in UCSB"
-repository               : "https://chengzhiliu666.github.io/"
+description              : "Chengzhi Liu — multimodal intelligence and trustworthy agents at UC Santa Barbara."
+repository               : "Chengzhiliu666/Chengzhiliu666.github.io"
+url                      : "https://chengzhiliu666.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -27,7 +28,7 @@ author:
   location         : " UCSB"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=SCHOLAR_ID&user=QC1kfNYAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=QC1kfNYAAAAJ&hl=en"
   email            : "chengzhi@ucsb.edu"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
