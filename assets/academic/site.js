@@ -112,62 +112,19 @@
     const drawEdges = () => {
       edge.clearRect(0, 0, aw, ah);
       if (aw < 720) return;
-      // Match the actual frame gutter: the light paths stay inside visible space.
       const margin = Math.max(24, (aw - Math.min(1200, aw - (aw > 920 ? 120 : 48))) / 2);
-      const hue = dark ? '68,155,255' : '34,104,219';
-      const cyan = dark ? '42,222,230' : '10,158,185';
+      // Soft drifting blue light only: no paths, particles, or decorative edges.
       for (const side of [-1, 1]) {
         const left = side < 0 ? 0 : aw - margin;
         edge.save(); edge.beginPath(); edge.rect(left, 0, margin, ah); edge.clip();
-        const point = (y, lane, offset = 0) => {
-          const t = y / ah;
-          const wave = Math.sin(t * 9 + phase * .85 + lane * 1.9 + side) * .22
-            + Math.sin(t * 19 - phase * .55 + lane) * .09;
-          return { x: left + margin * (.5 + wave) + offset, y };
-        };
-        // Moving pools of blue/cyan light make motion visible even in narrow gutters.
-        for (let pool = 0; pool < 3; pool++) {
-          const y = ((phase * 45 + pool * ah / 3 + (side > 0 ? ah / 2 : 0)) % (ah + 240)) - 120;
-          const glow = edge.createRadialGradient(left + margin * .5, y, 0, left + margin * .5, y, 190);
-          glow.addColorStop(0, `rgba(${pool % 2 ? cyan : hue},${dark ? .27 : .14})`);
-          glow.addColorStop(1, `rgba(${hue},0)`);
-          edge.fillStyle = glow; edge.fillRect(left, Math.max(0, y - 190), margin, 380);
-        }
-        for (let lane = 0; lane < 3; lane++) {
-          const color = lane === 1 ? cyan : hue;
-          const ribbonWidth = Math.min(7, margin * .08);
-          // A translucent ribbon has a bright seam and fine parallel filaments.
-          edge.beginPath();
-          for (let n = 0; n <= 90; n++) {
-            const p = point(n / 90 * ah, lane, -ribbonWidth);
-            n ? edge.lineTo(p.x, p.y) : edge.moveTo(p.x, p.y);
-          }
-          for (let n = 90; n >= 0; n--) { const p = point(n / 90 * ah, lane, ribbonWidth); edge.lineTo(p.x, p.y); }
-          edge.closePath(); edge.fillStyle = `rgba(${color},${dark ? .075 : .045})`; edge.fill();
-          for (const filament of [-1, 0, 1]) {
-            edge.beginPath();
-            for (let n = 0; n <= 90; n++) {
-              const p = point(n / 90 * ah, lane, filament * ribbonWidth);
-              n ? edge.lineTo(p.x, p.y) : edge.moveTo(p.x, p.y);
-            }
-            edge.strokeStyle = `rgba(${color},${filament ? (dark ? .25 : .15) : (dark ? .64 : .4)})`;
-            edge.lineWidth = filament ? .65 : 1.25; edge.stroke();
-          }
-          // Signals ascend on the left and descend on the right, with visible tails.
-          for (let signal = 0; signal < 2; signal++) {
-            const span = ah + 150;
-            const progress = (phase * (64 + lane * 12) + signal * span / 2 + lane * 127) % span;
-            const y = side > 0 ? progress - 75 : ah - progress + 75;
-            for (let k = 0; k < 18; k++) {
-              const a = point(y - side * k * 3, lane), b = point(y - side * (k + 1) * 3, lane);
-              edge.beginPath(); edge.moveTo(a.x, a.y); edge.lineTo(b.x, b.y);
-              edge.strokeStyle = `rgba(${color},${(1 - k / 18) * .85})`; edge.lineWidth = 2.3; edge.stroke();
-            }
-            const p = point(y, lane);
-            edge.save(); edge.translate(p.x, p.y); edge.rotate(Math.PI / 4);
-            edge.fillStyle = dark ? '#b7faff' : '#2b87da'; edge.shadowColor = `rgb(${color})`; edge.shadowBlur = 12;
-            edge.fillRect(-2.5, -2.5, 5, 5); edge.restore();
-          }
+        for (let pool = 0; pool < 2; pool++) {
+          const y = ah * (.5 + .48 * Math.sin(phase * .28 + pool * Math.PI + side));
+          const radius = Math.max(240, ah * .43);
+          const glow = edge.createRadialGradient(left + margin * .35, y, 0, left + margin * .35, y, radius);
+          const color = pool ? '35,162,189' : '50,114,226';
+          glow.addColorStop(0, `rgba(${color},${dark ? .18 : .095})`);
+          glow.addColorStop(1, `rgba(${color},0)`);
+          edge.fillStyle = glow; edge.fillRect(left, 0, margin, ah);
         }
         edge.restore();
       }

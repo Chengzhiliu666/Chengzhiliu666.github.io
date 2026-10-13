@@ -87,3 +87,8 @@ Replaced the orbital-braid backdrop with a custom projected, evolving parametric
 Removed the portrait overlay phrase, location caption, album headline/eyebrow, photo captions, and swipe copy. The album retains an accessible name, image descriptions, native scrolling, and its close button. The portrait uses only a small album icon.
 
 Replaced mostly clipped edge contours with three interwoven ribbons on each side, moving blue/cyan illumination, and bright signals travelling in opposite vertical directions. Their paths are anchored inside the actual visible gutters. Desktop margins are 60px minimum while the page remains capped at 1200px; tablet/mobile widths are unchanged. The hero signals also move faster. Two same-position screenshots confirmed changing pixels in both outer gutters, and light/dark views and album keyboard closing were checked.
+
+
+## Simplified outer background (2026-10-13)
+
+Per follow-up feedback, removed the interwoven outer ribbons and all edge signal particles. The gutters now contain only two low-opacity blue/cyan light gradients that drift slowly. The hero surface, clean three-photo album, and existing page interactions are unchanged.
