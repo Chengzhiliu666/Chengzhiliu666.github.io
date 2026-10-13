@@ -108,6 +108,31 @@
     return { recolor };
   })();
 
+  /* The photo stack opens into a native, keyboard-accessible album. */
+  const album = document.getElementById('photo-gallery');
+  const portrait = document.querySelector('.portrait-trigger');
+  portrait.addEventListener('click', () => {
+    album.showModal();
+    root.classList.add('album-open');
+  });
+  album.querySelector('.gallery-close').addEventListener('click', () => album.close());
+  album.addEventListener('click', e => {
+    if (e.target !== album) return;
+    const r = album.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) album.close();
+  });
+  album.addEventListener('close', () => {
+    root.classList.remove('album-open');
+    portrait.focus({ preventScroll: true });
+  });
+
+  /* An original academic explorer advances along the page margin. */
+  const explorer = document.getElementById('scroll-explorer');
+  let walkTimer;
+  const moveExplorer = progress => {
+    explorer.style.setProperty('--explorer-y', `${88 + progress * Math.max(0, innerHeight - 270)}px`);
+  };
+
   /* Header state, progress bar, back-to-top */
   const header = document.getElementById('site-header');
   const bar = document.getElementById('progress-bar');
@@ -117,8 +142,17 @@
     header.classList.toggle('scrolled', y > 8);
     bar.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
     toTop.classList.toggle('show', y > 900);
+    moveExplorer(max > 0 ? Math.max(0, Math.min(1, y / max)) : 0);
   };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  let scrollFrame = 0;
+  addEventListener('scroll', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(() => { onScroll(); scrollFrame = 0; });
+    explorer.classList.add('walking');
+    clearTimeout(walkTimer);
+    walkTimer = setTimeout(() => explorer.classList.remove('walking'), 180);
+  }, { passive: true });
+  addEventListener('resize', onScroll); onScroll();
+  new ResizeObserver(onScroll).observe(document.body);
   toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
   /* Active section in nav */
@@ -144,7 +178,7 @@
 
   /* Publication filter + search */
   const pubs = [...document.querySelectorAll('.pub')];
-  const years = [...document.querySelectorAll('.year')];
+  const groups = [...document.querySelectorAll('[data-group-label]')];
   const buttons = [...document.querySelectorAll('.filters button')];
   const search = document.getElementById('paper-search');
   const count = document.getElementById('result-count');
@@ -175,7 +209,7 @@
         target.innerHTML = target.textContent.replace(new RegExp(`(${esc(q)})`, 'ig'), '<mark>$1</mark>');
       }
     });
-    years.forEach(y => { y.hidden = !pubs.some(p => !p.hidden && p.dataset.year === y.dataset.yearLabel); });
+    groups.forEach(g => { g.hidden = !pubs.some(p => !p.hidden && p.dataset.authorship === g.dataset.groupLabel); });
     empty.hidden = shown > 0;
     count.textContent = `Showing ${shown} of ${pubs.length} papers`;
     toggle.hidden = !browsing || pubs.length <= previewCount;

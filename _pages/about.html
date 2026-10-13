@@ -26,8 +26,8 @@ redirect_from:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
-<link rel="stylesheet" href="/assets/academic/site.css?v=20261013l">
-<script src="/assets/academic/site.js?v=20261013l" defer></script>
+<link rel="stylesheet" href="/assets/academic/site.css?v=20261013m">
+<script src="/assets/academic/site.js?v=20261013m" defer></script>
 </head>
 <body id="top">
 <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
@@ -36,7 +36,7 @@ redirect_from:
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <a class="mark" href="#top" aria-label="Chengzhi Liu, back to top">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14.5" class="mark-ring"/><path d="M20.5 10.6a7 7 0 1 0 0 10.8" class="mark-c"/><circle cx="22.4" cy="16" r="1.9" class="mark-dot"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true" class="personal-logo"><path d="M32 3 57 17v30L32 61 7 47V17Z" fill="currentColor" opacity=".07"/><path d="M44 16a20 20 0 1 0 4 29" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M31 21v23h15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="m47 5 2.5 7.5L57 15l-7.5 2.5L47 25l-2.5-7.5L37 15l7.5-2.5Z" fill="#16a9c5"/><circle cx="47" cy="15" r="2" fill="var(--surface,white)"/></svg>
       <span>Chengzhi Liu</span>
     </a>
     <nav class="nav" aria-label="Sections">
@@ -74,7 +74,11 @@ redirect_from:
       <div class="orbit" aria-hidden="true">
         <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" class="orbit-track"/><circle cx="100" cy="4" r="3.4" class="orbit-sat"/><circle cx="4" cy="100" r="2.2" class="orbit-sat dim"/></svg>
       </div>
-      <img src="/images/person.webp" alt="Portrait of Chengzhi Liu" width="639" height="960" fetchpriority="high">
+      <button class="portrait-trigger" type="button" aria-label="Open Chengzhi’s photo album" aria-haspopup="dialog" aria-controls="photo-gallery">
+        <img class="photo-back" src="/images/chengzhi-canyon.jpg" alt="" width="1280" height="1707" aria-hidden="true">
+        <img class="photo-front" src="/images/person.webp" alt="Portrait of Chengzhi Liu" width="639" height="960" fetchpriority="high">
+        <span class="photo-hint"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="11" height="12" rx="2"/><path d="M7 2h8a2 2 0 0 1 2 2v9M6 13l3-3 3 4"/></svg> A little beyond research <span aria-hidden="true">↗</span></span>
+      </button>
       <figcaption><span class="pin" aria-hidden="true"></span>Santa Barbara, California</figcaption>
     </figure>
   </div>
@@ -177,18 +181,18 @@ redirect_from:
     <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
 
     <div class="pub-list" id="paper-list">
-      <h3 class="year" data-year-label="2026">2026</h3>
+      <h3 class="year" data-group-label="lead">First &amp; co-first author</h3>
 
-      <article class="pub" data-category="agents" data-year="2026">
+      <article class="pub" data-authorship="lead" data-category="agents" data-year="2026">
         <div class="pub-body">
-          <div class="pub-meta"><span class="venue v-pre">Preprint</span></div>
+          <div class="pub-meta"><span class="venue v-pre">Preprint 2026</span></div>
           <h4>StreamMind: Proactive Video Agents for Evolving User Intent</h4>
           <p class="authors"><b>Chengzhi Liu</b>, Yuxiang Lai, Yuzhe Yang, Yanqing Liu, Jiheng Hou, Yue Cao, Haonan Wang, Ruixi Fan, Lan Wang, Sheng Liu, Songyou Peng, Yale Song, Kevin Qinghong Lin, Xin Eric Wang, Jui-Hsin Lai, Youbao Tang</p>
           <p class="summary">Video agents that decide when to speak up as a user's intent shifts during a live stream.</p>
         </div>
       </article>
 
-      <article class="pub" data-category="agents" data-year="2026">
+      <article class="pub" data-authorship="lead" data-category="agents" data-year="2026">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
           <h4><a href="https://arxiv.org/abs/2605.29341">WorldMemArena: Evaluating Multimodal Agent Memory Through Action–World Interaction</a></h4>
@@ -198,37 +202,7 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="agents" data-year="2026">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
-          <h4><a href="https://arxiv.org/abs/2605.22217">Survive or Collapse: The Asymmetric Roles of Data Gating and Reward Grounding in Self-Play RL</a></h4>
-          <p class="authors">Sophia Xiao Pu, Zhaotian Weng, <b>Chengzhi Liu</b>, Jayanth Srinivasa, Gaowen Liu, William Yang Wang, Xin Eric Wang</p>
-          <p class="summary">Why some self-play RL runs keep improving while others collapse, traced to data gating and reward grounding.</p>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2605.22217">Paper</a></div>
-        </div>
-      </article>
-
-      <article class="pub" data-category="agents" data-year="2026">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
-          <h4><a href="https://arxiv.org/abs/2606.05405">Agents’ Last Exam</a></h4>
-          <p class="authors">Yiyou Sun et al., including <b>Chengzhi Liu</b></p>
-          <p class="summary">A benchmark of long-horizon, economically valuable tasks for AI agents.</p>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2606.05405">Paper</a></div>
-        </div>
-      </article>
-
-      <article class="pub" data-category="agents" data-year="2026">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="venue v-pre">Preprint</span></div>
-          <h4><a href="https://harnessaudit.github.io/">Auditing Agent Harness Safety</a></h4>
-          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Yichen Guo<sup>*</sup>, Yepeng Liu, Yuzhe Yang, Qianqi Yan, Xuandong Zhao, Wenyue Hua, Sheng Liu, Sharon Li, Yuheng Bu, Xin Eric Wang</p>
-          <p class="summary">Auditing the safety risks introduced by the harnesses that run AI agents.</p>
-          <div class="pub-links"><a href="https://harnessaudit.github.io/">Project</a></div>
-        </div>
-      </article>
-
-      <article class="pub" data-category="agents" data-year="2026">
+      <article class="pub" data-authorship="lead" data-category="agents" data-year="2026">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-cvpr">CVPR 2026</span></div>
           <h4><a href="https://arxiv.org/abs/2512.12623">Reasoning Within the Mind: Dynamic Multimodal Interleaving in Latent Space</a></h4>
@@ -238,7 +212,17 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="agents" data-year="2026">
+      <article class="pub" data-authorship="lead" data-category="agents" data-year="2026">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-pre">Preprint 2026</span></div>
+          <h4><a href="https://harnessaudit.github.io/">Auditing Agent Harness Safety</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Yichen Guo<sup>*</sup>, Yepeng Liu, Yuzhe Yang, Qianqi Yan, Xuandong Zhao, Wenyue Hua, Sheng Liu, Sharon Li, Yuheng Bu, Xin Eric Wang</p>
+          <p class="summary">Auditing the safety risks introduced by the harnesses that run AI agents.</p>
+          <div class="pub-links"><a href="https://harnessaudit.github.io/">Project</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-authorship="lead" data-category="agents" data-year="2026">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-iclr">ICLR 2026</span><span class="honor">RSI Workshop Spotlight</span></div>
           <h4><a href="https://arxiv.org/abs/2510.05571">Presenting a Paper is an Art: Self-Improvement Aesthetic Agents</a></h4>
@@ -248,9 +232,7 @@ redirect_from:
         </div>
       </article>
 
-      <h3 class="year" data-year-label="2025">2025</h3>
-
-      <article class="pub" data-category="safety" data-year="2025">
+      <article class="pub" data-authorship="lead" data-category="safety" data-year="2025">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2025</span></div>
           <h4><a href="https://arxiv.org/abs/2505.21523">More Thinking, Less Seeing? Assessing Amplified Hallucination in Multimodal Reasoning Models</a></h4>
@@ -260,7 +242,7 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="safety" data-year="2025">
+      <article class="pub" data-authorship="lead" data-category="safety" data-year="2025">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-cvpr">CVPR 2025</span><span class="honor">Oral</span></div>
           <h4><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.pdf">Seeing Far and Clearly: Mitigating Hallucinations in MLLMs</a></h4>
@@ -270,7 +252,7 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="safety" data-year="2025">
+      <article class="pub" data-authorship="lead" data-category="safety" data-year="2025">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-iclr">ICLR 2025</span></div>
           <h4><a href="https://openreview.net/forum?id=I9bEi6LNgt">Multimodal Situational Safety</a></h4>
@@ -280,7 +262,7 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="safety" data-year="2025">
+      <article class="pub" data-authorship="lead" data-category="safety" data-year="2025">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-aacl">AACL 2025</span></div>
           <h4>The Hidden Risks of Large Reasoning Models: A Safety Assessment of R1</h4>
@@ -289,23 +271,45 @@ redirect_from:
         </div>
       </article>
 
-      <article class="pub" data-category="safety" data-year="2025">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="venue v-iclr">ICLR 2025</span></div>
-          <h4><a href="https://openreview.net/forum?id=zGb4WgCW5i">Intervening Anchor Token: Decoding Strategy in Alleviating Hallucinations for MLLMs</a></h4>
-          <p class="authors">Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, <b>Chengzhi Liu</b>, Qiang Sun, Dawn Song, Harry Yang, Ser-Nam Lim</p>
-          <p class="summary">A decoding strategy that intervenes on anchor tokens to reduce hallucination.</p>
-          <div class="pub-links"><a href="https://openreview.net/forum?id=zGb4WgCW5i">Paper</a><a href="https://github.com/Everlyn-Labs/ANTRP">Code</a></div>
-        </div>
-      </article>
-
-      <article class="pub" data-category="health" data-year="2025">
+      <article class="pub" data-authorship="lead" data-category="health" data-year="2025">
         <div class="pub-body">
           <div class="pub-meta"><span class="venue v-aaai">AAAI 2025</span><span class="honor">Oral</span></div>
           <h4><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Incomplete Modality Disentangled Representation for Ophthalmic Disease Grading and Diagnosis</a></h4>
           <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Zile Huang<sup>*</sup>, Feilong Tang, Yu Tian, Zhongxing Xu, Yalin Zheng, Yanda Meng</p>
           <p class="summary">Disentangled representations that stay robust when some imaging modalities are missing.</p>
           <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Paper</a><a href="https://imdr-aaai.github.io/">Project</a></div>
+        </div>
+      </article>
+
+      <h3 class="year" data-group-label="collaborative">Collaborative work</h3>
+
+      <article class="pub" data-authorship="collaborative" data-category="agents" data-year="2026">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2605.22217">Survive or Collapse: The Asymmetric Roles of Data Gating and Reward Grounding in Self-Play RL</a></h4>
+          <p class="authors">Sophia Xiao Pu, Zhaotian Weng, <b>Chengzhi Liu</b>, Jayanth Srinivasa, Gaowen Liu, William Yang Wang, Xin Eric Wang</p>
+          <p class="summary">Why some self-play RL runs keep improving while others collapse, traced to data gating and reward grounding.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2605.22217">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-authorship="collaborative" data-category="agents" data-year="2026">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2606.05405">Agents’ Last Exam</a></h4>
+          <p class="authors">Yiyou Sun et al., including <b>Chengzhi Liu</b></p>
+          <p class="summary">A benchmark of long-horizon, economically valuable tasks for AI agents.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2606.05405">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-authorship="collaborative" data-category="safety" data-year="2025">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-iclr">ICLR 2025</span></div>
+          <h4><a href="https://openreview.net/forum?id=zGb4WgCW5i">Intervening Anchor Token: Decoding Strategy in Alleviating Hallucinations for MLLMs</a></h4>
+          <p class="authors">Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, <b>Chengzhi Liu</b>, Qiang Sun, Dawn Song, Harry Yang, Ser-Nam Lim</p>
+          <p class="summary">A decoding strategy that intervenes on anchor tokens to reduce hallucination.</p>
+          <div class="pub-links"><a href="https://openreview.net/forum?id=zGb4WgCW5i">Paper</a><a href="https://github.com/Everlyn-Labs/ANTRP">Code</a></div>
         </div>
       </article>
     </div>
@@ -366,6 +370,38 @@ redirect_from:
   <span>© 2026 Chengzhi Liu</span>
   <span>Last updated October 2026</span>
 </footer>
+</div>
+
+
+<dialog id="photo-gallery" class="photo-gallery" aria-labelledby="gallery-title">
+  <div class="gallery-header"><div><span class="gallery-eyebrow">OFF THE PAGE</span><h2 id="gallery-title">A little beyond research</h2></div><button class="gallery-close" type="button" aria-label="Close photo album" autofocus>×</button></div>
+  <div class="gallery-spread">
+    <figure class="gallery-card"><img src="/images/person.webp" alt="Chengzhi Liu outdoors in Santa Barbara" width="639" height="960"><figcaption>At home in Santa Barbara</figcaption></figure>
+    <figure class="gallery-card"><img src="/images/chengzhi-canyon.jpg" alt="Chengzhi Liu exploring a sunlit sandstone canyon" width="1280" height="1707" loading="lazy"><figcaption>Always a little curious.</figcaption></figure>
+  </div>
+</dialog>
+<div id="scroll-explorer" class="scroll-explorer" aria-hidden="true">
+  <svg viewBox="0 0 88 116" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="42" cy="108" rx="26" ry="3" fill="currentColor" opacity=".12"/>
+    <g class="explorer-person" stroke="#173451" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26 57q-13-1-12 13v17h16" fill="#20afbd"/>
+      <path d="M18 64v15m-4-9h11" fill="none" stroke="#9ae4e5"/>
+      <g class="explorer-leg leg-back"><path d="m37 81-5 20-9 3" fill="none" stroke="#173451" stroke-width="9"/><path d="m23 105 10-1" stroke="#4283df" stroke-width="6"/></g>
+      <g class="explorer-leg leg-front"><path d="m44 81 8 19 9 3" fill="none" stroke="#2866b8" stroke-width="9"/><path d="m54 105 11 0" stroke="#173451" stroke-width="6"/></g>
+      <path d="M29 56q10-6 20 1l5 29H26Z" fill="#438bea"/>
+      <path d="M31 58 45 82" stroke="#b5e9f1" stroke-width="4"/>
+      <path d="M40 49v8" stroke="#edba92" stroke-width="9"/>
+      <path d="M55 36q5 19-13 20-17-1-17-17V28l28-1Z" fill="#f2c9a4"/>
+      <path d="M25 36q-3-9 2-15l22 0q10 5 5 16l-6-9-9 5-9-1v8" fill="#26394e"/>
+      <path d="M48 39h7m-17 0h7" fill="none"/><path d="M44 38h4"/><circle cx="41" cy="39" r="5" fill="none"/><circle cx="53" cy="39" r="5" fill="none"/>
+      <path d="m46 48 5-1" fill="none"/>
+      <path d="M27 18v9q14 7 27-1V17" fill="#183d73"/>
+      <path d="m16 16 25-10 27 10-26 10Z" fill="#255fa8"/>
+      <path d="m42 16 20 3v14" fill="none" stroke="#edbb55"/><path d="m60 33-1 7h6l-2-7" fill="#edbb55" stroke="#edbb55"/>
+      <g class="explorer-arm"><path d="m48 63 10 9 12-12" fill="none" stroke="#438bea" stroke-width="8"/><circle cx="70" cy="60" r="4" fill="#f2c9a4"/><path d="m64 48 13-4 4 19-13 4Z" fill="#e8f5ed"/><path d="m69 53 4 3-1 5 5-2" fill="none" stroke="#29aabc" stroke-width="1.5"/></g>
+    </g>
+    <path class="explorer-spark" d="M77 25v8m-4-4h8M11 45v6m-3-3h6" stroke="#20afbd" stroke-width="2" stroke-linecap="round"/>
+  </svg>
 </div>
 
 <button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>

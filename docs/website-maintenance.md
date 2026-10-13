@@ -59,3 +59,10 @@ Main content and footer sit in a bordered page frame over a blue-tinted outer ba
 ## Visual system refinement (2026-10-13)
 
 Replaced the heavy rounded outer frame with a subtle paper-like surface and blue top edge. Section headings use fine trailing rules; Research uses open columns with separators rather than nested card borders. Affiliation strips, navigation, contact buttons, filters, photo framing, and publication links share consistent alignment and restrained corner radii. All academic content is unchanged. Verified at 320px, 390px, 768px, and 1280px, including dark mode, publication expansion/filtering, and scrollable News.
+
+
+## Photo album and explorer identity (2026-10-13)
+
+The supplied canyon photo is stored unchanged as images/chengzhi-canyon.jpg. Clicking the portrait stack opens a native modal dialog with a two-photo unfolding animation. Escape, the close button, and a backdrop click close it and restore focus to the portrait. A custom CL compass monogram is shared by the header and favicon. An original SVG scholar with mortarboard, backpack, and map advances down the page margin with scroll progress; walking limbs respond to scrolling, and gentle idle motion remains active. Motion respects the system reduced-motion preference.
+
+Publications are grouped by first/co-first authorship (10 papers) before collaborative work (3 papers), preserving existing author credits. Reasoning Within the Mind is third, following StreamMind and WorldMemArena. Search, filters, and the default three-paper preview also hide empty group headings. News is now 140px tall on desktop and 165px on mobile. Desktop checks covered album opening/Escape/focus restoration, the three-paper preview, full 13-paper list, authorship ordering, search/group visibility, and scroll-linked explorer position.
