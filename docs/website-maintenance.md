@@ -27,3 +27,10 @@ Official affiliation marks are stored locally, extracted from the institutionsâ€
 
 
 The imported homepage was refined with a research-focused hero lead, three system diagrams in the Research cards, and a bounded News archive. The News region supports touch, wheel, and keyboard scrolling and expands for printing. News items bypass scroll-reveal effects so older entries remain readable inside the nested scroll region.
+
+
+## Text-only publications and service update (2026-10-13)
+
+Publications now use a single text column, with all 13 thumbnails and their figure lightbox removed. Research diagrams are unchanged. Academic Services uses category bullets and a blue rule, with invited talks kept separately.
+
+Service sources: the supplied CV supports NeurIPS, ICML, CVPR, ICLR, AAAI, and AAAI-AIA (2026). The signed-in Chengzhi Liu OpenReview account's Active Consoles additionally confirmed AAAI 2027 Program Committee, ICLR 2027 Reviewers, MICCAI 2026 SAFER Reviewers, and COLM 2026 WAB Reviewers, alongside ICML/NeurIPS 2026. Role membership is not a claim that future-cycle reviews are completed. Author consoles were not treated as reviewer roles. No manuscript identifiers, review contents, or account credentials are stored here.

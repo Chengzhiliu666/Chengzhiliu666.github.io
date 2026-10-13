@@ -196,16 +196,4 @@
   }));
   search.addEventListener('input', apply);
 
-  /* Figure lightbox */
-  const box = document.getElementById('lightbox');
-  if (box && box.showModal) {
-    const img = box.querySelector('img');
-    document.querySelectorAll('[data-zoom]').forEach(btn => btn.addEventListener('click', () => {
-      img.src = btn.dataset.zoom;
-      img.alt = 'Figure from ' + btn.closest('.pub').querySelector('h4').textContent;
-      box.showModal();
-    }));
-    box.querySelector('.lightbox-close').addEventListener('click', () => box.close());
-    box.addEventListener('click', e => { if (e.target === box) box.close(); });
-  }
 })();
