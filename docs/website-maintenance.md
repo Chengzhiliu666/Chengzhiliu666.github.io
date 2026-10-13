@@ -39,3 +39,8 @@ Service sources: the supplied CV supports NeurIPS, ICML, CVPR, ICLR, AAAI, and A
 ## Publication preview (2026-10-13)
 
 Publications initially show the first three papers. Show all/Show fewer toggles the full list with aria-expanded and aria-controls. Search and topic filters show every match regardless of preview state; clearing them returns to the chosen preview state. Without JavaScript and when printing, all papers remain available.
+
+
+## Compact academic layout (2026-10-13)
+
+Sections use full-width headings and blue rules instead of a reserved heading column. The content container is 1200px, the hero photo is 230px, and research diagrams sit beside their text. Tighter spacing preserves the complete biography, all papers, News scrolling, publication expansion, and light/dark modes. At a 1280px viewport with three papers visible, page height decreased from 3670px to 2445px; hero height decreased from 959px to 522px. Mobile and tablet layouts were checked for horizontal overflow.
