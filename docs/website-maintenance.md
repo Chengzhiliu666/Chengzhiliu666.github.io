@@ -92,3 +92,10 @@ Replaced mostly clipped edge contours with three interwoven ribbons on each side
 ## Simplified outer background (2026-10-13)
 
 Per follow-up feedback, removed the interwoven outer ribbons and all edge signal particles. The gutters now contain only two low-opacity blue/cyan light gradients that drift slowly. The hero surface, clean three-photo album, and existing page interactions are unchanged.
+
+
+## LenVM and readable research diagrams (2026-10-13)
+
+Capitalized Trustworthy in the research-focus sentence. Added Length Value Model: Scalable Value Pretraining for Token-Level Length Modeling under Collaborative work, with all 14 authors in source order, Chengzhi Liu emphasized, and Paper/Project/Code links. Sources: https://arxiv.org/abs/2604.27039 and https://length-value-model.github.io/; no conference was identified on these primary pages, so the entry is marked Preprint 2026. Publication counts are now 14 total and 8 Agentic; the existing three-paper preview order is preserved.
+
+Research diagrams now use their wide aspect ratio at 180×108px above the text on desktop, replacing 64px squares. Tablet/mobile use a larger diagram beside text (144px/112px, 96px at the smallest breakpoint). Verified search for LenVM, full-list expansion, category counts, unchanged default preview, and 390px layout with no horizontal overflow.
