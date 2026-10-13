@@ -77,9 +77,6 @@ svg .fill { fill: currentColor; stroke: none; }
 .icon-btn svg { width: 18px; height: 18px; grid-area: 1 / 1; transition: opacity .3s, transform .5s var(--ease); }
 #theme-toggle .i-sun, :root[data-theme="dark"] #theme-toggle .i-moon { opacity: 0; transform: rotate(-90deg) scale(.6); }
 :root[data-theme="dark"] #theme-toggle .i-sun { opacity: 1; transform: none; }
-#motion-toggle .i-play, :root[data-motion="paused"] #motion-toggle .i-pause { opacity: 0; }
-:root[data-motion="paused"] #motion-toggle .i-play { opacity: 1; }
-#motion-toggle .i-play { stroke-width: 1.4; }
 
 /* hero */
 .hero { position: relative; isolation: isolate; overflow: hidden; padding: 30px 0 0; }
@@ -115,12 +112,12 @@ h1 { font: 500 clamp(34px, 4vw, 46px)/1.1 var(--serif); letter-spacing: -.02em; 
 .affiliations { list-style: none; max-width: var(--wrap); margin: 22px auto 0; padding: 12px var(--gutter); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .affiliations li { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center; }
 .affiliations a { display: grid; place-items: center; height: 28px; background: none; }
-.affiliations img { height: 22px; width: auto; max-width: 140px; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s, transform .3s var(--ease); }
+.affiliations img { height: 22px; width: auto; max-width: 140px; filter: none; opacity: 1; transition: filter .3s, opacity .3s, transform .3s var(--ease); }
 .affiliations .logo-ucsb { height: 10px; }
 .affiliations a:hover img { filter: none; opacity: 1; transform: translateY(-1px); }
 .affiliations span { color: var(--muted); font-size: 13.5px; }
-:root[data-theme="dark"] .logo-ucsb, :root[data-theme="dark"] .logo-liv { filter: grayscale(1) invert(1) brightness(1.4); }
-:root[data-theme="dark"] .affiliations a:hover .logo-ucsb, :root[data-theme="dark"] .affiliations a:hover .logo-liv { filter: invert(1) brightness(1.6); }
+:root[data-theme="dark"] .logo-ucsb, :root[data-theme="dark"] .logo-liv { filter: brightness(0) saturate(100%) invert(80%) sepia(28%) saturate(680%) hue-rotate(179deg); }
+:root[data-theme="dark"] .affiliations a:hover .logo-ucsb, :root[data-theme="dark"] .affiliations a:hover .logo-liv { filter: brightness(0) saturate(100%) invert(80%) sepia(28%) saturate(680%) hue-rotate(179deg); }
 
 /* sections */
 .section { position: relative; max-width: var(--wrap); margin: 0 auto; padding: 28px var(--gutter) 0; display: block; }
@@ -195,11 +192,11 @@ h1 { font: 500 clamp(34px, 4vw, 46px)/1.1 var(--serif); letter-spacing: -.02em; 
 .honor { color: #a14a00; background: #fff3e2; }
 .honor::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; }
 :root[data-theme="dark"] .honor { color: #ffc27a; background: rgba(255, 170, 70, .12); }
-.pub h4 { font: 500 18px/1.35 var(--serif); margin-bottom: 4px; color: var(--ink); }
+.pub h4 { font: 600 18px/1.35 var(--serif); margin-bottom: 5px; color: var(--accent-ink); }
 .pub h4 a { color: inherit; }
-.pub h4 a:hover { color: var(--accent-ink); }
+.pub h4 a:hover { color: var(--accent); }
 .authors { color: var(--ink-2); font-size: 14px; line-height: 1.45; margin-bottom: 3px; }
-.authors b { color: var(--ink); font-weight: 600; }
+.authors b { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--tide); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .summary { color: var(--muted); font-size: 14px; margin-bottom: 4px; }
 .pub-links { display: flex; flex-wrap: wrap; gap: 6px; }
 .pub-links a { font-size: 13.5px; font-weight: 500; padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); background: var(--surface); transition: all .2s; }
@@ -266,7 +263,6 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @keyframes zoomin { from { opacity: 0; transform: scale(.96); } }
 
-:root[data-motion="paused"] svg *, :root[data-motion="paused"] .orbit svg, :root[data-motion="paused"] .pulse { animation-play-state: paused !important; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }

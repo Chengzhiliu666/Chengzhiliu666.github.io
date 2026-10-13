@@ -26,101 +26,86 @@
     field.recolor();
   });
 
-  /* Motion toggle */
-  const motionBtn = document.getElementById('motion-toggle');
-  const syncMotion = () => {
-    const paused = root.dataset.motion === 'paused';
-    motionBtn.setAttribute('aria-pressed', String(paused));
-    const label = paused ? 'Resume background motion' : 'Pause background motion';
-    motionBtn.setAttribute('aria-label', label);
-    motionBtn.title = label;
-  };
-  syncMotion();
-  motionBtn.addEventListener('click', () => {
-    if (root.dataset.motion === 'paused') { delete root.dataset.motion; store.set('cl-motion', 'on'); }
-    else { root.dataset.motion = 'paused'; store.set('cl-motion', 'paused'); }
-    syncMotion();
-    field.toggle();
-  });
-  if (reduceMotion) motionBtn.hidden = true;
-
-  /* Latent field: particles drifting along a slowly changing flow */
+  /* Orbital braid: layered trajectories and travelling light packets. */
   const field = (() => {
     const canvas = document.getElementById('field');
     const hero = canvas.parentElement;
     const ctx = canvas.getContext('2d');
-    let w = 0, h = 0, dpr = 1, parts = [], raf = 0, t = 0, visible = true, rgb = '29,91,214';
-    const pointer = { x: -9999, y: -9999 };
-
-    const recolor = () => {
-      rgb = getComputedStyle(root).getPropertyValue('--field').trim() || rgb;
+    if (!ctx) return { recolor() {} };
+    let w = 0, h = 0, raf = 0, visible = true, phase = 0, last = 0;
+    let rgb = getComputedStyle(root).getPropertyValue('--field').trim();
+    const pointer = { x: 0, y: 0 };
+    const point = (u, lane) => {
+      const a = u * Math.PI * 2;
+      const twist = phase * .15 + lane * .2;
+      return {
+        x: w * .76 + Math.cos(a) * w * (.27 + lane * .018) + Math.sin(a * 3 + twist) * 18 + pointer.x * 12,
+        y: h * .48 + Math.sin(a) * h * .32 + Math.sin(a * 2 + twist + lane * .35) * h * .13 + pointer.y * 8
+      };
+    };
+    const draw = () => {
       ctx.clearRect(0, 0, w, h);
-      if (!running()) drawStatic();
+      const dark = root.dataset.theme === 'dark';
+      const glow = ctx.createRadialGradient(w * .82, h * .42, 0, w * .82, h * .42, w * .46);
+      glow.addColorStop(0, `rgba(${rgb},${dark ? .16 : .09})`);
+      glow.addColorStop(.55, 'rgba(35,180,225,.035)');
+      glow.addColorStop(1, `rgba(${rgb},0)`);
+      ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
+      for (let lane = 0; lane < 7; lane++) {
+        ctx.beginPath();
+        for (let i = 0; i <= 180; i++) {
+          const p = point(i / 180, lane);
+          i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y);
+        }
+        ctx.strokeStyle = `rgba(${rgb},${dark ? .19 : .14})`;
+        ctx.lineWidth = lane % 3 === 0 ? 1.1 : .6;
+        ctx.stroke();
+        // A short luminous tail moves around each trajectory.
+        for (let k = 0; k < 16; k++) {
+          const u = phase * .035 + lane / 7 - k * .003;
+          const p = point(u, lane), prev = point(u - .004, lane);
+          ctx.beginPath(); ctx.moveTo(prev.x, prev.y); ctx.lineTo(p.x, p.y);
+          ctx.strokeStyle = lane % 2 ? `rgba(25,160,210,${.6 * (1 - k / 16)})` : `rgba(${rgb},${.65 * (1 - k / 16)})`;
+          ctx.lineWidth = 2; ctx.stroke();
+        }
+        const p = point(phase * .035 + lane / 7, lane);
+        ctx.beginPath(); ctx.arc(p.x, p.y, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${rgb},.85)`; ctx.shadowColor = `rgb(${rgb})`; ctx.shadowBlur = 10;
+        ctx.fill(); ctx.shadowBlur = 0;
+      }
+      // The left edge stays quiet behind the biography.
+      ctx.globalCompositeOperation = 'destination-out';
+      const fade = ctx.createLinearGradient(0, 0, w, 0);
+      fade.addColorStop(0, 'rgba(0,0,0,.96)');
+      fade.addColorStop(.48, 'rgba(0,0,0,.85)');
+      fade.addColorStop(.75, 'rgba(0,0,0,0)');
+      ctx.fillStyle = fade; ctx.fillRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'source-over';
     };
-    const running = () => !reduceMotion && root.dataset.motion !== 'paused';
-    const spawn = p => {
-      p.x = Math.random() * w; p.y = Math.random() * h;
-      p.life = 0; p.max = 140 + Math.random() * 220;
-      p.a = .25 + Math.random() * .55;
-      return p;
+    const step = now => {
+      phase += last ? Math.min((now - last) / 1000, .05) : 0;
+      last = now; draw(); raf = requestAnimationFrame(step);
     };
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; last = 0; };
+    const start = () => { if (!raf && !reduceMotion && visible && !document.hidden) raf = requestAnimationFrame(step); };
     const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(devicePixelRatio || 1, 2);
       w = hero.clientWidth; h = hero.clientHeight;
       canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const n = Math.round(Math.min(520, (w * h) / 2600));
-      parts = Array.from({ length: n }, () => spawn({}));
-      if (!running()) drawStatic();
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
     };
-    const angle = (x, y) => {
-      const s = .0021;
-      return Math.sin(x * s + t * .35) * 1.4 + Math.cos(y * s * 1.3 - t * .22) * 1.1 + Math.sin((x + y) * s * .6 + t * .15);
-    };
-    const step = () => {
-      t += .006;
-      ctx.globalCompositeOperation = 'destination-out';
-      ctx.fillStyle = 'rgba(0,0,0,.06)';
-      ctx.fillRect(0, 0, w, h);
-      ctx.globalCompositeOperation = 'source-over';
-      ctx.lineWidth = 1.1;
-      for (const p of parts) {
-        let a = angle(p.x, p.y);
-        const dx = p.x - pointer.x, dy = p.y - pointer.y, d2 = dx * dx + dy * dy;
-        if (d2 < 22000) a += (1 - d2 / 22000) * 1.6;
-        const nx = p.x + Math.cos(a) * 1.15 + .35, ny = p.y + Math.sin(a) * 1.15;
-        const fade = Math.min(1, p.life / 30, (p.max - p.life) / 30);
-        ctx.strokeStyle = `rgba(${rgb},${(p.a * fade * .55).toFixed(3)})`;
-        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(nx, ny); ctx.stroke();
-        p.x = nx; p.y = ny; p.life++;
-        if (p.life > p.max || p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > h + 10) spawn(p);
-      }
-      raf = requestAnimationFrame(step);
-    };
-    const drawStatic = () => {
-      ctx.clearRect(0, 0, w, h);
-      ctx.lineWidth = 1;
-      for (let i = 0; i < 70; i++) {
-        let x = Math.random() * w, y = Math.random() * h;
-        ctx.strokeStyle = `rgba(${rgb},.16)`;
-        ctx.beginPath(); ctx.moveTo(x, y);
-        for (let k = 0; k < 60; k++) { const a = angle(x, y); x += Math.cos(a) * 3 + 1; y += Math.sin(a) * 3; ctx.lineTo(x, y); }
-        ctx.stroke();
-      }
-    };
-    const start = () => { if (!raf && running() && visible && !document.hidden) raf = requestAnimationFrame(step); };
-    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
-    const toggle = () => { if (running()) { ctx.clearRect(0, 0, w, h); start(); } else { stop(); drawStatic(); } };
-
-    rgb = getComputedStyle(root).getPropertyValue('--field').trim() || rgb;
-    resize();
-    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { stop(); resize(); start(); }, 150); });
-    hero.addEventListener('pointermove', e => { const r = canvas.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top; });
-    hero.addEventListener('pointerleave', () => { pointer.x = pointer.y = -9999; });
+    const recolor = () => { rgb = getComputedStyle(root).getPropertyValue('--field').trim(); draw(); };
+    new ResizeObserver(resize).observe(hero);
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      pointer.x = (e.clientX - r.left) / w - .5;
+      pointer.y = (e.clientY - r.top) / h - .5;
+    });
+    hero.addEventListener('pointerleave', () => { pointer.x = pointer.y = 0; });
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? start() : stop(); }).observe(hero);
     document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
-    start();
-    return { recolor, toggle };
+    resize(); start();
+    return { recolor };
   })();
 
   /* Header state, progress bar, back-to-top */

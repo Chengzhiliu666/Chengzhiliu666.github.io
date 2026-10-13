@@ -44,3 +44,8 @@ Publications initially show the first three papers. Show all/Show fewer toggles 
 ## Compact academic layout (2026-10-13)
 
 Sections use full-width headings and blue rules instead of a reserved heading column. The content container is 1200px, the hero photo is 230px, and research diagrams sit beside their text. Tighter spacing preserves the complete biography, all papers, News scrolling, publication expansion, and light/dark modes. At a 1280px viewport with three papers visible, page height decreased from 3670px to 2445px; hero height decreased from 959px to 522px. Mobile and tablet layouts were checked for horizontal overflow.
+
+
+## Visual identity and current Google role (2026-10-13)
+
+Removed the motion toggle and legacy paused-state lookup. A time-based canvas orbital braid now animates continuously while visible, with blue/cyan light packets, pointer response, and quieter rendering behind biography text. System reduced-motion remains respected; background tabs and offscreen canvas rendering suspend to save resources. Affiliation logos no longer use grayscale. Publication titles use blue semibold type and Chengzhi Liu uses bold underlined author styling. Per user correction, the Google Cloud AI role is June 2026–present throughout the biography, affiliation strip, News, and Experience.
