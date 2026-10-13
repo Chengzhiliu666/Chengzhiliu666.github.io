@@ -27,7 +27,7 @@
     motionButton.setAttribute('aria-pressed', String(paused));
     motionButton.textContent = reducedMotion.matches ? 'Reduced motion' : paused ? 'Resume motion ▷' : 'Pause motion Ⅱ';
     motionButton.disabled = reducedMotion.matches;
-    motionButton.title = reducedMotion.matches ? 'Reduced motion follows your device preference' : 'Toggle the decorative wave animation';
+    motionButton.title = reducedMotion.matches ? 'Reduced motion follows your device preference' : 'Pause or resume all ambient and research animations';
   }
   applyMotion();
   motionButton.addEventListener('click', () => { save('cl-motion', root.dataset.motion === 'paused' ? 'running' : 'paused'); applyMotion(); });
@@ -49,6 +49,7 @@
     count.hidden = selected === 'all' && terms.length === 0;
     count.textContent = `${visible} ${visible === 1 ? 'paper' : 'papers'}`;
     document.getElementById('empty-state').hidden = visible !== 0;
+    document.querySelector('.publication-list').scrollTop = 0;
   }
   filters.forEach(button => button.addEventListener('click', () => {
     selected = button.dataset.filter;
@@ -57,6 +58,14 @@
   }));
   search.addEventListener('input', filterPapers);
   document.querySelector('.publication-tools').hidden = false;
+
+  // Keep disclosure state per visit; make all content available on paper.
+  let printState = [];
+  window.addEventListener('beforeprint', () => {
+    printState = Array.from(document.querySelectorAll('.section-disclosure')).map(panel => [panel, panel.open]);
+    printState.forEach(([panel]) => { panel.open = true; });
+  });
+  window.addEventListener('afterprint', () => { printState.forEach(([panel, open]) => { panel.open = open; }); });
 
   if ('IntersectionObserver' in window) {
     const navLinks = Array.from(document.querySelectorAll('nav a'));

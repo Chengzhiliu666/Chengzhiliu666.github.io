@@ -17,3 +17,10 @@ Theme follows the device preference until the visitor makes a choice. Motion can
 Preview through Jekyll (`bundle exec jekyll serve`) when the Ruby dependencies are installed. For a lightweight static preview, strip only the leading YAML front matter from `_pages/about.html` into an ignored temporary `index.html`, and serve it together with `assets/`, `images/`, and `files/`. Keep preview output out of version control. The production build and redirect generation are performed by GitHub Pages.
 
 The previous homepage is recoverable from Git history, immediately before the redesign commit. Never add GitHub tokens or credentials to this repository.
+
+
+## October 2026 interaction refinement
+
+Research interests are Agentic AI, Multimodal AI, and Trustworthy AI. Updates and Publications use native `details`/`summary` and are closed by default on page load. Expanded content uses bounded, keyboard-focusable scroll regions. All 13 papers remain in the HTML, and native disclosures work without JavaScript. Printing temporarily opens the sections and restores their state afterward.
+
+Official affiliation marks are stored locally, extracted from the institutions’ public homepage assets: `https://www.ucsb.edu/` (header wordmark), `https://www.liverpool.ac.uk/` (header logo), and `https://research.google/gr/static/assets/icons/glue-icons.svg` (`google-color-logo`). Marks indicate the existing education/research affiliations only. The three research diagrams, social line icons, and animated background paths are original SVGs. The pause control applies to all continuous decorative animations; device reduced-motion preferences disable all motion.
