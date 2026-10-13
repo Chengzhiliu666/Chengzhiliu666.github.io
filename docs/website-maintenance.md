@@ -49,3 +49,8 @@ Sections use full-width headings and blue rules instead of a reserved heading co
 ## Visual identity and current Google role (2026-10-13)
 
 Removed the motion toggle and legacy paused-state lookup. A time-based canvas orbital braid now animates continuously while visible, with blue/cyan light packets, pointer response, and quieter rendering behind biography text. System reduced-motion remains respected; background tabs and offscreen canvas rendering suspend to save resources. Affiliation logos no longer use grayscale. Publication titles use blue semibold type and Chengzhi Liu uses bold underlined author styling. Per user correction, the Google Cloud AI role is June 2026–present throughout the biography, affiliation strip, News, and Experience.
+
+
+## Page frame and News timeline (2026-10-13)
+
+Main content and footer sit in a bordered page frame over a blue-tinted outer background, with matching dark-mode colors and narrower mobile margins. Removed the redundant identity badge above the name. News uses a date column, continuous vertical line and event nodes within the existing scroll region. Contact copy includes recursive self-improvement.
