@@ -104,3 +104,8 @@ Research diagrams now use their wide aspect ratio at 180×108px above the text o
 ## Centered research columns (2026-10-13)
 
 Desktop research columns now have equal widths and symmetric padding. Diagrams, headings, and descriptions share each column's centerline; equal heading height aligns description starts. Separators are positioned independently so borders do not shift content. Tablet/mobile retain the compact side-by-side arrangement. Browser geometry checks confirmed matching diagram/card centers and equal description top positions.
+
+
+## Scroll-linked News nodes (2026-10-13)
+
+The News archive now maps its scroll progress onto the timeline: the current node gains a blue halo, earlier nodes fill in, and the connecting line advances continuously. Scrolling back reverses the state. Wheel, touch, keyboard, and arrow buttons share the same passive, animation-frame-throttled update. Resizing recalculates the node positions; reduced-motion disables node transitions. Exactly one item carries aria-current="step".

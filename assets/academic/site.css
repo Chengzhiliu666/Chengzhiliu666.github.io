@@ -156,13 +156,18 @@ h1 { font: 500 clamp(34px, 4vw, 46px)/1.1 var(--serif); letter-spacing: -.02em; 
 .news-window::-webkit-scrollbar { width: 10px; }
 .news-window::-webkit-scrollbar-thumb { background: var(--tide); border-radius: 8px; }
 .news-window::-webkit-scrollbar-track { background: var(--accent-soft); }
-.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline { position: relative; list-style: none; margin: 0; padding: 0; }
+.timeline::after { content: ""; position: absolute; pointer-events: none; left: 105px; top: 21px; width: 2px; height: var(--news-progress, 0px); background: var(--accent); }
 .timeline li { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 34px; position: relative; padding: 9px 0; color: var(--ink-2); }
 .timeline li::after { content: ""; position: absolute; left: 105px; top: 0; bottom: 0; width: 2px; background: var(--tide); opacity: .65; }
 .timeline li:first-child::after { top: 20px; }
 .timeline li:last-child::after { bottom: calc(100% - 20px); }
-.timeline li::before { content: ""; position: absolute; z-index: 1; left: 101px; top: 16px; width: 10px; height: 10px; border: 2px solid var(--accent); border-radius: 50%; background: var(--surface); }
-.timeline li:first-child::before { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.timeline li::before { content: ""; position: absolute; z-index: 2; left: 101px; top: 16px; width: 10px; height: 10px; border: 2px solid var(--accent); border-radius: 50%; background: var(--surface); }
+.timeline li::before { transition: background .22s ease, box-shadow .22s ease, transform .22s ease; }
+.timeline li.is-read::before { background: var(--accent); }
+.timeline li.is-current::before { background: var(--accent); transform: scale(1.25); box-shadow: 0 0 0 4px var(--accent-soft), 0 0 12px color-mix(in srgb,var(--accent) 32%,transparent); }
+.timeline li.is-current time { color: var(--accent); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .timeline li::before { transition: none; } }
 .timeline time { color: var(--accent-ink); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; padding-top: 1px; }
 .timeline p { margin: 0; color: var(--ink-2); }
 .timeline strong { color: var(--ink); font-weight: 600; }
@@ -318,7 +323,7 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
   .affiliations li + li { border: 0; }
   .timeline li { grid-template-columns: 65px minmax(0, 1fr); gap: 24px; padding: 9px 0; }
   .timeline li::before { left: 73px; }
-  .timeline li::after { left: 77px; }
+  .timeline li::after, .timeline::after { left: 77px; }
   .timeline time { font-size: 13px; }
   .exp li { grid-template-columns: 1fr; gap: 10px; }
   .exp-logo { width: 120px; }

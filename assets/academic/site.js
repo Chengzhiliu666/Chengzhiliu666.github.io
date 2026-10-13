@@ -215,14 +215,39 @@
   const news = document.getElementById('news-archive');
   const newer = document.getElementById('news-newer');
   const older = document.getElementById('news-older');
+  const timeline = news.querySelector('.timeline');
+  const newsItems = [...timeline.children];
   const syncNews = () => {
+    const maxScroll = Math.max(0, news.scrollHeight - news.clientHeight);
+    const progress = maxScroll > 1 ? Math.max(0, Math.min(1, news.scrollTop / maxScroll)) : 0;
     newer.disabled = news.scrollTop <= 1;
-    older.disabled = news.scrollTop + news.clientHeight >= news.scrollHeight - 1;
+    older.disabled = news.scrollTop >= maxScroll - 1;
+    // Move the reading position from the newest node to the oldest as the archive scrolls.
+    const listTop = timeline.getBoundingClientRect().top;
+    const nodes = newsItems.map(item => item.getBoundingClientRect().top - listTop + 21);
+    const position = nodes[0] + progress * (nodes[nodes.length - 1] - nodes[0]);
+    let active = 0;
+    nodes.forEach((node, index) => {
+      if (Math.abs(node - position) < Math.abs(nodes[active] - position)) active = index;
+    });
+    timeline.style.setProperty('--news-progress', `${position - nodes[0]}px`);
+    newsItems.forEach((item, index) => {
+      item.classList.toggle('is-current', index === active);
+      item.classList.toggle('is-read', index < active);
+      if (index === active) item.setAttribute('aria-current', 'step');
+      else item.removeAttribute('aria-current');
+    });
+  };
+  let newsFrame = 0;
+  const scheduleNews = () => {
+    if (!newsFrame) newsFrame = requestAnimationFrame(() => { syncNews(); newsFrame = 0; });
   };
   newer.addEventListener('click', () => news.scrollBy({ top: -news.clientHeight * .8, behavior: reduceMotion ? 'instant' : 'smooth' }));
   older.addEventListener('click', () => news.scrollBy({ top: news.clientHeight * .8, behavior: reduceMotion ? 'instant' : 'smooth' }));
-  news.addEventListener('scroll', syncNews, { passive: true });
-  new ResizeObserver(syncNews).observe(news);
+  news.addEventListener('scroll', scheduleNews, { passive: true });
+  const newsResize = new ResizeObserver(scheduleNews);
+  newsResize.observe(news);
+  newsResize.observe(timeline);
   syncNews();
 
   /* A subtle pointer glow; a click releases a tiny graduation cap. */
