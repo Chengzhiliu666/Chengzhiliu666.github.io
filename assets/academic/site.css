@@ -440,3 +440,19 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
 }
 @media (prefers-reduced-motion: reduce) { .photo-gallery[open] .gallery-card { animation: none; } }
 @media print { .ambient-field, .photo-third { display: none !important; } }
+
+
+/* Give the animated margins room while keeping the academic page compact. */
+@media screen and (min-width: 921px) {
+  .page-frame, .header-inner { width: min(var(--wrap),calc(100% - 120px)); }
+}
+.photo-hint { left: auto; right: 10px; bottom: 12px; width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: #102743aa; }
+.photo-hint svg { width: 16px; height: 16px; }
+.gallery-header { justify-content: flex-end; margin-bottom: 4px; }
+.gallery-card { padding-bottom: 8px; }
+.photo-gallery { padding-top: 14px; padding-bottom: 24px; }
+@media (max-width: 640px) {
+  .photo-hint { right: -4px; bottom: 0; }
+  .gallery-card { padding-bottom: 4px; }
+  .photo-gallery { padding-top: 10px; padding-bottom: 12px; }
+}

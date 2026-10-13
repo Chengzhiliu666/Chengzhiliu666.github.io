@@ -80,3 +80,10 @@ Fine mouse pointers get an offset blue glow and a brief custom graduation-cap ef
 Added the user-supplied open-sky photo unchanged as images/chengzhi-open-sky.jpg. The portrait now hints at three stacked photos; the expanded desktop album presents three cards. At mobile widths it becomes a native horizontal scroll-snap gallery with a visible swipe hint, retaining the full photographs. Verified all three images load, Escape restores the page, and the third image is reachable in the 390px preview without page overflow.
 
 Replaced the orbital-braid backdrop with a custom projected, evolving parametric surface: translucent facets, depth-dependent geometry, blue/cyan wire contours, travelling signals, and smooth pointer/scroll parallax. A second canvas carries flowing contours through the outer page margins. Removed the old dotted portrait orbit. The text column is masked to preserve readability. Rendering is capped near 30fps (24fps mobile), uses capped pixel density and lower mobile geometry resolution, suspends in hidden tabs, skips the offscreen hero, and uses a static composition for reduced-motion users. Narrow screens omit the outer contour layer. Verified light/dark views and no browser console errors.
+
+
+## Clean photo presentation and visible edge motion (2026-10-13)
+
+Removed the portrait overlay phrase, location caption, album headline/eyebrow, photo captions, and swipe copy. The album retains an accessible name, image descriptions, native scrolling, and its close button. The portrait uses only a small album icon.
+
+Replaced mostly clipped edge contours with three interwoven ribbons on each side, moving blue/cyan illumination, and bright signals travelling in opposite vertical directions. Their paths are anchored inside the actual visible gutters. Desktop margins are 60px minimum while the page remains capped at 1200px; tablet/mobile widths are unchanged. The hero signals also move faster. Two same-position screenshots confirmed changing pixels in both outer gutters, and light/dark views and album keyboard closing were checked.
