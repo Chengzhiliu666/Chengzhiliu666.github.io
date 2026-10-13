@@ -34,3 +34,8 @@ The imported homepage was refined with a research-focused hero lead, three syste
 Publications now use a single text column, with all 13 thumbnails and their figure lightbox removed. Research diagrams are unchanged. Academic Services uses category bullets and a blue rule, with invited talks kept separately.
 
 Service sources: the supplied CV supports NeurIPS, ICML, CVPR, ICLR, AAAI, and AAAI-AIA (2026). The signed-in Chengzhi Liu OpenReview account's Active Consoles additionally confirmed AAAI 2027 Program Committee, ICLR 2027 Reviewers, MICCAI 2026 SAFER Reviewers, and COLM 2026 WAB Reviewers, alongside ICML/NeurIPS 2026. Role membership is not a claim that future-cycle reviews are completed. Author consoles were not treated as reviewer roles. No manuscript identifiers, review contents, or account credentials are stored here.
+
+
+## Publication preview (2026-10-13)
+
+Publications initially show the first three papers. Show all/Show fewer toggles the full list with aria-expanded and aria-controls. Search and topic filters show every match regardless of preview state; clearing them returns to the chosen preview state. Without JavaScript and when printing, all papers remain available.

@@ -169,15 +169,20 @@
     const h = p.querySelector('h4');
     p.dataset.title = h.innerHTML;
   });
+  const toggle = document.getElementById('papers-toggle');
+  const previewCount = 3;
+  let expanded = false;
   let filter = 'all';
   const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const apply = () => {
     const q = search.value.trim().toLowerCase();
+    const browsing = filter === 'all' && !q;
     let shown = 0;
-    pubs.forEach(p => {
+    pubs.forEach((p, index) => {
       const ok = (filter === 'all' || p.dataset.category === filter) && (!q || p.dataset.text.includes(q));
-      p.hidden = !ok;
-      if (ok) { shown++; p.classList.add('in'); }
+      const visible = ok && (!browsing || expanded || index < previewCount);
+      p.hidden = !visible;
+      if (visible) { shown++; p.classList.add('in'); }
       const h = p.querySelector('h4');
       h.innerHTML = p.dataset.title;
       if (ok && q.length > 1) {
@@ -187,7 +192,10 @@
     });
     years.forEach(y => { y.hidden = !pubs.some(p => !p.hidden && p.dataset.year === y.dataset.yearLabel); });
     empty.hidden = shown > 0;
-    count.textContent = (filter === 'all' && !q) ? '' : `Showing ${shown} of ${pubs.length} papers`;
+    count.textContent = `Showing ${shown} of ${pubs.length} papers`;
+    toggle.hidden = !browsing || pubs.length <= previewCount;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.innerHTML = expanded ? 'Show fewer papers <span aria-hidden="true">↑</span>' : `Show all ${pubs.length} papers <span aria-hidden="true">↓</span>`;
   };
   buttons.forEach(b => b.addEventListener('click', () => {
     filter = b.dataset.filter;
@@ -195,5 +203,11 @@
     apply();
   }));
   search.addEventListener('input', apply);
+  toggle.addEventListener('click', () => {
+    expanded = !expanded;
+    apply();
+    if (!expanded) toggle.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  });
+  apply();
 
 })();

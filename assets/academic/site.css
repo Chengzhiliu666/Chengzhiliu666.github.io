@@ -301,3 +301,13 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
   .site-header, .field, .to-top, .progress, .pub-tools, .orbit { display: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Publication preview: all papers remain available without JavaScript. */
+.papers-toggle { margin-top: 20px; padding: 11px 19px; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font: 500 14px/1.4 var(--sans); cursor: pointer; transition: border-color .2s, background .2s; }
+.papers-toggle:hover { border-color: var(--tide); background: var(--sunk); }
+.papers-toggle span { margin-left: 8px; }
+.papers-toggle[hidden] { display: none; }
+@media print {
+  .papers-toggle, .result-count, .empty-state { display: none !important; }
+  .pub[hidden], .year[hidden] { display: block; }
+}

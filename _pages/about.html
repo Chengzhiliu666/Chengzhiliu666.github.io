@@ -26,8 +26,8 @@ redirect_from:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
-<link rel="stylesheet" href="/assets/academic/site.css?v=20261013g">
-<script src="/assets/academic/site.js?v=20261013g" defer></script>
+<link rel="stylesheet" href="/assets/academic/site.css?v=20261013h">
+<script src="/assets/academic/site.js?v=20261013h" defer></script>
 </head>
 <body id="top">
 <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
@@ -181,7 +181,7 @@ redirect_from:
     <p class="pub-note"><sup>*</sup> Equal contribution. <a href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&amp;hl=en">Full list on Google Scholar</a></p>
     <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
 
-    <div class="pub-list">
+    <div class="pub-list" id="paper-list">
       <h3 class="year" data-year-label="2026">2026</h3>
 
       <article class="pub" data-category="agents" data-year="2026">
@@ -314,6 +314,7 @@ redirect_from:
         </div>
       </article>
     </div>
+    <button id="papers-toggle" class="papers-toggle" type="button" aria-expanded="false" aria-controls="paper-list" hidden>Show all 13 papers <span aria-hidden="true">↓</span></button>
     <p id="empty-state" class="empty-state" hidden>No papers match that search. Try a title word, an author, or a venue such as “CVPR”.</p>
   </div>
 </section>
