@@ -73,3 +73,10 @@ Publications are grouped by first/co-first authorship (10 papers) before collabo
 News is capped at 920px wide, centered within its section, and 290px tall (310px on mobile). The timeline retains native wheel/touch/keyboard scrolling; up/down buttons advance by 80% of its viewport and disable at the corresponding edge. Scroll chaining resumes at the archive boundaries.
 
 Fine mouse pointers get an offset blue glow and a brief custom graduation-cap effect on primary clicks. The native cursor is preserved, the effect layer cannot intercept input, and form editing is excluded. Click effects are bounded to six instances and removed after animation. Effects are disabled for reduced-motion and coarse/touch pointers. Desktop checks verified arrow/keyboard scrolling and edge states, cap rendering/cleanup, and non-intercepting overlays; a 390px local iframe verified mobile dimensions and no horizontal overflow.
+
+
+## Three-photo album and latent landscape (2026-10-13)
+
+Added the user-supplied open-sky photo unchanged as images/chengzhi-open-sky.jpg. The portrait now hints at three stacked photos; the expanded desktop album presents three cards. At mobile widths it becomes a native horizontal scroll-snap gallery with a visible swipe hint, retaining the full photographs. Verified all three images load, Escape restores the page, and the third image is reachable in the 390px preview without page overflow.
+
+Replaced the orbital-braid backdrop with a custom projected, evolving parametric surface: translucent facets, depth-dependent geometry, blue/cyan wire contours, travelling signals, and smooth pointer/scroll parallax. A second canvas carries flowing contours through the outer page margins. Removed the old dotted portrait orbit. The text column is masked to preserve readability. Rendering is capped near 30fps (24fps mobile), uses capped pixel density and lower mobile geometry resolution, suspends in hidden tabs, skips the offscreen hero, and uses a static composition for reduced-motion users. Narrow screens omit the outer contour layer. Verified light/dark views and no browser console errors.

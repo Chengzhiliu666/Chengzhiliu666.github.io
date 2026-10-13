@@ -26,10 +26,11 @@ redirect_from:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
-<link rel="stylesheet" href="/assets/academic/site.css?v=20261013n">
-<script src="/assets/academic/site.js?v=20261013n" defer></script>
+<link rel="stylesheet" href="/assets/academic/site.css?v=20261013o">
+<script src="/assets/academic/site.js?v=20261013o" defer></script>
 </head>
 <body id="top">
+<canvas id="ambient-field" class="ambient-field" aria-hidden="true"></canvas>
 <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -71,10 +72,8 @@ redirect_from:
       </div>
     </div>
     <figure class="portrait">
-      <div class="orbit" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" class="orbit-track"/><circle cx="100" cy="4" r="3.4" class="orbit-sat"/><circle cx="4" cy="100" r="2.2" class="orbit-sat dim"/></svg>
-      </div>
       <button class="portrait-trigger" type="button" aria-label="Open Chengzhi’s photo album" aria-haspopup="dialog" aria-controls="photo-gallery">
+        <img class="photo-third" src="/images/chengzhi-open-sky.jpg" alt="" width="4284" height="5845" aria-hidden="true" decoding="async">
         <img class="photo-back" src="/images/chengzhi-canyon.jpg" alt="" width="1280" height="1707" aria-hidden="true">
         <img class="photo-front" src="/images/person.webp" alt="Portrait of Chengzhi Liu" width="639" height="960" fetchpriority="high">
         <span class="photo-hint"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="11" height="12" rx="2"/><path d="M7 2h8a2 2 0 0 1 2 2v9M6 13l3-3 3 4"/></svg> A little beyond research <span aria-hidden="true">↗</span></span>
@@ -375,10 +374,12 @@ redirect_from:
 
 <dialog id="photo-gallery" class="photo-gallery" aria-labelledby="gallery-title">
   <div class="gallery-header"><div><span class="gallery-eyebrow">OFF THE PAGE</span><h2 id="gallery-title">A little beyond research</h2></div><button class="gallery-close" type="button" aria-label="Close photo album" autofocus>×</button></div>
-  <div class="gallery-spread">
+  <div class="gallery-spread" role="region" aria-label="Three-photo collection — swipe to explore" tabindex="0">
     <figure class="gallery-card"><img src="/images/person.webp" alt="Chengzhi Liu outdoors in Santa Barbara" width="639" height="960"><figcaption>At home in Santa Barbara</figcaption></figure>
     <figure class="gallery-card"><img src="/images/chengzhi-canyon.jpg" alt="Chengzhi Liu exploring a sunlit sandstone canyon" width="1280" height="1707" loading="lazy"><figcaption>Always a little curious.</figcaption></figure>
+    <figure class="gallery-card"><img src="/images/chengzhi-open-sky.jpg" alt="Chengzhi Liu standing on an off-road vehicle under a clear blue sky" width="4284" height="5845" loading="lazy" decoding="async"><figcaption>Under a wide-open sky.</figcaption></figure>
   </div>
+  <p class="gallery-swipe">Swipe to explore all three photos <span aria-hidden="true">↔</span></p>
 </dialog>
 <div id="scroll-explorer" class="scroll-explorer" aria-hidden="true">
   <svg viewBox="0 0 88 116" xmlns="http://www.w3.org/2000/svg">

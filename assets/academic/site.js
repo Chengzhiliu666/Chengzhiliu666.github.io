@@ -26,85 +26,141 @@
     field.recolor();
   });
 
-  /* Orbital braid: layered trajectories and travelling light packets. */
+  /* Latent landscape: an original projected surface, not a particle preset. */
   const field = (() => {
     const canvas = document.getElementById('field');
+    const ambient = document.getElementById('ambient-field');
     const hero = canvas.parentElement;
     const ctx = canvas.getContext('2d');
-    if (!ctx) return { recolor() {} };
-    let w = 0, h = 0, raf = 0, visible = true, phase = 0, last = 0;
+    const edge = ambient.getContext('2d');
+    if (!ctx || !edge) return { recolor() {} };
+    let w = 0, h = 0, aw = 0, ah = 0, raf = 0, visible = true, phase = 0, last = 0;
+    let dark = root.dataset.theme === 'dark';
     let rgb = getComputedStyle(root).getPropertyValue('--field').trim();
-    const pointer = { x: 0, y: 0 };
-    const point = (u, lane) => {
-      const a = u * Math.PI * 2;
-      const twist = phase * .15 + lane * .2;
+    const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+    let pageShift = 0;
+    const project = (u, v) => {
+      const x = u * 1.08;
+      const y = v * .66 + .22 * Math.sin(u * 2 + phase * .23);
+      const z = .44 * Math.sin(u * 1.8 + v * 2.2 - phase * .25) + .22 * Math.cos(v * 3 + phase * .12);
+      const yaw = .38 + pointer.x * .16 + Math.sin(phase * .075) * .18 + pageShift * .0003;
+      const xx = x * Math.cos(yaw) + z * Math.sin(yaw);
+      const zz = z * Math.cos(yaw) - x * Math.sin(yaw);
+      const yy = y * .76 - zz * .65;
+      const depth = 3.6 / (3.6 + zz * .45);
+      const scale = Math.min(w * .30, h * .72);
+      const tilt = -.30 + pointer.y * .09;
       return {
-        x: w * .76 + Math.cos(a) * w * (.27 + lane * .018) + Math.sin(a * 3 + twist) * 18 + pointer.x * 12,
-        y: h * .48 + Math.sin(a) * h * .32 + Math.sin(a * 2 + twist + lane * .35) * h * .13 + pointer.y * 8
+        x: w * .80 + (xx * Math.cos(tilt) - yy * Math.sin(tilt)) * scale * depth,
+        y: h * .44 + (xx * Math.sin(tilt) + yy * Math.cos(tilt)) * scale * depth,
+        z: zz
       };
     };
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
-      const dark = root.dataset.theme === 'dark';
-      const glow = ctx.createRadialGradient(w * .82, h * .42, 0, w * .82, h * .42, w * .46);
-      glow.addColorStop(0, `rgba(${rgb},${dark ? .16 : .09})`);
-      glow.addColorStop(.55, 'rgba(35,180,225,.035)');
-      glow.addColorStop(1, `rgba(${rgb},0)`);
-      ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
-      for (let lane = 0; lane < 7; lane++) {
-        ctx.beginPath();
-        for (let i = 0; i <= 180; i++) {
-          const p = point(i / 180, lane);
-          i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y);
+      const halo = ctx.createRadialGradient(w * .83, h * .36, 0, w * .83, h * .36, w * .5);
+      halo.addColorStop(0, dark ? 'rgba(31,133,200,.28)' : 'rgba(29,146,212,.14)');
+      halo.addColorStop(.6, dark ? 'rgba(47,73,200,.10)' : 'rgba(77,112,216,.045)');
+      halo.addColorStop(1, 'rgba(50,110,200,0)');
+      ctx.fillStyle = halo; ctx.fillRect(0, 0, w, h);
+      const rows = w < 640 ? 16 : 26, cols = w < 640 ? 48 : 72;
+      const grid = Array.from({ length: rows + 1 }, (_, r) => Array.from({ length: cols + 1 }, (_, c) => project(-1.7 + 3.4 * c / cols, -1 + 2 * r / rows)));
+      // Sparse translucent facets give the wire surface depth without a solid panel.
+      for (let r = 0; r < rows; r += 2) {
+        for (let c = 0; c < cols; c += 4) {
+          const a = grid[r][c], b = grid[r][c + 4], d = grid[r + 2][c], e = grid[r + 2][c + 4];
+          const wave = .5 + .5 * Math.sin(c * .16 - phase * .5 + r * .24);
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.lineTo(e.x, e.y); ctx.lineTo(d.x, d.y); ctx.closePath();
+          ctx.fillStyle = `rgba(${r % 4 ? '25,170,192' : rgb},${(dark ? .038 : .023) + wave * (dark ? .05 : .035)})`;
+          ctx.fill();
         }
-        ctx.strokeStyle = `rgba(${rgb},${dark ? .19 : .14})`;
-        ctx.lineWidth = lane % 3 === 0 ? 1.1 : .6;
-        ctx.stroke();
-        // A short luminous tail moves around each trajectory.
-        for (let k = 0; k < 16; k++) {
-          const u = phase * .035 + lane / 7 - k * .003;
-          const p = point(u, lane), prev = point(u - .004, lane);
-          ctx.beginPath(); ctx.moveTo(prev.x, prev.y); ctx.lineTo(p.x, p.y);
-          ctx.strokeStyle = lane % 2 ? `rgba(25,160,210,${.6 * (1 - k / 16)})` : `rgba(${rgb},${.65 * (1 - k / 16)})`;
-          ctx.lineWidth = 2; ctx.stroke();
-        }
-        const p = point(phase * .035 + lane / 7, lane);
-        ctx.beginPath(); ctx.arc(p.x, p.y, 2.4, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${rgb},.85)`; ctx.shadowColor = `rgb(${rgb})`; ctx.shadowBlur = 10;
-        ctx.fill(); ctx.shadowBlur = 0;
       }
-      // The left edge stays quiet behind the biography.
+      grid.forEach((row, r) => {
+        ctx.beginPath(); row.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+        const strong = r % 5 === 0;
+        ctx.strokeStyle = `rgba(${r % 3 ? rgb : '24,157,190'},${strong ? (dark ? .5 : .34) : (dark ? .23 : .16)})`;
+        ctx.lineWidth = strong ? 1.15 : .6; ctx.stroke();
+      });
+      for (let c = 0; c <= cols; c += 4) {
+        ctx.beginPath(); grid.forEach((row, r) => r ? ctx.lineTo(row[c].x, row[c].y) : ctx.moveTo(row[c].x, row[c].y));
+        ctx.strokeStyle = `rgba(${rgb},${dark ? .14 : .10})`; ctx.lineWidth = .55; ctx.stroke();
+      }
+      // Cyan and indigo signals follow the curved surface and refract at nodes.
+      for (let lane = 0; lane < 5; lane++) {
+        const v = -.8 + lane * .4;
+        const travel = ((phase * .075 + lane * .21) % 1);
+        for (let k = 0; k < 24; k++) {
+          const u = -1.7 + 3.4 * (travel - k * .004);
+          if (u < -1.7) continue;
+          const a = project(u, v), b = project(u + .018, v);
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(${lane % 2 ? rgb : '15,171,196'},${(1 - k / 24) * .9})`;
+          ctx.lineWidth = 2.2; ctx.stroke();
+        }
+        const p = project(-1.7 + travel * 3.4, v);
+        ctx.beginPath(); ctx.arc(p.x, p.y, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = dark ? '#b7f6ff' : '#258fbd'; ctx.shadowColor = '#20b7e0'; ctx.shadowBlur = 12; ctx.fill(); ctx.shadowBlur = 0;
+        ctx.strokeStyle = `rgba(${rgb},.36)`; ctx.lineWidth = .7; ctx.strokeRect(p.x - 5, p.y - 5, 10, 10);
+      }
+      // A quiet text column and a stronger visual field around the photo stack.
       ctx.globalCompositeOperation = 'destination-out';
       const fade = ctx.createLinearGradient(0, 0, w, 0);
-      fade.addColorStop(0, 'rgba(0,0,0,.96)');
-      fade.addColorStop(.48, 'rgba(0,0,0,.85)');
-      fade.addColorStop(.75, 'rgba(0,0,0,0)');
-      ctx.fillStyle = fade; ctx.fillRect(0, 0, w, h);
-      ctx.globalCompositeOperation = 'source-over';
+      fade.addColorStop(0, 'rgba(0,0,0,.98)'); fade.addColorStop(.42, 'rgba(0,0,0,.92)');
+      fade.addColorStop(.64, 'rgba(0,0,0,.65)'); fade.addColorStop(.82, 'rgba(0,0,0,0)');
+      ctx.fillStyle = fade; ctx.fillRect(0, 0, w, h); ctx.globalCompositeOperation = 'source-over';
+    };
+    const drawEdges = () => {
+      edge.clearRect(0, 0, aw, ah);
+      if (aw < 720) return;
+      const margin = Math.max(24, (aw - 1200) / 2);
+      // Contour currents live only in the page margins, continuing as you scroll.
+      for (const side of [-1, 1]) {
+        edge.save(); edge.beginPath(); edge.rect(side < 0 ? 0 : aw - margin, 0, margin, ah); edge.clip();
+        for (let lane = 0; lane < 15; lane++) {
+          edge.beginPath();
+          for (let n = 0; n <= 56; n++) {
+            const y = n / 56 * ah;
+            const bend = Math.sin(y * .005 + lane * .13 + phase * .13 + pageShift * .0006) * 24 + Math.sin(y * .009 - phase * .17) * 10;
+            const x = (side < 0 ? 0 : aw) + side * (-lane * 8 + bend);
+            n ? edge.lineTo(x, y) : edge.moveTo(x, y);
+          }
+          edge.strokeStyle = `rgba(${lane % 3 ? rgb : '24,164,192'},${dark ? .18 : .11})`; edge.lineWidth = lane % 4 ? .6 : 1; edge.stroke();
+        }
+        edge.restore();
+      }
     };
     const step = now => {
-      phase += last ? Math.min((now - last) / 1000, .05) : 0;
-      last = now; draw(); raf = requestAnimationFrame(step);
+      raf = requestAnimationFrame(step);
+      if (last && now - last < (w < 640 ? 42 : 33)) return;
+      phase += last ? Math.min((now - last) / 1000, .08) : 0;
+      last = now;
+      pointer.x += (pointer.tx - pointer.x) * .08;
+      pointer.y += (pointer.ty - pointer.y) * .08;
+      if (visible) draw();
+      drawEdges();
     };
     const stop = () => { cancelAnimationFrame(raf); raf = 0; last = 0; };
-    const start = () => { if (!raf && !reduceMotion && visible && !document.hidden) raf = requestAnimationFrame(step); };
+    const start = () => { if (!raf && !reduceMotion && !document.hidden && (visible || aw >= 720)) raf = requestAnimationFrame(step); };
     const resize = () => {
-      const dpr = Math.min(devicePixelRatio || 1, 2);
-      w = hero.clientWidth; h = hero.clientHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
+      const dpr = Math.min(devicePixelRatio || 1, 1.75);
+      w = hero.clientWidth; h = hero.clientHeight; aw = innerWidth; ah = innerHeight;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ambient.width = Math.round(aw * dpr); ambient.height = Math.round(ah * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); edge.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw(); drawEdges(); start();
     };
-    const recolor = () => { rgb = getComputedStyle(root).getPropertyValue('--field').trim(); draw(); };
+    const recolor = () => { dark = root.dataset.theme === 'dark'; rgb = getComputedStyle(root).getPropertyValue('--field').trim(); draw(); drawEdges(); };
     new ResizeObserver(resize).observe(hero);
+    addEventListener('resize', resize);
+    addEventListener('scroll', () => { pageShift = scrollY; }, { passive: true });
     hero.addEventListener('pointermove', e => {
       const r = hero.getBoundingClientRect();
-      pointer.x = (e.clientX - r.left) / w - .5;
-      pointer.y = (e.clientY - r.top) / h - .5;
-    });
-    hero.addEventListener('pointerleave', () => { pointer.x = pointer.y = 0; });
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? start() : stop(); }).observe(hero);
+      pointer.tx = (e.clientX - r.left) / w - .5; pointer.ty = (e.clientY - r.top) / h - .5;
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => { pointer.tx = pointer.ty = 0; });
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible || aw >= 720) start(); else stop(); }).observe(hero);
     document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
-    resize(); start();
+    resize();
     return { recolor };
   })();
 
