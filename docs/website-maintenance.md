@@ -66,3 +66,10 @@ Replaced the heavy rounded outer frame with a subtle paper-like surface and blue
 The supplied canyon photo is stored unchanged as images/chengzhi-canyon.jpg. Clicking the portrait stack opens a native modal dialog with a two-photo unfolding animation. Escape, the close button, and a backdrop click close it and restore focus to the portrait. A custom CL compass monogram is shared by the header and favicon. An original SVG scholar with mortarboard, backpack, and map advances down the page margin with scroll progress; walking limbs respond to scrolling, and gentle idle motion remains active. Motion respects the system reduced-motion preference.
 
 Publications are grouped by first/co-first authorship (10 papers) before collaborative work (3 papers), preserving existing author credits. Reasoning Within the Mind is third, following StreamMind and WorldMemArena. Search, filters, and the default three-paper preview also hide empty group headings. News is now 140px tall on desktop and 165px on mobile. Desktop checks covered album opening/Escape/focus restoration, the three-paper preview, full 13-paper list, authorship ordering, search/group visibility, and scroll-linked explorer position.
+
+
+## News browsing and pointer effects (2026-10-13)
+
+News is capped at 920px wide, centered within its section, and 290px tall (310px on mobile). The timeline retains native wheel/touch/keyboard scrolling; up/down buttons advance by 80% of its viewport and disable at the corresponding edge. Scroll chaining resumes at the archive boundaries.
+
+Fine mouse pointers get an offset blue glow and a brief custom graduation-cap effect on primary clicks. The native cursor is preserved, the effect layer cannot intercept input, and form editing is excluded. Click effects are bounded to six instances and removed after animation. Effects are disabled for reduced-motion and coarse/touch pointers. Desktop checks verified arrow/keyboard scrolling and edge states, cap rendering/cleanup, and non-intercepting overlays; a 390px local iframe verified mobile dimensions and no horizontal overflow.

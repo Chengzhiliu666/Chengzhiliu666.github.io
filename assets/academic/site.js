@@ -155,6 +155,59 @@
   new ResizeObserver(onScroll).observe(document.body);
   toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
+  /* News can be browsed with the wheel, keyboard, or explicit arrows. */
+  const news = document.getElementById('news-archive');
+  const newer = document.getElementById('news-newer');
+  const older = document.getElementById('news-older');
+  const syncNews = () => {
+    newer.disabled = news.scrollTop <= 1;
+    older.disabled = news.scrollTop + news.clientHeight >= news.scrollHeight - 1;
+  };
+  newer.addEventListener('click', () => news.scrollBy({ top: -news.clientHeight * .8, behavior: reduceMotion ? 'instant' : 'smooth' }));
+  older.addEventListener('click', () => news.scrollBy({ top: news.clientHeight * .8, behavior: reduceMotion ? 'instant' : 'smooth' }));
+  news.addEventListener('scroll', syncNews, { passive: true });
+  new ResizeObserver(syncNews).observe(news);
+  syncNews();
+
+  /* A subtle pointer glow; a click releases a tiny graduation cap. */
+  if (!reduceMotion && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const effects = document.createElement('div');
+    effects.className = 'pointer-effects';
+    effects.setAttribute('aria-hidden', 'true');
+    document.body.append(effects);
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    effects.append(glow);
+    let pointerFrame = 0, px = 0, py = 0;
+    const hideGlow = () => glow.classList.remove('visible');
+    document.addEventListener('pointermove', e => {
+      if (e.pointerType !== 'mouse') return;
+      px = e.clientX; py = e.clientY;
+      if (!pointerFrame) pointerFrame = requestAnimationFrame(() => {
+        glow.style.transform = `translate3d(${px + 12}px,${py + 12}px,0)`;
+        glow.classList.add('visible');
+        pointerFrame = 0;
+      });
+    }, { passive: true });
+    document.documentElement.addEventListener('pointerleave', hideGlow);
+    addEventListener('blur', hideGlow);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) hideGlow(); });
+    document.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' || e.button !== 0 || e.target.closest('input,textarea,select,[contenteditable="true"]')) return;
+      const caps = document.querySelectorAll('.scholar-click');
+      if (caps.length >= 6) caps[0].remove();
+      const cap = document.createElement('span');
+      cap.className = 'scholar-click';
+      cap.setAttribute('aria-hidden', 'true');
+      cap.style.left = `${e.clientX}px`; cap.style.top = `${e.clientY}px`;
+      cap.innerHTML = '<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 29v14q16 13 32 0V29" fill="#397bd8" stroke="#173b71" stroke-width="2"/><path d="m5 25 27-13 27 13-27 13Z" fill="#2364bb" stroke="#83c9f1" stroke-width="1.5"/><path d="m32 25 20 4v17" stroke="#f5c65c" stroke-width="2.5" stroke-linecap="round"/><path d="m50 46-2 8h8l-2-8" fill="#f5c65c"/><path d="M11 8v7M7.5 11.5h7M54 6v6m-3-3h6" stroke="#36c2d2" stroke-width="2" stroke-linecap="round"/></svg>';
+      effects.append(cap);
+      cap.addEventListener('animationend', e => { if (e.animationName === 'cap-lift') cap.remove(); });
+      setTimeout(() => cap.remove(), 1300);
+    }, { passive: true });
+  }
+
   /* Active section in nav */
   const navLinks = [...document.querySelectorAll('.nav a')];
   const spy = new IntersectionObserver(entries => {
