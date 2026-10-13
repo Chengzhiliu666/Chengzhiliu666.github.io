@@ -9,123 +9,361 @@ redirect_from:
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chengzhi Liu · Multimodal Intelligence &amp; Trustworthy Agents</title>
-<meta name="description" content="Chengzhi Liu is a Ph.D. student in Computer Science at UC Santa Barbara, working on multimodal reasoning, agent memory, and trustworthy AI.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chengzhi Liu | Multimodal Agents &amp; Trustworthy AI</title>
+<meta name="description" content="Chengzhi Liu is a Ph.D. student in Computer Science at UC Santa Barbara working on multimodal agents, multimodal reasoning, and trustworthy AI.">
 <link rel="canonical" href="https://chengzhiliu666.github.io/">
-<meta property="og:type" content="website"><meta property="og:title" content="Chengzhi Liu · Research">
-<meta property="og:description" content="Multimodal intelligence, reasoning, and trustworthy agents. Ph.D. student at UC Santa Barbara.">
-<meta property="og:url" content="https://chengzhiliu666.github.io/"><meta property="og:image" content="https://chengzhiliu666.github.io/images/person.jpg">
-<meta name="theme-color" content="#eef4fa"><link rel="icon" type="image/svg+xml" href="/assets/academic/favicon.svg">
-<script>try{var t=localStorage.getItem('cl-theme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(localStorage.getItem('cl-motion')==='paused')document.documentElement.dataset.motion='paused';}catch(e){}</script>
-<link rel="stylesheet" href="/assets/academic/site.css?v=20261013b"><script src="/assets/academic/site.js?v=20261013b" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chengzhi Liu">
+<meta property="og:description" content="Ph.D. student at UC Santa Barbara. Multimodal agents, multimodal reasoning, and trustworthy AI.">
+<meta property="og:url" content="https://chengzhiliu666.github.io/">
+<meta property="og:image" content="https://chengzhiliu666.github.io/images/person.jpg">
+<meta name="theme-color" content="#f5f8fd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08111f" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="/assets/academic/favicon.svg">
+<script>try{var t=localStorage.getItem('cl-theme');document.documentElement.dataset.theme=(t==='dark'||t==='light')?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(localStorage.getItem('cl-motion')==='paused')document.documentElement.dataset.motion='paused';}catch(e){document.documentElement.dataset.theme='light';}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<link rel="stylesheet" href="/assets/academic/site.css?v=20261013c">
+<script src="/assets/academic/site.js?v=20261013c" defer></script>
 </head>
 <body id="top">
-<div class="ambient-art" aria-hidden="true"><svg viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice" fill="none"><defs><pattern id="ambient-dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor"/></pattern></defs><rect width="1440" height="1000" fill="url(#ambient-dots)"/><g class="ambient-orbit"><ellipse cx="1320" cy="330" rx="190" ry="330" transform="rotate(25 1320 330)"/><ellipse cx="1320" cy="330" rx="140" ry="260" transform="rotate(25 1320 330)"/><circle cx="1208" cy="76" r="5" fill="currentColor"/><circle cx="1420" cy="580" r="4" fill="currentColor"/></g><g class="ambient-current"><path d="M-90 580Q140 440 80 700T140 1100"/><path d="M-70 580Q160 440 100 700T160 1100"/><path d="M-50 580Q180 440 120 700T180 1100"/></g></svg></div>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner">
-<a class="wordmark" href="#top" aria-label="Chengzhi Liu, back to top">CL<span class="wordmark-dot">.</span></a>
-<nav aria-label="Main navigation"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#service">Service</a></nav>
-<button id="theme-toggle" class="icon-button" aria-label="Switch to dark mode" title="Switch color theme"><span class="moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.7 13.3A9 9 0 0 1 10.7 3.3 9 9 0 1 0 20.7 13.3Z"/></svg></span><span class="sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></span></button>
-</div></header>
-<main id="main" class="page-shell">
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="mark" href="#top" aria-label="Chengzhi Liu, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14.5" class="mark-ring"/><path d="M20.5 10.6a7 7 0 1 0 0 10.8" class="mark-c"/><circle cx="22.4" cy="16" r="1.9" class="mark-dot"/></svg>
+      <span>Chengzhi Liu</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#research">Research</a><a href="#news">News</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#service">Service</a>
+    </nav>
+    <div class="header-actions">
+      <button id="motion-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Pause background motion" title="Pause background motion">
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5Z"/></svg>
+      </button>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark mode" title="Switch theme">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
 <span id="about-me" class="anchor-alias"></span>
-<section id="about" class="intro" aria-labelledby="name">
-<div class="intro-copy"><p class="eyebrow">COMPUTER SCIENCE · UC SANTA BARBARA</p>
-<h1 id="name">Chengzhi Liu<span class="name-period">.</span></h1>
-<p class="position">Ph.D. Student <span aria-hidden="true">/</span> Multimodal Intelligence &amp; Agents</p>
-<p class="bio">I am a Ph.D. student in Computer Science at the <a href="https://www.ucsb.edu/">University of California, Santa Barbara</a>, advised by <a href="https://eric-xw.github.io/">Prof. Xin Eric Wang</a>. I previously studied Information and Computing Science at the University of Liverpool and was a Student Researcher at <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI</a> in summer 2026.</p>
-<p class="bio">My research explores how multimodal agents <strong>reason, remember, and act reliably</strong>. I work on multimodal reasoning and visual grounding, agent memory and self-improvement, and the safety of large models and agentic systems.</p>
-<div class="social-links" aria-label="Contact and profiles"><a href="mailto:chengzhi@ucsb.edu"><svg class="social-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="3"/><path d="m7 13 17 13 17-13"/></svg>Email <span aria-hidden="true">↗</span></a><a href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&amp;hl=en"><svg class="social-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 19 21-11 21 11-21 11Z"/><path d="M12 24v12q12 9 24 0V24M43 20v17"/></svg>Google Scholar <span aria-hidden="true">↗</span></a><a href="https://github.com/Chengzhiliu666"><svg class="social-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 12-5-5v10a13 13 0 0 0-2 7c0 8 5 12 14 12s14-4 14-12a13 13 0 0 0-2-7V7l-5 5a23 23 0 0 0-14 0Z"/><path d="M19 36v8m10-8v8M18 40c-8 2-9-7-14-7"/></svg>GitHub <span aria-hidden="true">↗</span></a><a href="/files/Chengzhi_CV.pdf"><svg class="social-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5h17l8 8v30H12Z"/><path d="M29 5v10h8M19 23h11m-11 7h11m-11 7h7"/></svg>CV <span aria-hidden="true">↓</span></a></div>
-</div>
-<figure class="portrait"><div class="portrait-frame"><img src="/images/person.jpg" alt="Chengzhi Liu" width="1279" height="1920" fetchpriority="high"></div><figcaption><span class="location-dot" aria-hidden="true"></span> Santa Barbara, California</figcaption></figure>
+<section class="hero" id="about" aria-labelledby="name">
+  <canvas id="field" class="field" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker"><span class="pulse" aria-hidden="true"></span>Ph.D. student, Computer Science, UC Santa Barbara</p>
+      <h1 id="name">Chengzhi Liu</h1>
+      <p class="lede">I build multimodal agents that perceive, reason, remember, and act reliably in the real world.</p>
+      <p>I am a first-year Ph.D. student at the <a href="https://www.ucsb.edu/">University of California, Santa Barbara</a>, advised by <a href="https://eric-xw.github.io/">Prof. Xin Eric Wang</a>. Before that I studied Information and Computing Science at the <a href="https://www.liverpool.ac.uk/">University of Liverpool</a>, and in summer 2026 I was a Student Researcher at <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI</a>.</p>
+      <p>My work spans multimodal reasoning and hallucination, agent memory and self-improvement, proactive video agents, and the safety of large models and agentic systems.</p>
+      <div class="links" aria-label="Contact and profiles">
+        <a class="link-btn primary" href="mailto:chengzhi@ucsb.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
+        <a class="link-btn" href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&amp;hl=en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9.5 12 4l10 5.5L12 15Z"/><path d="M6.5 12v5c3.5 2.6 7.5 2.6 11 0v-5"/></svg>Scholar</a>
+        <a class="link-btn" href="https://github.com/Chengzhiliu666"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a>
+        <a class="link-btn" href="https://x.com/liuchen02938149"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4.5L20 20h-4.5Z"/><path d="M20 4l-6.6 7.4M10.6 12.6 4 20"/></svg>X</a>
+        <a class="link-btn" href="/files/Chengzhi_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/></svg>CV</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <div class="orbit" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" class="orbit-track"/><circle cx="100" cy="4" r="3.4" class="orbit-sat"/><circle cx="4" cy="100" r="2.2" class="orbit-sat dim"/></svg>
+      </div>
+      <img src="/images/person.webp" alt="Portrait of Chengzhi Liu" width="639" height="960" fetchpriority="high">
+      <figcaption><span class="pin" aria-hidden="true"></span>Santa Barbara, California</figcaption>
+    </figure>
+  </div>
+  <ul class="affiliations" aria-label="Affiliations">
+    <li><a href="https://www.ucsb.edu/"><img class="logo-ucsb" src="/assets/academic/ucsb.svg" alt="UC Santa Barbara" width="160" height="12"></a><span>Ph.D. student</span></li>
+    <li><a href="https://research.google/teams/cloud-ai-research/"><img src="/assets/academic/google.svg" alt="Google" width="74" height="24"></a><span>Cloud AI, summer 2026</span></li>
+    <li><a href="https://www.liverpool.ac.uk/"><img class="logo-liv" src="/assets/academic/liverpool.svg" alt="University of Liverpool" width="120" height="34"></a><span>B.Sc., 2025</span></li>
+  </ul>
 </section>
-<div class="affiliations" aria-label="Research and education affiliations">
-<a href="https://www.ucsb.edu/" class="affiliation"><img src="/assets/academic/ucsb.svg" alt="UC Santa Barbara" width="130" height="36"><span>Ph.D. student</span></a>
-<a href="https://research.google/teams/cloud-ai-research/" class="affiliation"><img src="/assets/academic/google.svg" alt="Google" width="92" height="32"><span>Cloud AI · Summer 2026</span></a>
-<a href="https://www.liverpool.ac.uk/" class="affiliation"><img src="/assets/academic/liverpool.svg" alt="University of Liverpool" width="140" height="40"><span>Undergraduate studies</span></a>
-</div>
-<section id="research" class="research-section" aria-labelledby="research-title">
-<div class="research-heading"><h2 id="research-title">Research interests</h2><button id="motion-toggle" class="motion-toggle" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
-<div class="research-grid">
-<div><div class="research-visual"><svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="diagram-track" d="M12 12h24v24H12Z" stroke-dasharray="3 5"/><path d="M19 24h10m-5-5v10"/><circle cx="12" cy="12" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/><circle class="diagram-node" cx="24" cy="24" r="9"/></svg><span class="research-index">01</span></div><h3>Agentic AI</h3><p>Memory, planning, world interaction, and self-improving agents.</p></div>
-<div><div class="research-visual"><svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="26" height="23" rx="3"/><path d="m8 28 8-9 7 7 4-4 5 5"/><circle cx="25" cy="15" r="2"/><rect class="diagram-layer" x="17" y="20" width="25" height="20" rx="3"/><path d="M23 27h12m-12 6h8"/></svg><span class="research-index">02</span></div><h3>Multimodal AI</h3><p>Visual grounding, latent-space reasoning, and proactive video understanding.</p></div>
-<div><div class="research-visual"><svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 39 11v12c0 10-15 19-15 19S9 33 9 23V11Z"/><circle class="diagram-node" cx="24" cy="23" r="10"/><path d="m19 23 4 4 7-8"/></svg><span class="research-index">03</span></div><h3>Trustworthy AI</h3><p>Safety, alignment, hallucination mitigation, and reliable agentic systems.</p></div>
-</div>
-<svg class="research-waves" viewBox="0 0 1100 100" preserveAspectRatio="none" fill="none" aria-hidden="true"><g><path d="M-50 70C100 0 230 120 400 60S700 0 880 55s220 40 300-20"/><path d="M-50 80C110 10 240 130 410 70S710 10 890 65s220 40 300-20"/><path d="M-50 90C120 20 250 140 420 80S720 20 900 75s220 40 300-20"/></g></svg>
+
+<section class="section" id="research" aria-labelledby="research-title">
+  <h2 id="research-title">Research</h2>
+  <div class="section-body">
+    <div class="themes">
+      <article class="theme">
+        <svg class="theme-art" viewBox="0 0 120 72" aria-hidden="true">
+          <g class="ta-agent"><rect x="8" y="22" width="28" height="28" rx="7"/><circle cx="18" cy="34" r="2.2" class="fill"/><circle cx="26" cy="34" r="2.2" class="fill"/><path d="M17 42h10"/></g>
+          <path class="ta-flow" d="M40 36h22m0 0c6 0 6-16 14-16h14m-28 16c6 0 6 16 14 16h14"/>
+          <rect x="92" y="12" width="20" height="16" rx="4"/><rect x="92" y="44" width="20" height="16" rx="4"/>
+          <circle class="ta-pulse fill" cx="62" cy="36" r="3"/>
+        </svg>
+        <h3>Agentic AI</h3>
+        <p>Agents that plan, keep memory across long interactions, act in the world, and improve themselves from feedback.</p>
+      </article>
+      <article class="theme">
+        <svg class="theme-art" viewBox="0 0 120 72" aria-hidden="true">
+          <rect x="8" y="14" width="34" height="26" rx="4"/><path d="m11 36 9-10 7 7 5-5 7 7"/><circle cx="33" cy="21" r="2.4" class="fill"/>
+          <g class="ta-frames"><rect x="50" y="18" width="16" height="12" rx="2"/><rect x="70" y="18" width="16" height="12" rx="2"/><rect x="90" y="18" width="16" height="12" rx="2"/></g>
+          <path class="ta-wave" d="M8 56c10-8 18 8 28 0s18-8 28 0 18 8 28 0 14-6 22 0"/>
+        </svg>
+        <h3>Multimodal reasoning</h3>
+        <p>Visual grounding, reasoning in latent space, streaming video understanding, and keeping models faithful to what they see.</p>
+      </article>
+      <article class="theme">
+        <svg class="theme-art" viewBox="0 0 120 72" aria-hidden="true">
+          <path d="M60 8 82 16v18c0 15-22 28-22 28S38 49 38 34V16Z"/>
+          <path class="ta-check" d="m50 34 7 7 13-14"/>
+          <circle class="ta-scan" cx="60" cy="34" r="30"/>
+        </svg>
+        <h3>Trustworthy AI</h3>
+        <p>Safety evaluation for multimodal models and agent harnesses, hallucination mitigation, and alignment of reasoning models.</p>
+      </article>
+    </div>
+  </div>
 </section>
-<section id="news" class="section news-section" aria-labelledby="news-title">
-<details class="section-disclosure" id="updates-disclosure"><summary class="disclosure-summary"><h2 id="news-title">Updates</h2><span class="disclosure-meta">2025 — 2026 <span class="disclosure-count">4 updates</span></span><span class="disclosure-action"><span class="when-closed">Expand</span><span class="when-open">Collapse</span><span class="disclosure-chevron" aria-hidden="true">+</span></span></summary>
-<div class="disclosure-content"><div class="news-scroll" tabindex="0" role="region" aria-label="Research updates"><div class="news-row"><time datetime="2026">2026</time><p>Three papers at <strong>NeurIPS 2026</strong>: WorldMemArena, Survive or Collapse, and Agents’ Last Exam.</p></div>
-<div class="news-row"><span class="news-date">Summer 2026</span><p>Student Researcher at <strong>Google Cloud AI</strong>, June–September.</p></div>
-<div class="news-row"><time datetime="2026">2026</time><p>Our work on latent-space multimodal reasoning at <strong>CVPR 2026</strong>; EvoPresent at <strong>ICLR 2026</strong> and an <strong>RSI Workshop Spotlight</strong>.</p></div>
-<div class="news-row"><time datetime="2025">2025</time><p>Research at NeurIPS, ICLR, AACL, <strong>CVPR (Oral)</strong>, and <strong>AAAI (Oral)</strong>, spanning multimodal reasoning, safety, and healthcare.</p></div>
-</div></div></details></section>
-<section id="publications" class="section" aria-labelledby="pub-title"><span id="selected-publications" class="anchor-alias"></span>
-<details class="section-disclosure" id="publications-disclosure"><summary class="disclosure-summary"><h2 id="pub-title">Publications</h2><span class="disclosure-meta">Papers &amp; preprints <span class="disclosure-count">13 works</span></span><span class="disclosure-action"><span class="when-closed">Expand</span><span class="when-open">Collapse</span><span class="disclosure-chevron" aria-hidden="true">+</span></span></summary>
-<div class="disclosure-content"><div class="publication-intro"><a href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&amp;hl=en">Google Scholar ↗</a></div>
-<p class="publication-note">Papers &amp; preprints. <sup>*</sup> Equal contribution.</p>
-<div class="publication-tools" hidden><div class="filters" role="group" aria-label="Filter publications by research area"><button data-filter="all" aria-pressed="true">All <span>13</span></button><button data-filter="agents" aria-pressed="false">Agents &amp; reasoning <span>7</span></button><button data-filter="safety" aria-pressed="false">Safety &amp; alignment <span>5</span></button><button data-filter="health" aria-pressed="false">Healthcare <span>1</span></button></div><label class="search-label"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="m12 12 5 5"/></svg><input id="paper-search" type="search" placeholder="Search papers" aria-label="Search papers by title, author, or venue"></label></div>
-<p id="result-count" class="result-count" role="status" aria-live="polite" hidden></p>
-<div class="publication-list" tabindex="0" role="region" aria-label="Publication list"><article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">Preprint</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3>StreamMind: Proactive Video Agents for Evolving User Intent</h3><p class="authors"><strong>Chengzhi Liu</strong>, Yuxiang Lai, Yuzhe Yang, Yanqing Liu, Jiheng Hou, Yue Cao, Haonan Wang, Ruixi Fan, Lan Wang, Sheng Liu, Songyou Peng, Yale Song, Kevin Qinghong Lin, Xin Eric Wang, Jui-Hsin Lai, Youbao Tang</p><p class="pub-description">Proactive video agents that adapt to evolving user intent.</p>
- <div class="pub-links"></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">NeurIPS</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2605.29341">WorldMemArena: Evaluating Multimodal Agent Memory Through Action–World Interaction</a></h3><p class="authors"><strong>Chengzhi Liu</strong>, Yuzhe Yang, Xiao Pu, Yepeng Liu, James Zou, Sheng Liu, Yuheng Bu, Songyou Peng, Xin Eric Wang</p><p class="pub-description">Evaluating multimodal agent memory through action–world interaction.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2605.29341">Paper<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">NeurIPS</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2605.22217">Survive or Collapse: The Asymmetric Roles of Data Gating and Reward Grounding in Self-Play RL</a></h3><p class="authors">Sophia Xiao Pu, Zhaotian Weng, <strong>Chengzhi Liu</strong>, Jayanth Srinivasa, Gaowen Liu, William Yang Wang, Xin Eric Wang</p><p class="pub-description">Studying the asymmetric roles of data gating and reward grounding in self-play RL.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2605.22217">Paper<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">NeurIPS</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2606.05405">Agents’ Last Exam</a></h3><p class="authors">Yiyou Sun et al. (including <strong>Chengzhi Liu</strong>)</p><p class="pub-description">Benchmarking agents on long-horizon, economically valuable tasks.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2606.05405">Paper<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">Preprint</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://harnessaudit.github.io/">Auditing Agent Harness Safety</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Yichen Guo<sup>*</sup>, Yepeng Liu, Yuzhe Yang, Qianqi Yan, Xuandong Zhao, Wenyue Hua, Sheng Liu, Sharon Li, Yuheng Bu, Xin Eric Wang</p><p class="pub-description">Auditing the safety risks of agent harnesses.</p>
- <div class="pub-links"><a href="https://harnessaudit.github.io/">Project<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">CVPR</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2512.12623">Reasoning Within the Mind: Dynamic Multimodal Interleaving in Latent Space</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Yuzhe Yang<sup>*</sup>, Yue Fan, Qingyue Wei, Sheng Liu, Xin Eric Wang</p><p class="pub-description">Dynamic multimodal reasoning through latent-space interleaving.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2512.12623">Paper<span aria-hidden="true"> ↗</span></a><a href="https://mllm-dmlr.github.io/">Project<span aria-hidden="true"> ↗</span></a><a href="https://github.com/eric-ai-lab/DMLR">Code<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="agents" data-year="2026">
- <div class="pub-meta"><span class="venue">ICLR</span><span class="pub-year">2026</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2510.05571">Presenting a Paper is an Art: Self-Improvement Aesthetic Agents</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Yuzhe Yang<sup>*</sup>, Kaiwen Zhou, Zhen Zhang, Yue Fan, Yannan Xie, Peng Qi, Xin Eric Wang</p><p class="pub-description">Self-improving agents for aesthetically driven presentation generation.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2510.05571">Paper<span aria-hidden="true"> ↗</span></a><a href="https://evopresent.github.io/">Project<span aria-hidden="true"> ↗</span></a><a href="https://github.com/eric-ai-lab/EvoPresent">Code<span aria-hidden="true"> ↗</span></a><span class="honor">ICLR 2026 RSI Workshop · Spotlight</span></div></div></article>
-<article class="publication" data-category="safety" data-year="2025">
- <div class="pub-meta"><span class="venue">NeurIPS</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3><a href="https://arxiv.org/abs/2505.21523">More Thinking, Less Seeing? Assessing Amplified Hallucination</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Zhongxing Xu<sup>*</sup>, Qinyue Wei, Juncheng Wu, James Zou, Xin Eric Wang, Yuyin Zhou, Sheng Liu</p><p class="pub-description">Assessing how extended reasoning can amplify hallucinations.</p>
- <div class="pub-links"><a href="https://arxiv.org/abs/2505.21523">Paper<span aria-hidden="true"> ↗</span></a><a href="https://mlrm-halu.github.io/">Project<span aria-hidden="true"> ↗</span></a><a href="https://github.com/MLRM-Halu/MLRM-Halu">Code<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="safety" data-year="2025">
- <div class="pub-meta"><span class="venue">CVPR</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.pdf">Seeing Far and Clearly: Mitigating Hallucinations in MLLMs</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Feilong Tang<sup>*</sup>, Zhongxing Xu<sup>*</sup>, Hu Ming, Zile Huang, Jionglong Su, Imran Razzak, Zongyuan Ge</p><p class="pub-description">Mitigating hallucinations in multimodal large language models.</p>
- <div class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.pdf">Paper<span aria-hidden="true"> ↗</span></a><span class="honor">Oral</span></div></div></article>
-<article class="publication" data-category="safety" data-year="2025">
- <div class="pub-meta"><span class="venue">ICLR</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3><a href="https://openreview.net/forum?id=I9bEi6LNgt">Multimodal Situational Safety</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Kaiwen Zhou<sup>*</sup>, Xuandong Zhao, Anderson Compalas, Dawn Song, Xin Eric Wang</p><p class="pub-description">Evaluating safety under multimodal situational context.</p>
- <div class="pub-links"><a href="https://openreview.net/forum?id=I9bEi6LNgt">Paper<span aria-hidden="true"> ↗</span></a><a href="https://mssbench.github.io/">Project<span aria-hidden="true"> ↗</span></a><a href="https://github.com/eric-ai-lab/MSSBench">Code<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="safety" data-year="2025">
- <div class="pub-meta"><span class="venue">AACL</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3>The Hidden Risks of Large Reasoning Models: A Safety Assessment of R1</h3><p class="authors">Kaiwen Zhou<sup>*</sup>, <strong>Chengzhi Liu</strong><sup>*</sup>, Xuandong Zhao, Jayanth Srinivasa, Gaowen Liu, Dawn Song, Xin Eric Wang</p><p class="pub-description">Assessing safety risks in large reasoning models.</p>
- <div class="pub-links"></div></div></article>
-<article class="publication" data-category="safety" data-year="2025">
- <div class="pub-meta"><span class="venue">ICLR</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3><a href="https://openreview.net/forum?id=zGb4WgCW5i">Intervening Anchor Token: Decoding Strategy in Alleviating Hallucinations</a></h3><p class="authors">Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, <strong>Chengzhi Liu</strong>, Qiang Sun, Dawn Song, Harry Yang, Ser-Nam Lim</p><p class="pub-description">Intervening on anchor tokens during decoding to reduce hallucinations.</p>
- <div class="pub-links"><a href="https://openreview.net/forum?id=zGb4WgCW5i">Paper<span aria-hidden="true"> ↗</span></a><a href="https://github.com/Everlyn-Labs/ANTRP">Code<span aria-hidden="true"> ↗</span></a></div></div></article>
-<article class="publication" data-category="health" data-year="2025">
- <div class="pub-meta"><span class="venue">AAAI</span><span class="pub-year">2025</span></div>
- <div class="pub-body"><h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Incomplete Modality Disentangled Representation for Ophthalmic Disease</a></h3><p class="authors"><strong>Chengzhi Liu</strong><sup>*</sup>, Zile Huang<sup>*</sup>, Feilong Tang, Yu Tian, Zhongxing Xu, Yalin Zheng, Yanda Meng</p><p class="pub-description">Disentangled representations with incomplete modalities for ophthalmic disease.</p>
- <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Paper<span aria-hidden="true"> ↗</span></a><a href="https://imdr-aaai.github.io/">Project<span aria-hidden="true"> ↗</span></a><span class="honor">Oral</span></div></div></article></div><p id="empty-state" class="empty-state" hidden>No papers match your search. Try another title, author, or research area.</p>
-</div></details></section>
-<section id="experience" class="section" aria-labelledby="experience-title"><div class="section-heading"><h2 id="experience-title">Experience &amp; education</h2></div>
-<div class="experience-row"><div class="experience-date">Jun — Sep 2026</div><div><h3>Google Cloud AI</h3><p>Student Researcher</p></div><span class="row-type">RESEARCH</span></div>
-<span id="educations" class="anchor-alias"></span><div class="experience-row" id="education"><div class="experience-date">Expected 2030</div><div><h3>University of California, Santa Barbara</h3><p>Ph.D. in Computer Science</p><p class="detail">Advisor: <a href="https://eric-xw.github.io/">Xin Eric Wang</a></p></div><span class="row-type">EDUCATION</span></div>
-<div class="experience-row"><div class="experience-date">Undergraduate</div><div><h3>The University of Liverpool</h3><p>B.Sc. in Information and Computing Science</p><p class="detail">Major GPA: 4.0 / 4.0 · Overall GPA: 3.86 / 4.0</p></div><span class="row-type">EDUCATION</span></div>
+
+<section class="section" id="news" aria-labelledby="news-title">
+  <h2 id="news-title">News</h2>
+  <div class="section-body">
+    <ol class="timeline">
+      <li><time datetime="2026-09">Fall 2026</time><p>Started my Ph.D. in Computer Science at UC Santa Barbara.</p></li>
+      <li><time datetime="2026">2026</time><p>Three papers accepted to <strong>NeurIPS 2026</strong>: WorldMemArena, Survive or Collapse, and Agents’ Last Exam.</p></li>
+      <li><time datetime="2026-06">Jun 2026</time><p>Started as a Student Researcher at <strong>Google Cloud AI</strong> for the summer.</p></li>
+      <li><time datetime="2026">2026</time><p>Latent-space multimodal reasoning (DMLR) accepted to <strong>CVPR 2026</strong>.</p></li>
+      <li><time datetime="2026-01">2026</time><p>EvoPresent accepted to <strong>ICLR 2026</strong>, and selected as a <strong>Spotlight</strong> at the ICLR 2026 RSI Workshop.</p></li>
+      <li><time datetime="2025-11">Nov 2025</time><p>Invited talk on multimodal latent-space reasoning at the NLP Academic Exchange Platform.</p></li>
+            <li class="more"><time datetime="2025">2025</time><p>Papers at NeurIPS, ICLR, AACL, <strong>CVPR (Oral)</strong>, and <strong>AAAI (Oral)</strong> on reasoning hallucination, multimodal safety, and medical imaging.</p></li>
+    </ol>
+  </div>
 </section>
-<section id="service" class="section service-section" aria-labelledby="service-title"><span id="services" class="anchor-alias"></span><span id="academic-services" class="anchor-alias"></span><div class="section-heading"><h2 id="service-title">Academic service</h2></div><div class="service-grid"><div><h3>Conference reviewer</h3><p>AAAI 2026 · ICLR 2026 · AAAI-AIA 2026<br>CVPR 2026 · ICML 2026 · NeurIPS 2026</p></div><div><h3>Invited talks</h3><p><span class="talk-date">Nov 2025</span> Multimodal Latent-Space Reasoning<br><span class="detail">NLP Academic Exchange Platform</span></p><p><span class="talk-date">Oct 2025</span> Canvas: Aesthetic-Driven Automatic Presentation Generation</p></div></div></section>
-<div class="contact-line"><p>Interested in multimodal intelligence and trustworthy agents?<br><a href="mailto:chengzhi@ucsb.edu">Let’s connect. <span>chengzhi@ucsb.edu ↗</span></a></p></div>
-<footer><span>© 2026 Chengzhi Liu</span><span>Updated October 2026</span><a href="#top">Back to top ↑</a></footer>
-</main></body></html>
+
+<section class="section" id="publications" aria-labelledby="pub-title">
+  <span id="selected-publications" class="anchor-alias"></span>
+  <h2 id="pub-title">Publications</h2>
+  <div class="section-body">
+    <div class="pub-tools">
+      <div class="filters" role="group" aria-label="Filter by topic">
+        <button type="button" data-filter="all" aria-pressed="true">All <span>13</span></button>
+        <button type="button" data-filter="agents" aria-pressed="false">Agents and reasoning <span>7</span></button>
+        <button type="button" data-filter="safety" aria-pressed="false">Safety and alignment <span>5</span></button>
+        <button type="button" data-filter="health" aria-pressed="false">Healthcare <span>1</span></button>
+      </div>
+      <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg><input id="paper-search" type="search" placeholder="Search title, author, venue" aria-label="Search publications"></label>
+    </div>
+    <p class="pub-note"><sup>*</sup> Equal contribution. <a href="https://scholar.google.com/citations?user=QC1kfNYAAAAJ&amp;hl=en">Full list on Google Scholar</a></p>
+    <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+
+    <div class="pub-list">
+      <h3 class="year" data-year-label="2026">2026</h3>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <div class="pub-thumb cover"><svg viewBox="0 0 320 200" aria-hidden="true"><g class="cv-frames"><rect x="22" y="58" width="58" height="40" rx="5"/><rect x="92" y="58" width="58" height="40" rx="5"/><rect x="162" y="58" width="58" height="40" rx="5"/><rect x="232" y="58" width="58" height="40" rx="5" class="cv-hot"/></g><path class="cv-line" d="M22 132h268"/><circle class="cv-head fill" cx="22" cy="132" r="5"/><path d="M246 150c0-10 8-16 16-16s16 6 16 16" /><circle cx="262" cy="124" r="6"/><path class="cv-bubble" d="M200 152h28l6 8 2-8h8"/></svg></div>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-pre">Preprint</span></div>
+          <h4>StreamMind: Proactive Video Agents for Evolving User Intent</h4>
+          <p class="authors"><b>Chengzhi Liu</b>, Yuxiang Lai, Yuzhe Yang, Yanqing Liu, Jiheng Hou, Yue Cao, Haonan Wang, Ruixi Fan, Lan Wang, Sheng Liu, Songyou Peng, Yale Song, Kevin Qinghong Lin, Xin Eric Wang, Jui-Hsin Lai, Youbao Tang</p>
+          <p class="summary">Video agents that decide when to speak up as a user's intent shifts during a live stream.</p>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <div class="pub-thumb cover"><svg viewBox="0 0 320 200" aria-hidden="true"><g class="cv-grid"><rect x="40" y="40" width="34" height="34" rx="6"/><rect x="82" y="40" width="34" height="34" rx="6" class="cv-hot"/><rect x="124" y="40" width="34" height="34" rx="6"/><rect x="40" y="82" width="34" height="34" rx="6"/><rect x="82" y="82" width="34" height="34" rx="6"/><rect x="124" y="82" width="34" height="34" rx="6" class="cv-hot2"/><rect x="40" y="124" width="34" height="34" rx="6" class="cv-hot3"/><rect x="82" y="124" width="34" height="34" rx="6"/><rect x="124" y="124" width="34" height="34" rx="6"/></g><path class="cv-line" d="M170 99h40"/><circle cx="248" cy="99" r="38"/><path d="M228 99c8-14 32-14 40 0-8 14-32 14-40 0Z"/><circle class="fill" cx="248" cy="99" r="5"/></svg></div>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2605.29341">WorldMemArena: Evaluating Multimodal Agent Memory Through Action–World Interaction</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b>, Yuzhe Yang, Xiao Pu, Yepeng Liu, James Zou, Sheng Liu, Yuheng Bu, Songyou Peng, Xin Eric Wang</p>
+          <p class="summary">A benchmark that tests whether multimodal agents remember what their own actions did to the world.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2605.29341">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <div class="pub-thumb cover"><svg viewBox="0 0 320 200" aria-hidden="true"><circle cx="118" cy="100" r="44"/><circle cx="202" cy="100" r="44"/><path class="cv-spin" d="M118 56a44 44 0 0 1 0 88"/><path class="cv-spin rev" d="M202 144a44 44 0 0 1 0-88"/><circle class="fill" cx="160" cy="100" r="6"/><path class="cv-line" d="M40 172h240"/><path d="M40 172c40-6 60-40 100-44s70 20 140-30" class="cv-hot-line"/></svg></div>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2605.22217">Survive or Collapse: The Asymmetric Roles of Data Gating and Reward Grounding in Self-Play RL</a></h4>
+          <p class="authors">Sophia Xiao Pu, Zhaotian Weng, <b>Chengzhi Liu</b>, Jayanth Srinivasa, Gaowen Liu, William Yang Wang, Xin Eric Wang</p>
+          <p class="summary">Why some self-play RL runs keep improving while others collapse, traced to data gating and reward grounding.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2605.22217">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <div class="pub-thumb cover"><svg viewBox="0 0 320 200" aria-hidden="true"><rect x="100" y="28" width="120" height="148" rx="8"/><path d="M122 58h76M122 80h76M122 102h52"/><path class="cv-check" d="m124 134 10 10 20-22"/><path d="M178 136h22M178 150h14"/><circle class="cv-head fill" cx="230" cy="40" r="5"/></svg></div>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2606.05405">Agents’ Last Exam</a></h4>
+          <p class="authors">Yiyou Sun et al., including <b>Chengzhi Liu</b></p>
+          <p class="summary">A benchmark of long-horizon, economically valuable tasks for AI agents.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2606.05405">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <div class="pub-thumb cover"><svg viewBox="0 0 320 200" aria-hidden="true"><rect x="60" y="48" width="200" height="104" rx="10"/><path d="M60 72h200"/><circle cx="74" cy="60" r="3" class="fill"/><circle cx="86" cy="60" r="3"/><path d="M80 94h60M80 112h96M80 130h44"/><g class="cv-lens"><circle cx="214" cy="118" r="26"/><path d="m233 137 18 18"/></g></svg></div>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-pre">Preprint</span></div>
+          <h4><a href="https://harnessaudit.github.io/">Auditing Agent Harness Safety</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Yichen Guo<sup>*</sup>, Yepeng Liu, Yuzhe Yang, Qianqi Yan, Xuandong Zhao, Wenyue Hua, Sheng Liu, Sharon Li, Yuheng Bu, Xin Eric Wang</p>
+          <p class="summary">Auditing the safety risks introduced by the harnesses that run AI agents.</p>
+          <div class="pub-links"><a href="https://harnessaudit.github.io/">Project</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/dmlr.webp" aria-label="Enlarge figure for Reasoning Within the Mind"><img src="/images/papers/dmlr.webp" alt="" loading="lazy" width="960" height="344"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-cvpr">CVPR 2026</span></div>
+          <h4><a href="https://arxiv.org/abs/2512.12623">Reasoning Within the Mind: Dynamic Multimodal Interleaving in Latent Space</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Yuzhe Yang<sup>*</sup>, Yue Fan, Qingyue Wei, Sheng Liu, Xin Eric Wang</p>
+          <p class="summary">Interleaving visual and textual reasoning directly in latent space, without explicit tool calls.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2512.12623">Paper</a><a href="https://mllm-dmlr.github.io/">Project</a><a href="https://github.com/eric-ai-lab/DMLR">Code</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="agents" data-year="2026">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/evopresent.webp" aria-label="Enlarge figure for Presenting a Paper is an Art"><img src="/images/papers/evopresent.webp" alt="" loading="lazy" width="960" height="583"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-iclr">ICLR 2026</span><span class="honor">RSI Workshop Spotlight</span></div>
+          <h4><a href="https://arxiv.org/abs/2510.05571">Presenting a Paper is an Art: Self-Improvement Aesthetic Agents</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Yuzhe Yang<sup>*</sup>, Kaiwen Zhou, Zhen Zhang, Yue Fan, Yannan Xie, Peng Qi, Xin Eric Wang</p>
+          <p class="summary">Agents that generate paper presentations and improve their own visual design through aesthetic feedback.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2510.05571">Paper</a><a href="https://evopresent.github.io/">Project</a><a href="https://github.com/eric-ai-lab/EvoPresent">Code</a></div>
+        </div>
+      </article>
+
+      <h3 class="year" data-year-label="2025">2025</h3>
+
+      <article class="pub" data-category="safety" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/mlrm-halu.webp" aria-label="Enlarge figure for More Thinking, Less Seeing"><img src="/images/papers/mlrm-halu.webp" alt="" loading="lazy" width="960" height="268"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-neurips">NeurIPS 2025</span></div>
+          <h4><a href="https://arxiv.org/abs/2505.21523">More Thinking, Less Seeing? Assessing Amplified Hallucination in Multimodal Reasoning Models</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Zhongxing Xu<sup>*</sup>, Qinyue Wei, Juncheng Wu, James Zou, Xin Eric Wang, Yuyin Zhou, Sheng Liu</p>
+          <p class="summary">Longer reasoning chains can pull multimodal models away from the image and amplify hallucination.</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2505.21523">Paper</a><a href="https://mlrm-halu.github.io/">Project</a><a href="https://github.com/MLRM-Halu/MLRM-Halu">Code</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="safety" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/farsight.webp" aria-label="Enlarge figure for Seeing Far and Clearly"><img src="/images/papers/farsight.webp" alt="" loading="lazy" width="960" height="938"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-cvpr">CVPR 2025</span><span class="honor">Oral</span></div>
+          <h4><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.pdf">Seeing Far and Clearly: Mitigating Hallucinations in MLLMs</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Feilong Tang<sup>*</sup>, Zhongxing Xu<sup>*</sup>, Hu Ming, Zile Huang, Jionglong Su, Imran Razzak, Zongyuan Ge</p>
+          <p class="summary">Reshaping attention so multimodal models keep looking at distant visual tokens, reducing hallucination.</p>
+          <div class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_Seeing_Far_and_Clearly_Mitigating_Hallucinations_in_MLLMs_with_Attention_CVPR_2025_paper.pdf">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="safety" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/mssbench.webp" aria-label="Enlarge figure for Multimodal Situational Safety"><img src="/images/papers/mssbench.webp" alt="" loading="lazy" width="960" height="326"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-iclr">ICLR 2025</span></div>
+          <h4><a href="https://openreview.net/forum?id=I9bEi6LNgt">Multimodal Situational Safety</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Kaiwen Zhou<sup>*</sup>, Xuandong Zhao, Anderson Compalas, Dawn Song, Xin Eric Wang</p>
+          <p class="summary">The same request can be safe or unsafe depending on the scene; MSSBench tests whether models notice.</p>
+          <div class="pub-links"><a href="https://openreview.net/forum?id=I9bEi6LNgt">Paper</a><a href="https://mssbench.github.io/">Project</a><a href="https://github.com/eric-ai-lab/MSSBench">Code</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="safety" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/r1-safety.webp" aria-label="Enlarge figure for The Hidden Risks of Large Reasoning Models"><img src="/images/papers/r1-safety.webp" alt="" loading="lazy" width="960" height="232"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-aacl">AACL 2025</span></div>
+          <h4>The Hidden Risks of Large Reasoning Models: A Safety Assessment of R1</h4>
+          <p class="authors">Kaiwen Zhou<sup>*</sup>, <b>Chengzhi Liu</b><sup>*</sup>, Xuandong Zhao, Jayanth Srinivasa, Gaowen Liu, Dawn Song, Xin Eric Wang</p>
+          <p class="summary">A safety assessment of open reasoning models, including how risky content surfaces in the thinking process.</p>
+        </div>
+      </article>
+
+      <article class="pub" data-category="safety" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/antrp.webp" aria-label="Enlarge figure for Intervening Anchor Token"><img src="/images/papers/antrp.webp" alt="" loading="lazy" width="960" height="279"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-iclr">ICLR 2025</span></div>
+          <h4><a href="https://openreview.net/forum?id=zGb4WgCW5i">Intervening Anchor Token: Decoding Strategy in Alleviating Hallucinations for MLLMs</a></h4>
+          <p class="authors">Feilong Tang<sup>*</sup>, Zile Huang<sup>*</sup>, <b>Chengzhi Liu</b>, Qiang Sun, Dawn Song, Harry Yang, Ser-Nam Lim</p>
+          <p class="summary">A decoding strategy that intervenes on anchor tokens to reduce hallucination.</p>
+          <div class="pub-links"><a href="https://openreview.net/forum?id=zGb4WgCW5i">Paper</a><a href="https://github.com/Everlyn-Labs/ANTRP">Code</a></div>
+        </div>
+      </article>
+
+      <article class="pub" data-category="health" data-year="2025">
+        <button class="pub-thumb" type="button" data-zoom="/images/papers/imdr.webp" aria-label="Enlarge figure for Incomplete Modality Disentangled Representation"><img src="/images/papers/imdr.webp" alt="" loading="lazy" width="960" height="406"></button>
+        <div class="pub-body">
+          <div class="pub-meta"><span class="venue v-aaai">AAAI 2025</span><span class="honor">Oral</span></div>
+          <h4><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Incomplete Modality Disentangled Representation for Ophthalmic Disease Grading and Diagnosis</a></h4>
+          <p class="authors"><b>Chengzhi Liu</b><sup>*</sup>, Zile Huang<sup>*</sup>, Feilong Tang, Yu Tian, Zhongxing Xu, Yalin Zheng, Yanda Meng</p>
+          <p class="summary">Disentangled representations that stay robust when some imaging modalities are missing.</p>
+          <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32570">Paper</a><a href="https://imdr-aaai.github.io/">Project</a></div>
+        </div>
+      </article>
+    </div>
+    <p id="empty-state" class="empty-state" hidden>No papers match that search. Try a title word, an author, or a venue such as “CVPR”.</p>
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <span id="educations" class="anchor-alias"></span><span id="education" class="anchor-alias"></span>
+  <h2 id="experience-title">Experience</h2>
+  <div class="section-body">
+    <ol class="exp">
+      <li>
+        <div class="exp-logo"><img src="/assets/academic/google.svg" alt="" width="74" height="24"></div>
+        <div><h3>Google Cloud AI</h3><p>Student Researcher</p></div>
+        <time>Jun – Sep 2026</time>
+      </li>
+      <li>
+        <div class="exp-logo"><img class="logo-ucsb" src="/assets/academic/ucsb.svg" alt="" width="160" height="12"></div>
+        <div><h3>University of California, Santa Barbara</h3><p>Ph.D. in Computer Science, advised by <a href="https://eric-xw.github.io/">Xin Eric Wang</a></p></div>
+        <time>2026 – 2030 (expected)</time>
+      </li>
+      <li>
+        <div class="exp-logo"><img class="logo-liv" src="/assets/academic/liverpool.svg" alt="" width="120" height="34"></div>
+        <div><h3>The University of Liverpool</h3><p>B.Sc. in Information and Computing Science. Major GPA 4.0/4.0, overall 3.86/4.0</p></div>
+        <time>2025</time>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="service" aria-labelledby="service-title">
+  <span id="services" class="anchor-alias"></span><span id="academic-services" class="anchor-alias"></span>
+  <h2 id="service-title">Service and talks</h2>
+  <div class="section-body service">
+    <div>
+      <h3>Conference reviewer</h3>
+      <ul class="chips"><li>NeurIPS 2026</li><li>ICML 2026</li><li>CVPR 2026</li><li>ICLR 2026</li><li>AAAI 2026</li><li>AAAI-AIA 2026</li></ul>
+    </div>
+    <div>
+      <h3>Invited talks</h3>
+      <ul class="talks">
+        <li><time>Nov 2025</time><span>Multimodal latent-space reasoning<small>NLP Academic Exchange Platform</small></span></li>
+        <li><time>Oct 2025</time><span>Canvas: aesthetic-driven automatic presentation generation</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" aria-label="Contact">
+  <p>Open to collaborations on multimodal agents and trustworthy AI.</p>
+  <a class="link-btn primary" href="mailto:chengzhi@ucsb.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>chengzhi@ucsb.edu</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Chengzhi Liu</span>
+  <span>Last updated October 2026</span>
+</footer>
+
+<button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<dialog id="lightbox" class="lightbox" aria-label="Figure preview">
+  <button type="button" class="lightbox-close" aria-label="Close figure">✕</button>
+  <img alt="">
+</dialog>
+</body>
+</html>
