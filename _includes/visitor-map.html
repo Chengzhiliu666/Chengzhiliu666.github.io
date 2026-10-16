@@ -1,0 +1,16 @@
+{% if site.visitor_map.id and site.visitor_map.id != empty %}
+<section class="visitor-section" id="visitors" aria-labelledby="visitors-title">
+  <h2 id="visitors-title">Visitors around the world</h2>
+  <p class="visitor-caption">A map of visits to this homepage.</p>
+  <div class="visitor-map">
+    <script async id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d={{ site.visitor_map.id | uri_escape | escape }}&amp;cl=ffffff&amp;co=1d5bd6&amp;ct=ffffff&amp;w=a"></script>
+    <noscript>
+      <img src="https://mapmyvisitors.com/map.png?d={{ site.visitor_map.id | uri_escape | escape }}&amp;cl=ffffff&amp;co=1d5bd6&amp;ct=ffffff" alt="World map showing homepage visitor locations and visit totals">
+    </noscript>
+  </div>
+  {% if site.visitor_map.stats_url and site.visitor_map.stats_url != empty %}
+  <a class="visitor-details" href="{{ site.visitor_map.stats_url | escape }}" target="_blank" rel="noopener noreferrer">View visitor statistics <span aria-hidden="true">↗</span></a>
+  {% endif %}
+  <p class="visitor-note">Approximate locations, not personal identities. Statistics provided by <a href="https://mapmyvisitors.com/" target="_blank" rel="noopener noreferrer">MapMyVisitors</a>.</p>
+</section>
+{% endif %}
