@@ -15,6 +15,12 @@ google_scholar_stats_use_cdn : true
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
+# MapMyVisitors: use the ID generated specifically for this homepage.
+# Leave id empty to hide the section until the site's widget is registered.
+visitor_map:
+  id: "j_fWRr7e03E2THI3PsD4qq_G50_MwbW1fryahyglBiU"
+  stats_url: "https://mapmyvisitors.com/web/1c8wu"
+
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
 bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
