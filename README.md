@@ -1,4 +1,3 @@
-
 <h1 align="center">
 AcadHomepage
 </h1>
@@ -57,6 +56,21 @@ Some examples:
 1. Your page will be published at `https://USERNAME.github.io`.
 
 ## Debug Locally
+
+### Homepage visitor map
+
+The redesigned homepage includes `_includes/visitor-map.html` above its footer.
+Create a widget for `https://chengzhiliu666.github.io/` at
+[MapMyVisitors](https://mapmyvisitors.com/add), then set `visitor_map.id` in
+`_config.yml` to the `d` parameter from the generated embed code. Set
+`visitor_map.stats_url` to that site's statistics URL. Do not reuse another
+website's ID, including the unrelated ID in the legacy layout.
+
+The section stays hidden while the ID is empty. The map loads asynchronously,
+with an image fallback when JavaScript is disabled. Visit totals and approximate
+locations come from the provider; they do not identify individual visitors.
+
+### Run the site
 
 1. Clone your REPO to local using `git clone`.
 1. Install Jekyll building environment, including `Ruby`, `RubyGems`, `GCC` and `Make` following [the installation guide](https://jekyllrb.com/docs/installation/#requirements).
