@@ -476,3 +476,7 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
 }
 
 @media (max-width: 360px) { .theme { grid-template-columns: 96px minmax(0,1fr); gap: 10px; } .theme-art { width: 96px; height: 64px; } }
+
+.link-btn[data-copy-email] { position: relative; }
+.link-btn[data-copy-email]::after { content: attr(data-copied); position: absolute; left: 50%; top: calc(100% + 8px); transform: translateX(-50%); padding: 4px 8px; border-radius: 4px; background: var(--ink); color: var(--surface); font-size: 12px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.link-btn[data-copy-email].copied::after { opacity: 1; }

@@ -364,3 +364,21 @@
   apply();
 
 })();
+
+(() => {
+  // mailto: does nothing when no mail app is configured, so also copy the address.
+  document.querySelectorAll('[data-copy-email]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const email = btn.dataset.copyEmail;
+      const done = () => {
+        btn.dataset.copied = `Copied ${email}`;
+        btn.classList.add('copied');
+        clearTimeout(btn._copyTimer);
+        btn._copyTimer = setTimeout(() => btn.classList.remove('copied'), 2200);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(done, () => {});
+      }
+    });
+  });
+})();
