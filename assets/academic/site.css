@@ -208,10 +208,9 @@ mark { background: rgba(var(--field), .18); color: inherit; border-radius: 3px; 
 .exp { list-style: none; margin: 0; padding: 0; }
 .exp li { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 22px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .exp li:first-child { padding-top: 0; }
-.exp-logo { height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 0 12px; }
+.exp-logo { height: 42px; display: flex; align-items: center; }
 .exp-logo img { height: 24px; width: auto; max-width: 100%; }
 .exp-logo .logo-ucsb { height: 10px; }
-:root[data-theme="dark"] .exp-logo .logo-ucsb, :root[data-theme="dark"] .exp-logo .logo-liv { filter: none; }
 .exp h3 { font: 500 18px/1.3 var(--serif); }
 .exp p { margin: 2px 0 0; color: var(--ink-2); font-size: 15px; }
 .exp time { color: var(--muted); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
