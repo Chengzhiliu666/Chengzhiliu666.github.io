@@ -113,4 +113,4 @@ The News archive now maps its scroll progress onto the timeline: the current nod
 
 ## Research cards (2026-11-23)
 
-Removed the affiliation logo strip under the hero (affiliations remain in the biography and Experience). Research now uses three bordered cards (icon, number, title, description) with linked chips for representative papers instead of the animated diagrams. The first theme is renamed "Agentic AI & Self-Improvement". Google-affiliated papers carry a small Google badge (`.org-google`) in their publication meta.
+Removed the affiliation logo strip under the hero (affiliations remain in the biography and Experience). Research now uses three bordered cards (icon, number, title, description) instead of the animated diagrams (no paper links, by request). The first theme is renamed "Agentic AI & Self-Improvement". Google-affiliated papers carry a small Google badge (`.org-google`) in their publication meta.
