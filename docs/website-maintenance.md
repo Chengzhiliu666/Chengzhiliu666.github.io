@@ -109,3 +109,8 @@ Desktop research columns now have equal widths and symmetric padding. Diagrams, 
 ## Scroll-linked News nodes (2026-10-13)
 
 The News archive now maps its scroll progress onto the timeline: the current node gains a blue halo, earlier nodes fill in, and the connecting line advances continuously. Scrolling back reverses the state. Wheel, touch, keyboard, and arrow buttons share the same passive, animation-frame-throttled update. Resizing recalculates the node positions; reduced-motion disables node transitions. Exactly one item carries aria-current="step".
+
+
+## Research cards (2026-11-23)
+
+Removed the affiliation logo strip under the hero (affiliations remain in the biography and Experience). Research now uses three bordered cards (icon, number, title, description) with linked chips for representative papers instead of the animated diagrams. The first theme is renamed "Agentic AI & Self-Improvement". Google-affiliated papers carry a small Google badge (`.org-google`) in their publication meta.
